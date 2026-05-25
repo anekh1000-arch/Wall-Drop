@@ -84,7 +84,7 @@ def main() -> int:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    print(f"WallDrop sync: {len(wallpapers)} wallpaper(s) → wallpapers.json")
+    print(f"WallDrop sync: {len(wallpapers)} wallpaper(s) -> wallpapers.json")
     print(f"  desktop: {len(scan_folder(DESKTOP, 'desktop'))}")
     print(f"  mobile:  {len(scan_folder(MOBILE, 'mobile'))}")
     if not wallpapers:

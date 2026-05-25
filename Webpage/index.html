@@ -331,7 +331,8 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   position:relative;overflow:hidden;
   background:var(--bg);cursor:pointer;
   transform:translateZ(0);
-  transition:background 0.2s;
+  transition:background 0.25s,opacity 0.4s cubic-bezier(0.25,0.46,0.45,0.94),
+    transform 0.45s cubic-bezier(0.34,1.15,0.64,1),filter 0.4s,box-shadow 0.4s;
 }
 .wall-card:hover{background:var(--card-hover)}
 
@@ -341,28 +342,42 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   background:#0a0a0a;
 }
 .wall-thumb-inner{
-  width:100%;line-height:0;
-  transition:transform 0.4s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.3s;
-  will-change:transform;
+  width:100%;line-height:0;overflow:hidden;
 }
-.wall-card:hover .wall-thumb-inner{transform:scale(1.02);filter:brightness(0.45)}
 .wall-thumb-inner.has-image{background:none}
 .wall-thumb-inner.has-image::after{display:none}
 .wall-thumb-inner.has-image img{
   width:100%;height:auto;display:block;
   object-fit:contain;object-position:center;
   max-height:min(72vh,960px);
+  transform:scale(1);
+  transform-origin:center center;
+  transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.4s ease;
+  will-change:transform;
 }
-.wall-card:hover .wall-thumb-inner.has-image img{filter:brightness(0.45)}
+.wall-card:hover .wall-thumb-inner.has-image img{
+  transform:scale(1.07);
+  filter:brightness(0.82);
+}
 
-/* OVERLAY */
+/* OVERLAY — click passes through to open view */
 .wall-overlay{
   position:absolute;inset:0;
-  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;
-  opacity:0;
-  transition:opacity 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+  display:flex;align-items:center;justify-content:center;
+  opacity:0;pointer-events:none;
+  background:linear-gradient(180deg,transparent 0%,rgba(0,0,0,0.5) 100%);
+  transition:opacity 0.3s cubic-bezier(0.25,0.46,0.45,0.94);
 }
 .wall-card:hover .wall-overlay{opacity:1}
+.wall-view-hint{
+  font-family:'Outfit',sans-serif;font-size:0.72rem;font-weight:500;
+  letter-spacing:0.2em;text-transform:uppercase;
+  color:rgba(255,255,255,0.85);
+  padding:0.5rem 1.1rem;border-radius:100px;
+  border:1px solid rgba(255,255,255,0.2);
+  background:rgba(0,0,0,0.45);
+  backdrop-filter:blur(8px);
+}
 
 .dl-btn{
   background:var(--white);color:#080808;border:none;
@@ -449,6 +464,21 @@ footer{
 
 /* HIDDEN / EMPTY */
 .wall-card.hidden{display:none!important}
+.gallery.is-searching .wall-card.is-search-hit{
+  z-index:2;
+  box-shadow:0 0 0 1px rgba(255,255,255,0.1),0 14px 40px rgba(0,0,0,0.5);
+  animation:searchPop 0.5s cubic-bezier(0.34,1.2,0.64,1) both;
+  animation-delay:var(--pop-delay,0s);
+}
+@keyframes searchPop{
+  0%{opacity:0.4;transform:scale(0.88) translateY(8px)}
+  55%{transform:scale(1.04) translateY(-2px)}
+  100%{opacity:1;transform:scale(1) translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){
+  .wall-card,.wall-thumb-inner.has-image img{transition-duration:0.01ms}
+  .gallery.is-searching .wall-card.is-search-hit{animation:none}
+}
 .empty-state{
   display:none;grid-column:1/-1;
   padding:5rem 2rem;text-align:center;
@@ -628,7 +658,6 @@ footer{
     <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
-    <a class="nav-btn" href="admin.html">Owner</a>
     <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">☰</button>
   </div>
 </nav>
@@ -678,7 +707,7 @@ footer{
   <div class="stats-row">
     <div class="stat">
       <div class="stat-val" id="wall-count">0</div>
-      <div class="stat-label">Wallpapers</div>
+      <div class="stat-label">Uploaded</div>
     </div>
     <div class="stat">
       <div class="stat-val" id="dl-count">0</div>
@@ -718,7 +747,6 @@ footer{
     <div class="empty-state visible" id="emptyState">
       <div class="empty-title">No wallpapers yet</div>
       <p>Copy images into <strong>images/wallpapers/desktop</strong> or <strong>mobile</strong>, then run <strong>update-gallery.bat</strong>.</p>
-      <span class="empty-hint"><a href="admin.html" style="color:inherit">Owner guide</a></span>
     </div>
 
   </div>
@@ -757,23 +785,56 @@ footer{
 
 <script src="gallery.js"></script>
 <script>
-/* ── STATE ── */
-const STORAGE_KEY='walldrop_v2';
+/* ── STATE (downloads keyed by image — survives new uploads) ── */
+const STORAGE_KEY='walldrop_v3';
 const cards=()=>[...document.querySelectorAll('.wall-card')];
 
 function loadState(){
   const total=cards().length;
+  const byImage={};
+  let totalDownloads=0;
   try{
-    const s=JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if(s&&Array.isArray(s.downloads)&&s.downloads.length===total){
-      return{downloads:s.downloads,wallCount:total,totalDownloads:s.totalDownloads||0};
+    let s=JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if(!s){
+      const old=JSON.parse(localStorage.getItem('walldrop_v2'));
+      if(old) s=old;
     }
+    s=s||{};
+    if(s.downloadsByImage&&typeof s.downloadsByImage==='object'){
+      Object.assign(byImage,s.downloadsByImage);
+    }
+    if(Array.isArray(s.downloadKeys)&&Array.isArray(s.downloads)){
+      s.downloadKeys.forEach((key,i)=>{
+        if(key) byImage[key]=(byImage[key]||0)+(s.downloads[i]||0);
+      });
+    }
+    if(typeof s.totalDownloads==='number') totalDownloads=s.totalDownloads;
   }catch{}
-  return{downloads:Array(total).fill(0),wallCount:total,totalDownloads:0};
+  const downloads=cards().map(c=>byImage[c.dataset.image]||0);
+  const sum=downloads.reduce((a,b)=>a+b,0);
+  if(!totalDownloads) totalDownloads=sum;
+  return{downloads,downloadsByImage:byImage,wallCount:total,totalDownloads};
 }
-function saveState(s){try{localStorage.setItem(STORAGE_KEY,JSON.stringify(s))}catch{}}
 
-let state=loadState();
+function saveState(s){
+  const downloadsByImage={};
+  const downloadKeys=[];
+  cards().forEach((card,i)=>{
+    const key=card.dataset.image;
+    downloadKeys.push(key);
+    downloadsByImage[key]=s.downloads[i]||0;
+  });
+  try{
+    localStorage.setItem(STORAGE_KEY,JSON.stringify({
+      downloads:s.downloads,
+      downloadsByImage,
+      downloadKeys,
+      totalDownloads:s.totalDownloads||0
+    }));
+  }catch{}
+}
+
+let state={downloads:[],wallCount:0,totalDownloads:0};
 let activeCat='all',activeDev='all',searchQuery='';
 /* ── HELPERS ── */
 function fmtNum(n){
@@ -801,13 +862,32 @@ function cardMatches(card){
   return catOk&&devOk&&searchOk;
 }
 
-function applyFilters(){
+function applyFilters(animateSearch){
+  const gallery=document.getElementById('gallery');
+  const q=searchQuery.trim().toLowerCase();
   let visible=0;
+
   cards().forEach(card=>{
     const show=cardMatches(card);
     card.classList.toggle('hidden',!show);
+    card.classList.remove('is-search-hit');
     if(show) visible++;
   });
+
+  if(gallery) gallery.classList.toggle('is-searching',!!q);
+
+  if(animateSearch&&q){
+    requestAnimationFrame(()=>{
+      let hitIndex=0;
+      cards().forEach(card=>{
+        if(card.classList.contains('hidden')) return;
+        card.classList.add('is-search-hit');
+        card.style.setProperty('--pop-delay',Math.min(hitIndex*0.06,0.36)+'s');
+        hitIndex++;
+      });
+    });
+  }
+
   const emptyEl=document.getElementById('emptyState');
   const total=cards().length;
   if(total===0){
@@ -823,8 +903,12 @@ function applyFilters(){
       emptyEl.querySelector('.empty-hint').style.display='none';
     }
   }
-  document.getElementById('wall-count').textContent=
-    total===0?'0':(visible===total?fmtNum(total):visible+' / '+fmtNum(total));
+  updateUploadedCount();
+}
+
+function updateUploadedCount(){
+  const el=document.getElementById('wall-count');
+  if(el) el.textContent=fmtNum(cards().length);
 }
 
 /* ── RENDER STATS ── */
@@ -850,8 +934,8 @@ function renderStats(animate=true){
   }else{
     dlEl.textContent=fmtNum(totalDl);
   }
-  wallEl.textContent=fmtNum(total);
-  applyFilters();
+  updateUploadedCount();
+  applyFilters(false);
 }
 
 function animateNum(el,target,fmt){
@@ -870,7 +954,13 @@ function slugFilename(title,ext){
 }
 
 function recordDownload(index,title){
+  const card=cards()[index];
+  const key=card&&card.dataset.image;
   state.downloads[index]=(state.downloads[index]||0)+1;
+  if(key){
+    state.downloadsByImage=state.downloadsByImage||{};
+    state.downloadsByImage[key]=state.downloads[index];
+  }
   state.totalDownloads=(state.totalDownloads||0)+1;
   saveState(state);
   renderStats(false);
@@ -985,20 +1075,10 @@ document.addEventListener('keydown',e=>{
 /* ── CARD INTERACTIONS ── */
 function bindCardInteractions(){
   cards().forEach((card,i)=>{
-    card.querySelector('.dl-btn').addEventListener('click',e=>{
-      e.stopPropagation();
-      triggerDownload(i,e.currentTarget);
-    });
-    card.querySelector('.wall-thumb').addEventListener('click',e=>{
-      if(e.target.closest('.wall-overlay')) return;
-      e.preventDefault();
-      openLightbox(i);
-    });
-    const viewLink=card.querySelector('.pre-btn');
-    if(viewLink){
-      viewLink.addEventListener('click',e=>{
+    const thumb=card.querySelector('.wall-thumb');
+    if(thumb){
+      thumb.addEventListener('click',e=>{
         e.preventDefault();
-        e.stopPropagation();
         openLightbox(i);
       });
     }
@@ -1011,7 +1091,7 @@ document.getElementById('filters').addEventListener('click',e=>{
   document.querySelectorAll('.pill').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   activeCat=btn.dataset.cat;
-  applyFilters();
+  applyFilters(false);
 });
 
 document.getElementById('deviceGroup').addEventListener('click',e=>{
@@ -1019,30 +1099,30 @@ document.getElementById('deviceGroup').addEventListener('click',e=>{
   document.querySelectorAll('.device-pill').forEach(b=>b.classList.remove('active'));
   btn.classList.add('active');
   activeDev=btn.dataset.dev;
-  applyFilters();
+  applyFilters(false);
 });
 
-function runSearch(){
+let searchInputTimer;
+
+function runSearch(animate){
   searchQuery=document.querySelector('.search-wrap input').value.trim();
   if(cards().length===0){
     if(searchQuery) showToast('No wallpapers uploaded yet');
     return;
   }
-  applyFilters();
-  const vis=cards().filter(c=>!c.classList.contains('hidden')).length;
-  if(searchQuery) showToast(vis?vis+' result'+(vis===1?'':'s')+' found':'No matches for "'+searchQuery+'"');
+  applyFilters(animate!==false);
 }
 
-document.querySelector('.search-btn').addEventListener('click',runSearch);
+function onSearchInput(){
+  clearTimeout(searchInputTimer);
+  searchInputTimer=setTimeout(()=>runSearch(true),70);
+}
+
+document.querySelector('.search-btn').addEventListener('click',()=>runSearch(true));
 document.querySelector('.search-wrap input').addEventListener('keydown',e=>{
-  if(e.key==='Enter') runSearch();
+  if(e.key==='Enter') runSearch(true);
 });
-document.querySelector('.search-wrap input').addEventListener('input',()=>{
-  if(!document.querySelector('.search-wrap input').value.trim()){
-    searchQuery='';
-    applyFilters();
-  }
-});
+document.querySelector('.search-wrap input').addEventListener('input',onSearchInput);
 
 /* ── NAV SCROLL ── */
 document.querySelectorAll('.nav-links a[href="#"]').forEach(a=>{

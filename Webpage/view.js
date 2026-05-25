@@ -1,5 +1,5 @@
 (function () {
-  const STORAGE_KEY = 'walldrop_v2';
+  const STORAGE_KEY = 'walldrop_v3';
   const params = new URLSearchParams(location.search);
   const src = params.get('src');
   const title = params.get('title') || 'Wallpaper';
@@ -80,17 +80,29 @@ function escapeAttr(s) {
   return escapeHtml(s).replace(/"/g, '&quot;');
 }
 
-function loadState(count) {
+function loadState() {
+  const byImage = {};
+  let totalDownloads = 0;
   try {
-    const s = JSON.parse(localStorage.getItem('walldrop_v2'));
-    if (s && Array.isArray(s.downloads)) return s;
+    const s = JSON.parse(localStorage.getItem('walldrop_v3')) || {};
+    if (s.downloadsByImage) Object.assign(byImage, s.downloadsByImage);
+    if (typeof s.totalDownloads === 'number') totalDownloads = s.totalDownloads;
   } catch (e) {}
-  return { downloads: Array(count).fill(0), totalDownloads: 0 };
+  return { downloadsByImage: byImage, totalDownloads };
 }
 
-function saveState(s) {
+function saveState(byImage, totalDownloads) {
   try {
-    localStorage.setItem('walldrop_v2', JSON.stringify(s));
+    const prev = JSON.parse(localStorage.getItem('walldrop_v3')) || {};
+    localStorage.setItem(
+      'walldrop_v3',
+      JSON.stringify({
+        downloadsByImage: byImage,
+        downloadKeys: prev.downloadKeys || [],
+        downloads: prev.downloads || [],
+        totalDownloads
+      })
+    );
   } catch (e) {}
 }
 
@@ -109,16 +121,11 @@ function downloadWallpaper(src, title, index, btn) {
       a.click();
       URL.revokeObjectURL(url);
 
-      if (index !== null && index !== '') {
-        const i = parseInt(index, 10);
-        if (!isNaN(i)) {
-          const state = loadState(i + 1);
-          while (state.downloads.length <= i) state.downloads.push(0);
-          state.downloads[i] = (state.downloads[i] || 0) + 1;
-          state.totalDownloads = (state.totalDownloads || 0) + 1;
-          saveState(state);
-        }
-      }
+      const state = loadState();
+      const prev = state.downloadsByImage[src] || 0;
+      state.downloadsByImage[src] = prev + 1;
+      state.totalDownloads = (state.totalDownloads || 0) + 1;
+      saveState(state.downloadsByImage, state.totalDownloads);
 
       if (btn) {
         btn.textContent = '✓ Saved';

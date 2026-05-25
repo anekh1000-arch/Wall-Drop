@@ -147,10 +147,7 @@
       '<div class="res-badge">' +
       escapeHtml(resolution) +
       '</div>' +
-      '<div class="wall-overlay">' +
-      '<button class="dl-btn" type="button">↓ Download</button>' +
-      '<a class="pre-btn" href="' + escapeHtml(viewUrl) + '" data-action="view">View</a>' +
-      '</div>' +
+      '<div class="wall-overlay"><span class="wall-view-hint">View</span></div>' +
       '<div class="card-meta">' +
       '<span class="card-title">' +
       escapeHtml(item.title) +
