@@ -1,0 +1,49 @@
+/* Custom cursor — desktop / laptop / Mac (fine pointer only) */
+@media (hover: hover) and (pointer: fine) {
+  :root {
+    --cursor-default: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='10' cy='10' r='6' fill='none' stroke='%23a0a0a0' stroke-width='1'/%3E%3Ccircle cx='10' cy='10' r='1.25' fill='%23555555'/%3E%3C/svg%3E") 10 10, auto;
+    --cursor-pointer: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='8' fill='none' stroke='%23f5f5f5' stroke-width='1'/%3E%3Ccircle cx='12' cy='12' r='2.5' fill='%23f5f5f5'/%3E%3C/svg%3E") 12 12, pointer;
+    --cursor-text: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='24' viewBox='0 0 16 24'%3E%3Cpath d='M8 4v16' stroke='%23a0a0a0' stroke-width='1' stroke-linecap='round'/%3E%3C/svg%3E") 8 12, text;
+  }
+
+  html,
+  body {
+    cursor: var(--cursor-default);
+  }
+
+  a,
+  button,
+  [role="button"],
+  summary,
+  .logo-link,
+  .nav-btn,
+  .nav-toggle,
+  .wall-card,
+  .pill,
+  .device-pill,
+  .search-btn,
+  .dl-btn,
+  .pre-btn,
+  .btn-primary,
+  .btn-ghost,
+  .footer-brand,
+  .footer-nav a,
+  .modal-close,
+  label[for] {
+    cursor: var(--cursor-pointer);
+  }
+
+  input[type="text"],
+  input[type="search"],
+  input[type="email"],
+  input[type="password"],
+  textarea,
+  [contenteditable="true"] {
+    cursor: var(--cursor-text);
+  }
+
+  :disabled,
+  [aria-disabled="true"] {
+    cursor: not-allowed;
+  }
+}
