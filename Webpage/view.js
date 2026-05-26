@@ -36,6 +36,7 @@
 
   const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
   document.documentElement.classList.toggle('is-mobile', isMobile);
+  if (!isMobile) document.body.classList.add('view-desktop-back');
 
   main.innerHTML =
     '<div class="view-img-wrap">' +
@@ -208,30 +209,49 @@
     window.WallDropDownloads.syncFromServer().then(updateDlStat);
   }
 
-  // Desktop / Mac: clicking the empty left/right gutters should go back.
-  // (Avoids interfering with the image + controls.)
-  document.addEventListener(
-    'click',
-    function (e) {
-      if (isMobile) return;
-      if (e.defaultPrevented) return;
-      if (e.button && e.button !== 0) return;
-      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+  function goHome() {
+    if (window.WallDropLoader && typeof window.WallDropLoader.navigate === 'function') {
+      window.WallDropLoader.navigate('index.html');
+    } else {
+      location.href = 'index.html';
+    }
+  }
 
-      var t = e.target;
-      if (t && t.closest && t.closest('a,button,select,option,label,input,textarea,.view-img-wrap,.view-meta,nav')) return;
+  function isInImageGutter(clientX, clientY) {
+    var wrap = document.querySelector('.view-img-wrap');
+    var img = document.getElementById('viewImg');
+    if (!wrap || !img) return false;
 
-      var x = typeof e.clientX === 'number' ? e.clientX : 0;
-      var edge = 120; // px
-      if (x > edge && x < window.innerWidth - edge) return;
+    var frame = wrap.getBoundingClientRect();
+    var pic = img.getBoundingClientRect();
 
-      e.preventDefault();
-      if (window.WallDropLoader && typeof window.WallDropLoader.navigate === 'function') {
-        window.WallDropLoader.navigate('index.html');
-      } else {
-        location.href = 'index.html';
-      }
-    },
-    true
-  );
+    if (clientY < frame.top || clientY > frame.bottom) return false;
+
+    if (clientX < frame.left || clientX > frame.right) return true;
+
+    if (clientX < pic.left || clientX > pic.right || clientY < pic.top || clientY > pic.bottom) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // Desktop / Mac: full left/right gutter beside the image frame → home (smooth loader).
+  document.addEventListener('click', function (e) {
+    if (isMobile) return;
+    if (e.defaultPrevented) return;
+    if (e.button && e.button !== 0) return;
+    if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+    var t = e.target;
+    if (t && t.closest && t.closest('nav,.view-meta,a,button,select,option,label,input,textarea')) return;
+    if (t && t.closest && t.closest('.view-img')) return;
+
+    var x = typeof e.clientX === 'number' ? e.clientX : 0;
+    var y = typeof e.clientY === 'number' ? e.clientY : 0;
+    if (!isInImageGutter(x, y)) return;
+
+    e.preventDefault();
+    goHome();
+  });
 })();
