@@ -2,115 +2,799 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wall-drops.vercel.app/</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://wall-drops.vercel.app/about</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://wall-drops.vercel.app/license.html</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-6016x6016-1432.jpg&amp;title=Macos+Big+Sur+Apple+Layers+Fluidic+Colorful+Dark+Wwdc+2020+6016X6016+1432&amp;cat=dark&amp;dev=mac&amp;res=6016%C3%976016&amp;i=0&amp;w=6016&amp;h=6016</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fcapture_1775669463248.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=0&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/capture_1775669463248.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — capture 1775669463248 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2FMacos-Monterey-Stock-Black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=1</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/Macos-Monterey-Stock-Black.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — macos monterey stock dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fmilad-fakurian-DjjaZybYx4I-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=2</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/milad-fakurian-DjjaZybYx4I-unsplash.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — milad fakurian djjazybyx4i dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fminato-namikaze-5120x2880-24353.png&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=5120%C3%972880&amp;i=3&amp;w=5120&amp;h=2880</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/minato-namikaze-5120x2880-24353.png</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — minato namikaze 5120x2880 dark minimalist desktop wallpaper, 5120×2880 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fmiyamoto-musashi-3840x2160-15204.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=4</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/miyamoto-musashi-3840x2160-15204.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — miyamoto musashi 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fnorbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=5</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/norbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — norbert kowalczyk jrkkj9njmxm dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fsagittarius-black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=6</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/sagittarius-black.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — sagittarius black dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Ftanjiro-kamado-red-5120x2880-22577.png&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=5120%C3%972880&amp;i=7&amp;w=5120&amp;h=2880</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/tanjiro-kamado-red-5120x2880-22577.png</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — tanjiro kamado red dark minimalist desktop wallpaper, 5120×2880 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fwallpapersden.com_ship-monochrome_2560x1617.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=8</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/wallpapersden.com_ship-monochrome_2560x1617.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — wallpapersden.com ship monochrome dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fweightlifter-3840x2160-24340.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=9&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/weightlifter-3840x2160-24340.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — weightlifter 3840x2160 24340 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2FWindows-11-Dark-Mode.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=7680%C3%974320&amp;i=10&amp;w=7680&amp;h=4320</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/Windows-11-Dark-Mode.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — windows 11 dark dark minimalist desktop wallpaper, 7680×4320 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fyuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=11</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/yuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — yuvraj singh parmar dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fblue-aesthetic-3840x2160-17495.png&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=12&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/blue-aesthetic-3840x2160-17495.png</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — blue aesthetic 3840x2160 minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fcapture_1774525079378.png&amp;title=Minimal+Stillness&amp;cat=minimal&amp;dev=desktop&amp;res=2560%C3%971440&amp;i=13&amp;w=2560&amp;h=1440</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/capture_1774525079378.png</image:loc>
+      <image:title>Minimal Stillness</image:title>
+      <image:caption>Minimal Stillness — capture 1774525079378 minimal minimalist desktop wallpaper, 2560×1440 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FCar.png&amp;title=Eternal+Void&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=14&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Car.png</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — car minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Felliott-engelmann-DjlKxYFJlTc-unsplash.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=15</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/elliott-engelmann-DjlKxYFJlTc-unsplash.jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — elliott engelmann djlkxyfjltc minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Ffloral-purple-3840x2160-21500.png&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=16&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/floral-purple-3840x2160-21500.png</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — floral purple 3840x2160 minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FFox.jpg&amp;title=Amber+Wake&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=17</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Fox.jpg</image:loc>
+      <image:title>Amber Wake</image:title>
+      <image:caption>Amber Wake — fox minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fian-dooley-DuBNA1QMpPA-unsplash.jpg&amp;title=Slate+Calm&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=18</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/ian-dooley-DuBNA1QMpPA-unsplash.jpg</image:loc>
+      <image:title>Slate Calm</image:title>
+      <image:caption>Slate Calm — ian dooley dubna1qmppa minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FIcy+Mountains+Wallpaper.png&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=desktop&amp;res=1920%C3%971080&amp;i=19&amp;w=1920&amp;h=1080</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Icy Mountains Wallpaper.png</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — icy mountains wallpaper minimal minimalist desktop wallpaper, 1920×1080 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fjohannes-plenio-hvrpOmuMrAI-unsplash.jpg&amp;title=Minimal+Stillness&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=20</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/johannes-plenio-hvrpOmuMrAI-unsplash.jpg</image:loc>
+      <image:title>Minimal Stillness</image:title>
+      <image:caption>Minimal Stillness — johannes plenio hvrpomumrai minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fjonatan-pie-h8nxGssjQXs-unsplash.jpg&amp;title=Slate+Calm&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=21</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/jonatan-pie-h8nxGssjQXs-unsplash.jpg</image:loc>
+      <image:title>Slate Calm</image:title>
+      <image:caption>Slate Calm — jonatan pie h8nxgssjqxs minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FMountain+1.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=22</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Mountain 1.jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — mountain 1 minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fparrish-freeman-29W9RscuUMw-unsplash.jpg&amp;title=Slate+Calm&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=23</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/parrish-freeman-29W9RscuUMw-unsplash.jpg</image:loc>
+      <image:title>Slate Calm</image:title>
+      <image:caption>Slate Calm — parrish freeman 29w9rscuumw minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fphilipp-pilz-AOhBMkQlzgM-unsplash.jpg&amp;title=Slate+Calm&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=24</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/philipp-pilz-AOhBMkQlzgM-unsplash.jpg</image:loc>
+      <image:title>Slate Calm</image:title>
+      <image:caption>Slate Calm — philipp pilz aohbmkqlzgm minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fpier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg&amp;title=Minimal+Stillness&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=25</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/pier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg</image:loc>
+      <image:title>Minimal Stillness</image:title>
+      <image:caption>Minimal Stillness — pier sea surrounded minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fspider-man.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=26</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/spider-man.jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — spider man minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FViolet+Patterns.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=27</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Violet Patterns.jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — violet patterns minimal minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fwindows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png&amp;title=Eternal+Void&amp;cat=minimal&amp;dev=desktop&amp;res=3840%C3%972400&amp;i=28&amp;w=3840&amp;h=2400</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/windows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — windows 11 purple minimal minimalist desktop wallpaper, 3840×2400 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fmilad-fakurian-8cOzOWgk9Qo-unsplash.jpg&amp;title=Milad+Fakurian+8cozowgk9qo+Unsplash+%C2%B7+Studio+Cut&amp;cat=abstract&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=29</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/milad-fakurian-8cOzOWgk9Qo-unsplash.jpg</image:loc>
+      <image:title>Milad Fakurian 8cozowgk9qo Unsplash · Studio Cut</image:title>
+      <image:caption>Milad Fakurian 8cozowgk9qo Unsplash · Studio Cut — milad fakurian 8cozowgk9qo abstract minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2F5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=30</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — c0c2 5e53 4cce dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fdaniil-silantev-XQO0MBtUihk-unsplash.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=31</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/daniil-silantev-XQO0MBtUihk-unsplash.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — daniil silantev xqo0mbtuihk dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fe6e4138b-9932-403f-95f1-b3627ec89e49.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=32</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/e6e4138b-9932-403f-95f1-b3627ec89e49.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — e6e4138b 9932 403f dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fhonor-magic-v6-3200x3200-25988.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=33</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/honor-magic-v6-3200x3200-25988.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — honor magic v6 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2Fhonor-magic-v6-3200x3200-25993.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=34</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/honor-magic-v6-3200x3200-25993.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — honor magic v6 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2FIMG_0009.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=35</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/IMG_0009.JPG</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — img 0009 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2FIMG_0010.JPG&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=36</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/IMG_0010.JPG</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — img 0010 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=dark%2FIMG_1345.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=37</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/dark/IMG_1345.JPG</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — img 1345 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2F421c9091-38ba-4775-9de9-20c8a173d503%281%29.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=38</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/421c9091-38ba-4775-9de9-20c8a173d503(1).jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — c9091 38ba 4775 minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fa68e939b-5014-446f-937c-3d46d5aa20a5.jpg&amp;title=Slate+Calm&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=39</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/a68e939b-5014-446f-937c-3d46d5aa20a5.jpg</image:loc>
+      <image:title>Slate Calm</image:title>
+      <image:caption>Slate Calm — a68e939b 5014 446f minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2FBlack+Panther+Wallpapers+-+Free+By+Zedge%E2%84%A2.jpeg&amp;title=Midnight+Eclipse&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=40</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/Black Panther Wallpapers - Free By Zedge™.jpeg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — black panther wallpapers minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fcoloros-16-stock-1440x3168-24290.jpg&amp;title=Plainlight&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=41</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/coloros-16-stock-1440x3168-24290.jpg</image:loc>
+      <image:title>Plainlight</image:title>
+      <image:caption>Plainlight — coloros 16 stock minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fcoloros-16-stock-1440x3168-24292.png&amp;title=Minimal+Stillness&amp;cat=minimal&amp;dev=mobile&amp;res=1440%C3%973168&amp;i=42&amp;w=1440&amp;h=3168</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/coloros-16-stock-1440x3168-24292.png</image:loc>
+      <image:title>Minimal Stillness</image:title>
+      <image:caption>Minimal Stillness — coloros 16 stock minimal minimalist mobile wallpaper, 1440×3168 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fekmed-ali-DjLIn5mSptw-unsplash.jpg&amp;title=Minimal+Stillness&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=43</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/ekmed-ali-DjLIn5mSptw-unsplash.jpg</image:loc>
+      <image:title>Minimal Stillness</image:title>
+      <image:caption>Minimal Stillness — ekmed ali djlin5msptw minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Ff3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=44</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/f3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — f3ba2de7 e64c 498b minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fiwin-YyLCFhYrVeg-unsplash.jpg&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=45</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/iwin-YyLCFhYrVeg-unsplash.jpg</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — iwin yylcfhyrveg unsplash minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=minimal%2Fjon-tyson-eYVEsLmljlA-unsplash.jpg&amp;title=Quiet+Geometry&amp;cat=minimal&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=46</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/minimal/jon-tyson-eYVEsLmljlA-unsplash.jpg</image:loc>
+      <image:title>Quiet Geometry</image:title>
+      <image:caption>Quiet Geometry — jon tyson eyveslmljla minimal minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fhonor-magic-v6-3200x3200-25983.jpg&amp;title=Honor+Magic+V6+3200x3200+25983+%C2%B7+Nordic+Dusk&amp;cat=abstract&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=47</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/honor-magic-v6-3200x3200-25983.jpg</image:loc>
+      <image:title>Honor Magic V6 3200x3200 25983 · Nordic Dusk</image:title>
+      <image:caption>Honor Magic V6 3200x3200 25983 · Nordic Dusk — honor magic v6 abstract minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2FIMG_1558.JPG&amp;title=Img+1558+%C2%B7+Studio+Cut&amp;cat=abstract&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=48</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/IMG_1558.JPG</image:loc>
+      <image:title>Img 1558 · Studio Cut</image:title>
+      <image:caption>Img 1558 · Studio Cut — img 1558 abstract minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fiphone-17-pro-stock-1320x2868-23880.png&amp;title=Iphone+17+Pro+Stock+1320x2868+23880+%C2%B7+Studio+Cut&amp;cat=abstract&amp;dev=mobile&amp;res=1320%C3%972868&amp;i=49&amp;w=1320&amp;h=2868</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iphone-17-pro-stock-1320x2868-23880.png</image:loc>
+      <image:title>Iphone 17 Pro Stock 1320x2868 23880 · Studio Cut</image:title>
+      <image:caption>Iphone 17 Pro Stock 1320x2868 23880 · Studio Cut — iphone 17 pro abstract minimalist mobile wallpaper, 1320×2868 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fiphone-17-stock-1206x2622-23879.jpg&amp;title=Iphone+17+Stock+1206x2622+23879+%C2%B7+Nordic+Dusk&amp;cat=abstract&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=50</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iphone-17-stock-1206x2622-23879.jpg</image:loc>
+      <image:title>Iphone 17 Stock 1206x2622 23879 · Nordic Dusk</image:title>
+      <image:caption>Iphone 17 Stock 1206x2622 23879 · Nordic Dusk — iphone 17 stock abstract minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fiphone-17-stock-1206x2622-23882.jpg&amp;title=Iphone+17+Stock+1206x2622+23882+%C2%B7+Stillness+Series&amp;cat=abstract&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=51</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iphone-17-stock-1206x2622-23882.jpg</image:loc>
+      <image:title>Iphone 17 Stock 1206x2622 23882 · Stillness Series</image:title>
+      <image:caption>Iphone 17 Stock 1206x2622 23882 · Stillness Series — iphone 17 stock abstract minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fiphone-air-2025-stock-1260x2736-23887.png&amp;title=Iphone+Air+2025+Stock+1260x2736+23887+%C2%B7+Studio+Cut&amp;cat=abstract&amp;dev=mobile&amp;res=1260%C3%972736&amp;i=52&amp;w=1260&amp;h=2736</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iphone-air-2025-stock-1260x2736-23887.png</image:loc>
+      <image:title>Iphone Air 2025 Stock 1260x2736 23887 · Studio Cut</image:title>
+      <image:caption>Iphone Air 2025 Stock 1260x2736 23887 · Studio Cut — iphone air 2025 abstract minimalist mobile wallpaper, 1260×2736 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Fiphone-air-2025-stock-1260x2736-23890.png&amp;title=Iphone+Air+2025+Stock+1260x2736+23890+%C2%B7+Nordic+Dusk&amp;cat=abstract&amp;dev=mobile&amp;res=1260%C3%972736&amp;i=53&amp;w=1260&amp;h=2736</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iphone-air-2025-stock-1260x2736-23890.png</image:loc>
+      <image:title>Iphone Air 2025 Stock 1260x2736 23890 · Nordic Dusk</image:title>
+      <image:caption>Iphone Air 2025 Stock 1260x2736 23890 · Nordic Dusk — iphone air 2025 abstract minimalist mobile wallpaper, 1260×2736 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=abstract%2Firidescent-spheres-5120x5120-26346.jpg&amp;title=Iridescent+Spheres+5120x5120+26346+%C2%B7+Minimal+Selection&amp;cat=abstract&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=54</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/abstract/iridescent-spheres-5120x5120-26346.jpg</image:loc>
+      <image:title>Iridescent Spheres 5120x5120 26346 · Minimal Selection</image:title>
+      <image:caption>Iridescent Spheres 5120x5120 26346 · Minimal Selection — iridescent spheres 5120x5120 abstract minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=monochrome%2Fblack-and-white-6480x7454-21293.jpg&amp;title=Midnight+Eclipse&amp;cat=monochrome&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=55</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/monochrome/black-and-white-6480x7454-21293.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — black and white monochrome minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fcristina-gottardi-CSpjU6hYo_0-unsplash.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=56</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/cristina-gottardi-CSpjU6hYo_0-unsplash.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — cristina gottardi cspju6hyo dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
+      <image:license>https://wall-drops.vercel.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-6016x6016-1432.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=57</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-6016x6016-1432.jpg</image:loc>
-      <image:title>Macos Big Sur Apple Layers Fluidic Colorful Dark Wwdc 2020 6016X6016 1432</image:title>
-      <image:caption>Macos Big Sur Apple Layers Fluidic Colorful Dark Wwdc 2020 6016X6016 1432</image:caption>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — macos big sur dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg&amp;title=Macos+Big+Sur+Apple+Layers+Fluidic+Colorful+Wwdc+Stock+4096X2304+1455&amp;cat=dark&amp;dev=mac&amp;res=4096%C3%972304&amp;i=1&amp;w=4096&amp;h=2304</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=58</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg</image:loc>
-      <image:title>Macos Big Sur Apple Layers Fluidic Colorful Wwdc Stock 4096X2304 1455</image:title>
-      <image:caption>Macos Big Sur Apple Layers Fluidic Colorful Wwdc Stock 4096X2304 1455</image:caption>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — macos big sur dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-stock-blue-light-layers-5k-6016x6016-5898.jpg&amp;title=Macos+Monterey+Stock+Blue+Light+Layers+5K+6016X6016+5898&amp;cat=dark&amp;dev=mac&amp;res=6016%C3%976016&amp;i=2&amp;w=6016&amp;h=6016</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-stock-blue-light-layers-5k-6016x6016-5898.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=59</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-monterey-stock-blue-light-layers-5k-6016x6016-5898.jpg</image:loc>
-      <image:title>Macos Monterey Stock Blue Light Layers 5K 6016X6016 5898</image:title>
-      <image:caption>Macos Monterey Stock Blue Light Layers 5K 6016X6016 5898</image:caption>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — macos monterey stock dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-wwdc-21-stock-5k-6016x6016-5584.jpg&amp;title=Macos+Monterey+Wwdc+21+Stock+5K+6016X6016+5584&amp;cat=dark&amp;dev=mac&amp;res=6016%C3%976016&amp;i=3&amp;w=6016&amp;h=6016</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-wwdc-21-stock-5k-6016x6016-5584.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=60</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-monterey-wwdc-21-stock-5k-6016x6016-5584.jpg</image:loc>
-      <image:title>Macos Monterey Wwdc 21 Stock 5K 6016X6016 5584</image:title>
-      <image:caption>Macos Monterey Wwdc 21 Stock 5K 6016X6016 5584</image:caption>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — macos monterey wwdc dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg&amp;title=Macos+Monterey+Wwdc+21+Stock+Dark+Mode+5K+6016X6016+5585&amp;cat=dark&amp;dev=mac&amp;res=6016%C3%976016&amp;i=4&amp;w=6016&amp;h=6016</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=61</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg</image:loc>
-      <image:title>Macos Monterey Wwdc 21 Stock Dark Mode 5K 6016X6016 5585</image:title>
-      <image:caption>Macos Monterey Wwdc 21 Stock Dark Mode 5K 6016X6016 5585</image:caption>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — macos monterey wwdc dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-tahoe-26-5k-6016x6016-22672.jpg&amp;title=Macos+Tahoe+26+5K+6016X6016+22672&amp;cat=dark&amp;dev=mac&amp;res=6016%C3%976016&amp;i=5&amp;w=6016&amp;h=6016</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fmacos-tahoe-26-5k-6016x6016-22672.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=62</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/macos-tahoe-26-5k-6016x6016-22672.jpg</image:loc>
-      <image:title>Macos Tahoe 26 5K 6016X6016 22672</image:title>
-      <image:caption>Macos Tahoe 26 5K 6016X6016 22672</image:caption>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — macos tahoe 26 dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fos-x-mavericks-tide-3840x2160-24077.jpg&amp;title=Os+X+Mavericks+Tide+3840X2160+24077&amp;cat=dark&amp;dev=mac&amp;res=3840%C3%972160&amp;i=6&amp;w=3840&amp;h=2160</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fos-x-mavericks-tide-3840x2160-24077.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=63</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/os-x-mavericks-tide-3840x2160-24077.jpg</image:loc>
-      <image:title>Os X Mavericks Tide 3840X2160 24077</image:title>
-      <image:caption>Os X Mavericks Tide 3840X2160 24077</image:caption>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — os x mavericks dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fos-x-mountain-lion-3840x2160-24073.jpg&amp;title=Os+X+Mountain+Lion+3840X2160+24073&amp;cat=dark&amp;dev=mac&amp;res=3840%C3%972160&amp;i=7&amp;w=3840&amp;h=2160</loc>
-    <lastmod>2026-05-26T17:56:41.645Z</lastmod>
+    <loc>https://wall-drops.vercel.app/view.html?src=images%2Fwallpapers%2Fmac%2Fos-x-mountain-lion-3840x2160-24073.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mac&amp;res=3024%C3%971964&amp;i=64</loc>
+    <lastmod>2026-05-26T18:24:05.688Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
       <image:loc>https://wall-drops.vercel.app/images/wallpapers/mac/os-x-mountain-lion-3840x2160-24073.jpg</image:loc>
-      <image:title>Os X Mountain Lion 3840X2160 24073</image:title>
-      <image:caption>Os X Mountain Lion 3840X2160 24073</image:caption>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — os x mountain dark minimalist Mac wallpaper, 3024×1964 quality</image:caption>
       <image:license>https://wall-drops.vercel.app/license.html</image:license>
     </image:image>
   </url>
