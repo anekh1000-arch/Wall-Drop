@@ -14,7 +14,7 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
   --bg:#080808;--border:#1f1f1f;--border-light:#2a2a2a;
-  --white:#f5f5f5;--silver:#a0a0a0;--dim:#555;--live:#ef4444;
+  --white:#f5f5f5;--silver:#a0a0a0;--dim:#555;
 }
 body{
   background:var(--bg);color:var(--silver);
@@ -42,12 +42,10 @@ nav a:hover{color:var(--white)}
   .view-wrap{animation:none}
 }
 .view-img-wrap{
-  background:linear-gradient(160deg,#101010,#0a0a0a);
-  border:1px solid var(--border-light);
-  border-radius:16px;
+  background:#0e0e0e;border:1px solid var(--border-light);
+  border-radius:14px;
   display:flex;align-items:center;justify-content:center;
   padding:1rem;min-height:120px;
-  box-shadow:0 24px 60px rgba(0,0,0,0.45),inset 0 1px 0 rgba(255,255,255,0.04);
 }
 .view-img{
   display:block;
@@ -78,7 +76,7 @@ nav a:hover{color:var(--white)}
 }
 .view-dl-stat{font-size:0.72rem;color:var(--dim);margin-top:0.5rem}
 .dl-btn{
-  background:var(--live);color:#fff;border:none;
+  background:var(--white);color:#080808;border:none;
   padding:0.6rem 1.5rem;border-radius:8px;
   font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:700;
   letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;
