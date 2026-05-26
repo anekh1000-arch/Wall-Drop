@@ -1,13 +1,17 @@
 (function () {
   const DEVICE_TAGS = {
     desktop: ['Desktop'],
-    mobile: ['Mobile']
+    mobile: ['Mobile'],
+    mac: ['Mac']
   };
 
   const FALLBACK_RES = {
     desktop: '3840×2160',
-    mobile: '1284×2778'
+    mobile: '1284×2778',
+    mac: '3024×1964'
   };
+
+  const VALID_DEVICES = new Set(['desktop', 'mobile', 'mac']);
 
   function formatRes(w, h) {
     return w + '\u00d7' + h;
@@ -51,7 +55,7 @@
     var raw = String(item.image).replace(/\\/g, '/').trim();
     if (!raw) return null;
 
-    var dev = item.device === 'mobile' ? 'mobile' : item.device === 'desktop' ? 'desktop' : null;
+    var dev = VALID_DEVICES.has(item.device) ? item.device : null;
     if (!dev) return null;
 
     if (raw.indexOf('/') === -1) {
@@ -68,8 +72,8 @@
 
   function isValidItem(item) {
     if (!item.title || !item.category) return false;
-    if (item.device !== 'desktop' && item.device !== 'mobile') {
-      console.warn('WallDrop: skipped "' + (item.title || '?') + '" — device must be desktop or mobile');
+    if (!VALID_DEVICES.has(item.device)) {
+      console.warn('WallDrop: skipped "' + (item.title || '?') + '" — device must be desktop, mobile, or mac');
       return false;
     }
     if (!resolveImagePath(item)) {
@@ -133,7 +137,14 @@
     img.src = imagePath;
     img.alt =
       item.alt ||
-      (item.title + ' ' + (item.device === 'mobile' ? 'mobile wallpaper' : 'desktop wallpaper') + ' 4K');
+      (item.title +
+        ' ' +
+        (item.device === 'mobile'
+          ? 'mobile wallpaper'
+          : item.device === 'mac'
+            ? 'Mac wallpaper'
+            : 'desktop wallpaper') +
+        ' 4K');
     img.loading = 'lazy';
     img.decoding = 'async';
     img.addEventListener('load', function () {
@@ -231,7 +242,7 @@
       emptyEl.classList.add('visible');
       emptyEl.querySelector('.empty-title').textContent = 'No wallpapers yet';
       emptyEl.querySelector('p').textContent =
-        'Add images to images/wallpapers/desktop or mobile, then deploy (Netlify runs npm run build automatically).';
+        'Add images to images/wallpapers/desktop, mobile, or mac, then deploy (Netlify runs npm run build automatically).';
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.textContent = 'Tip: use WebP/AVIF for faster loads — see PERFORMANCE.md';
       if (hint) hint.style.display = 'inline-block';

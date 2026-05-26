@@ -16,7 +16,7 @@ const DATA = path.join(ROOT, 'wallpapers.json');
 const SITE_URL = (process.env.SITE_URL || 'https://wall-drops.netlify.app').replace(/\/+$/, '');
 const LICENSE_URL = `${SITE_URL}/license.html`;
 
-const FALLBACK_RES = { desktop: '3840×2160', mobile: '1284×2778' };
+const FALLBACK_RES = { desktop: '3840×2160', mobile: '1284×2778', mac: '3024×1964' };
 
 function esc(s) {
   return String(s)
@@ -33,7 +33,7 @@ function absUrl(relativePath) {
 }
 
 function resolveImagePath(item) {
-  const dev = item.device === 'mobile' ? 'mobile' : 'desktop';
+  const dev = ['desktop', 'mobile', 'mac'].includes(item.device) ? item.device : 'desktop';
   const raw = String(item.image || '').replace(/\\/g, '/').trim();
   if (!raw) return null;
   if (raw.includes('/')) return raw.replace(/^\/+/, '');

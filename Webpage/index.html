@@ -794,7 +794,7 @@ footer{
       </svg>
     </span>
   </h1>
-  <p class="hero-sub">A handpicked library of <strong>dark-themed</strong> and <strong>minimal</strong> wallpapers for desktop and mobile. No clutter — just calm, high-contrast backgrounds.</p>
+  <p class="hero-sub">A handpicked library of <strong>dark-themed</strong> and <strong>minimal</strong> wallpapers for desktop, Mac, and mobile. No clutter — just calm, high-contrast backgrounds.</p>
 
   <div class="search-row">
     <div class="search-wrap">
@@ -849,6 +849,7 @@ footer{
   <div class="device-group" id="deviceGroup">
     <button class="device-pill active" data-dev="all">All</button>
     <button class="device-pill" data-dev="desktop">Desktop</button>
+    <button class="device-pill" data-dev="mac">Mac</button>
     <button class="device-pill" data-dev="mobile">Mobile</button>
   </div>
 </div>
@@ -858,7 +859,7 @@ footer{
   <div class="gallery" id="gallery">
     <div class="empty-state visible" id="emptyState">
       <div class="empty-title">No wallpapers yet</div>
-      <p>Add wallpapers to <strong>images/wallpapers/desktop</strong> or <strong>mobile</strong>, then deploy. Netlify rebuilds the gallery automatically.</p>
+      <p>Add wallpapers to <strong>images/wallpapers/desktop</strong>, <strong>mac</strong>, or <strong>mobile</strong>, then deploy. Netlify rebuilds the gallery automatically.</p>
       <span class="empty-hint">Tip: convert large PNGs to WebP for faster loads — see PERFORMANCE.md</span>
     </div>
 
@@ -896,6 +897,7 @@ footer{
           <option value="original">Original (full resolution)</option>
           <option value="1080p">1080p optimized</option>
           <option value="mobile">Mobile aspect</option>
+          <option value="mac">MacBook aspect</option>
         </select>
       </div>
       <button type="button" class="dl-btn" id="lbDownload">↓ Download</button>

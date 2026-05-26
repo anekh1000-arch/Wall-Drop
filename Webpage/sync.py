@@ -4,6 +4,7 @@ Rebuild wallpapers.json from images in desktop/ and mobile/ folders.
 Drop images into:
   images/wallpapers/desktop/
   images/wallpapers/mobile/
+  images/wallpapers/mac/
 
 Optional filename prefix for category:
   dark--my-wall.jpg   → category: dark, title: My Wall
@@ -25,11 +26,12 @@ from image_size import format_resolution, read_image_size
 ROOT = Path(__file__).resolve().parent
 DESKTOP = ROOT / "images" / "wallpapers" / "desktop"
 MOBILE = ROOT / "images" / "wallpapers" / "mobile"
+MAC = ROOT / "images" / "wallpapers" / "mac"
 OUT = ROOT / "wallpapers.json"
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 CATEGORIES = {"dark", "minimal", "abstract", "monochrome", "gradient"}
-FALLBACK_RES = {"desktop": "3840×2160", "mobile": "1284×2778"}
+FALLBACK_RES = {"desktop": "3840×2160", "mobile": "1284×2778", "mac": "3024×1964"}
 
 
 def title_from_stem(stem: str) -> str:
@@ -76,8 +78,13 @@ def scan_folder(folder: Path, device: str) -> list[dict]:
 def main() -> int:
     DESKTOP.mkdir(parents=True, exist_ok=True)
     MOBILE.mkdir(parents=True, exist_ok=True)
+    MAC.mkdir(parents=True, exist_ok=True)
 
-    wallpapers = scan_folder(DESKTOP, "desktop") + scan_folder(MOBILE, "mobile")
+    wallpapers = (
+        scan_folder(DESKTOP, "desktop")
+        + scan_folder(MOBILE, "mobile")
+        + scan_folder(MAC, "mac")
+    )
     data = {"wallpapers": wallpapers}
 
     with open(OUT, "w", encoding="utf-8") as f:
@@ -87,8 +94,9 @@ def main() -> int:
     print(f"WallDrop sync: {len(wallpapers)} wallpaper(s) -> wallpapers.json")
     print(f"  desktop: {len(scan_folder(DESKTOP, 'desktop'))}")
     print(f"  mobile:  {len(scan_folder(MOBILE, 'mobile'))}")
+    print(f"  mac:     {len(scan_folder(MAC, 'mac'))}")
     if not wallpapers:
-        print("  (drop JPG/PNG/WebP into images/wallpapers/desktop or mobile)")
+        print("  (drop JPG/PNG/WebP into images/wallpapers/desktop, mobile, or mac)")
     return 0
 
 

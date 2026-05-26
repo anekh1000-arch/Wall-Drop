@@ -4,6 +4,7 @@
 
 1. Copy images into:
    - `images/wallpapers/desktop/` — PC wallpapers  
+   - `images/wallpapers/mac/` — MacBook / iMac / macOS-style wallpapers  
    - `images/wallpapers/mobile/` — phone wallpapers  
 
 2. Double-click **`update-gallery.bat`** (or run `python sync.py`)
@@ -21,7 +22,8 @@ Example:
 ```json
 {
   "my-image.jpg": "Midnight Circuit",
-  "mobile/wallpaper-22.png": "Pocket Noir"
+  "mobile/wallpaper-22.png": "Pocket Noir",
+  "mac/monterey-dark.jpg": "Monterey Afterdark"
 }
 ```
 

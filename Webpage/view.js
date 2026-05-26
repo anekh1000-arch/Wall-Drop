@@ -42,7 +42,7 @@
   }
 
   document.title = title + ' — WallDrop';
-  const devLabel = dev === 'mobile' ? 'Mobile' : 'Desktop';
+  const devLabel = dev === 'mobile' ? 'Mobile' : dev === 'mac' ? 'Mac' : 'Desktop';
   var initialRes = res;
   if (paramW && paramH) initialRes = paramW + '\u00d7' + paramH;
 
@@ -67,6 +67,7 @@
     '<option value="original">Original</option>' +
     '<option value="1080p">1080p</option>' +
     '<option value="mobile">Mobile</option>' +
+    '<option value="mac">MacBook</option>' +
     '</select>' +
     '<button type="button" class="dl-btn" id="viewDownload">↓ Download</button>' +
     '</div></div>' +
@@ -121,6 +122,7 @@
 
   function getQualityTarget(quality, nw, nh) {
     if (quality === '1080p') return { w: 1920, h: 1080 };
+    if (quality === 'mac') return { w: 3024, h: 1964 };
     if (quality === 'mobile') {
       return dev === 'mobile' ? { w: 1284, h: 2778 } : { w: 1170, h: 2532 };
     }

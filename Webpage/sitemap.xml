@@ -2,25 +2,85 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wall-drops.netlify.app/</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://wall-drops.netlify.app/about</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
     <loc>https://wall-drops.netlify.app/license.html</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FCar.png&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=0&amp;w=3840&amp;h=2160</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2F20928412_2107.w026.n002.637B.p1.637.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=0</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/20928412_2107.w026.n002.637B.p1.637.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — 2107.w026.n002.637b.p1.637 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fbeautiful-autumnal-landscape.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=1</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/beautiful-autumnal-landscape.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — beautiful autumnal landscape dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fblue-aesthetic-3840x2160-17495.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=2&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/blue-aesthetic-3840x2160-17495.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — blue aesthetic 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fcapture_1774525079378.png&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=2560%C3%971440&amp;i=3&amp;w=2560&amp;h=1440</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/capture_1774525079378.png</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — capture 1774525079378 dark minimalist desktop wallpaper, 2560×1440 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fcapture_1775669463248.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=4&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/capture_1775669463248.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — capture 1775669463248 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FCar.png&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=5&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -31,8 +91,32 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FFox.jpg&amp;title=Amber+Wake&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=1</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Felliott-engelmann-DjlKxYFJlTc-unsplash.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=6</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/elliott-engelmann-DjlKxYFJlTc-unsplash.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — elliott engelmann djlkxyfjltc dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Ffloral-purple-3840x2160-21500.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=7&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/floral-purple-3840x2160-21500.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — floral purple 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FFox.jpg&amp;title=Amber+Wake&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=8</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -43,8 +127,56 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FMacos-Monterey-Stock-Black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=2</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fian-dooley-DuBNA1QMpPA-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=9</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/ian-dooley-DuBNA1QMpPA-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — ian dooley dubna1qmppa dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FIcy+Mountains+Wallpaper.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=1920%C3%971080&amp;i=10&amp;w=1920&amp;h=1080</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/Icy Mountains Wallpaper.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — icy mountains wallpaper dark minimalist desktop wallpaper, 1920×1080 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fjohannes-plenio-hvrpOmuMrAI-unsplash.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=11</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/johannes-plenio-hvrpOmuMrAI-unsplash.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — johannes plenio hvrpomumrai dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fjonatan-pie-h8nxGssjQXs-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=12</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/jonatan-pie-h8nxGssjQXs-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — jonatan pie h8nxgssjqxs dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FMacos-Monterey-Stock-Black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=13</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -55,8 +187,128 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fsagittarius-black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=3</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fmilad-fakurian-8cOzOWgk9Qo-unsplash.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=14</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/milad-fakurian-8cOzOWgk9Qo-unsplash.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — milad fakurian 8cozowgk9qo dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fmilad-fakurian-DjjaZybYx4I-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=15</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/milad-fakurian-DjjaZybYx4I-unsplash.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — milad fakurian djjazybyx4i dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fminato-namikaze-5120x2880-24353.png&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=5120%C3%972880&amp;i=16&amp;w=5120&amp;h=2880</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/minato-namikaze-5120x2880-24353.png</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — minato namikaze 5120x2880 dark minimalist desktop wallpaper, 5120×2880 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fmiyamoto-musashi-3840x2160-15204.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=17</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/miyamoto-musashi-3840x2160-15204.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — miyamoto musashi 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FMountain+1.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=18</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/Mountain 1.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — mountain 1 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fnorbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=19</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/norbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — norbert kowalczyk jrkkj9njmxm dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fos-x-snow-leopard-5120x3200-24051.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=20</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/os-x-snow-leopard-5120x3200-24051.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — os x snow dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fparrish-freeman-29W9RscuUMw-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=21</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/parrish-freeman-29W9RscuUMw-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — parrish freeman 29w9rscuumw dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fphilipp-pilz-AOhBMkQlzgM-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=22</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/philipp-pilz-AOhBMkQlzgM-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — philipp pilz aohbmkqlzgm dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fpier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=23</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/pier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — pier sea surrounded dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fsagittarius-black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=24</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -67,8 +319,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fspider-man.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=4</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fspider-man.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=25</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -79,8 +331,20 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FViolet+Patterns.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=5</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Ftanjiro-kamado-red-5120x2880-22577.png&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=5120%C3%972880&amp;i=26&amp;w=5120&amp;h=2880</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/tanjiro-kamado-red-5120x2880-22577.png</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — tanjiro kamado red dark minimalist desktop wallpaper, 5120×2880 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FViolet+Patterns.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=27</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -91,8 +355,20 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fwallpapersden.com_ship-monochrome_2560x1617.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=6</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fwallpaper.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=28</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/wallpaper.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — wallpaper dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fwallpapersden.com_ship-monochrome_2560x1617.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=29</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -103,8 +379,20 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FWindows-11-Dark-Mode.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=7680%C3%974320&amp;i=7&amp;w=7680&amp;h=4320</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fweightlifter-3840x2160-24340.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=30&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/weightlifter-3840x2160-24340.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — weightlifter 3840x2160 24340 dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FWindows-11-Dark-Mode.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=7680%C3%974320&amp;i=31&amp;w=7680&amp;h=4320</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -115,8 +403,32 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F421c9091-38ba-4775-9de9-20c8a173d503%281%29.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=8</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fwindows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972400&amp;i=32&amp;w=3840&amp;h=2400</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/windows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — windows 11 purple dark minimalist desktop wallpaper, 3840×2400 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fyuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=33</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/desktop/yuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg</image:loc>
+      <image:title>Obsidian Drift</image:title>
+      <image:caption>Obsidian Drift — yuvraj singh parmar dark minimalist desktop wallpaper, 3840×2160 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F421c9091-38ba-4775-9de9-20c8a173d503%281%29.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=34</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -127,8 +439,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=9</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=35</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -139,8 +451,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fa68e939b-5014-446f-937c-3d46d5aa20a5.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=10</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fa68e939b-5014-446f-937c-3d46d5aa20a5.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=36</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -151,8 +463,44 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fe6e4138b-9932-403f-95f1-b3627ec89e49.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=11</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FBlack+Panther+Wallpapers+-+Free+By+Zedge%E2%84%A2.jpeg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=37</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/Black Panther Wallpapers - Free By Zedge™.jpeg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — black panther wallpapers dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fblack-and-white-6480x7454-21293.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=38</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/black-and-white-6480x7454-21293.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — black and white dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fdaniil-silantev-XQO0MBtUihk-unsplash.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=39</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/daniil-silantev-XQO0MBtUihk-unsplash.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — daniil silantev xqo0mbtuihk dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fe6e4138b-9932-403f-95f1-b3627ec89e49.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=40</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -163,8 +511,20 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Ff3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=12</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fekmed-ali-DjLIn5mSptw-unsplash.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=41</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/ekmed-ali-DjLIn5mSptw-unsplash.jpg</image:loc>
+      <image:title>Noir Silence</image:title>
+      <image:caption>Noir Silence — ekmed ali djlin5msptw dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Ff3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=42</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -175,8 +535,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0009.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=13</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0009.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=43</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -187,8 +547,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0010.JPG&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=14</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0010.JPG&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=44</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -199,8 +559,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1345.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=15</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1345.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=45</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -211,8 +571,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1558.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=16</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1558.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=46</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -223,8 +583,32 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fjon-tyson-eYVEsLmljlA-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=17</loc>
-    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Firidescent-spheres-5120x5120-26346.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=47</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/iridescent-spheres-5120x5120-26346.jpg</image:loc>
+      <image:title>Eternal Void</image:title>
+      <image:caption>Eternal Void — iridescent spheres 5120x5120 dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fiwin-YyLCFhYrVeg-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=48</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://wall-drops.netlify.app/images/wallpapers/mobile/iwin-YyLCFhYrVeg-unsplash.jpg</image:loc>
+      <image:title>Midnight Eclipse</image:title>
+      <image:caption>Midnight Eclipse — iwin yylcfhyrveg unsplash dark minimalist mobile wallpaper, 1284×2778 quality</image:caption>
+      <image:license>https://wall-drops.netlify.app/license.html</image:license>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fjon-tyson-eYVEsLmljlA-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=49</loc>
+    <lastmod>2026-05-26T08:47:30.288Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>

@@ -1,11 +1,74 @@
 {
   "wallpapers": [
     {
+      "title": "20928412 2107.W026.N002.637B.P1.637",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6000×3000",
+      "image": "20928412_2107.w026.n002.637B.p1.637.jpg",
+      "width": 6000,
+      "height": 3000
+    },
+    {
+      "title": "Beautiful Autumnal Landscape",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "4864×3328",
+      "image": "beautiful-autumnal-landscape.jpg",
+      "width": 4864,
+      "height": 3328
+    },
+    {
+      "title": "Blue Aesthetic 3840X2160 17495",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "blue-aesthetic-3840x2160-17495.png",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "title": "Capture 1774525079378",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "2560×1440",
+      "image": "capture_1774525079378.png",
+      "width": 2560,
+      "height": 1440
+    },
+    {
+      "title": "Capture 1775669463248",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "capture_1775669463248.png",
+      "width": 3840,
+      "height": 2160
+    },
+    {
       "title": "Car",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "Car.png",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "title": "Elliott Engelmann Djlkxyfjltc Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "4000×2660",
+      "image": "elliott-engelmann-DjlKxYFJlTc-unsplash.jpg",
+      "width": 4000,
+      "height": 2660
+    },
+    {
+      "title": "Floral Purple 3840X2160 21500",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "floral-purple-3840x2160-21500.png",
       "width": 3840,
       "height": 2160
     },
@@ -19,6 +82,42 @@
       "height": 2880
     },
     {
+      "title": "Ian Dooley Dubna1Qmppa Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6000×4000",
+      "image": "ian-dooley-DuBNA1QMpPA-unsplash.jpg",
+      "width": 6000,
+      "height": 4000
+    },
+    {
+      "title": "Icy Mountains Wallpaper",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "1920×1080",
+      "image": "Icy Mountains Wallpaper.png",
+      "width": 1920,
+      "height": 1080
+    },
+    {
+      "title": "Johannes Plenio Hvrpomumrai Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6000×4000",
+      "image": "johannes-plenio-hvrpOmuMrAI-unsplash.jpg",
+      "width": 6000,
+      "height": 4000
+    },
+    {
+      "title": "Jonatan Pie H8Nxgssjqxs Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "7042×4699",
+      "image": "jonatan-pie-h8nxGssjQXs-unsplash.jpg",
+      "width": 7042,
+      "height": 4699
+    },
+    {
       "title": "Macos Monterey Stock Black",
       "category": "dark",
       "device": "desktop",
@@ -26,6 +125,96 @@
       "image": "Macos-Monterey-Stock-Black.jpg",
       "width": 3840,
       "height": 2160
+    },
+    {
+      "title": "Milad Fakurian 8Cozowgk9Qo Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6016×3384",
+      "image": "milad-fakurian-8cOzOWgk9Qo-unsplash.jpg",
+      "width": 6016,
+      "height": 3384
+    },
+    {
+      "title": "Milad Fakurian Djjazybyx4I Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3000×2000",
+      "image": "milad-fakurian-DjjaZybYx4I-unsplash.jpg",
+      "width": 3000,
+      "height": 2000
+    },
+    {
+      "title": "Minato Namikaze 5120X2880 24353",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "5120×2880",
+      "image": "minato-namikaze-5120x2880-24353.png",
+      "width": 5120,
+      "height": 2880
+    },
+    {
+      "title": "Miyamoto Musashi 3840X2160 15204",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "miyamoto-musashi-3840x2160-15204.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "title": "Mountain 1",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "5504×3072",
+      "image": "Mountain 1.jpg",
+      "width": 5504,
+      "height": 3072
+    },
+    {
+      "title": "Norbert Kowalczyk Jrkkj9Njmxm Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6000×4500",
+      "image": "norbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg",
+      "width": 6000,
+      "height": 4500
+    },
+    {
+      "title": "Os X Snow Leopard 5120X3200 24051",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "5120×3200",
+      "image": "os-x-snow-leopard-5120x3200-24051.jpg",
+      "width": 5120,
+      "height": 3200
+    },
+    {
+      "title": "Parrish Freeman 29W9Rscuumw Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "5219×3479",
+      "image": "parrish-freeman-29W9RscuUMw-unsplash.jpg",
+      "width": 5219,
+      "height": 3479
+    },
+    {
+      "title": "Philipp Pilz Aohbmkqlzgm Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "6240×4160",
+      "image": "philipp-pilz-AOhBMkQlzgM-unsplash.jpg",
+      "width": 6240,
+      "height": 4160
+    },
+    {
+      "title": "Pier Sea Surrounded By Hills Cloudy Sky Evening Portugal",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "7360×4912",
+      "image": "pier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg",
+      "width": 7360,
+      "height": 4912
     },
     {
       "title": "Sagittarius Black",
@@ -46,6 +235,15 @@
       "height": 2160
     },
     {
+      "title": "Tanjiro Kamado Red 5120X2880 22577",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "5120×2880",
+      "image": "tanjiro-kamado-red-5120x2880-22577.png",
+      "width": 5120,
+      "height": 2880
+    },
+    {
       "title": "Violet Patterns",
       "category": "dark",
       "device": "desktop",
@@ -53,6 +251,15 @@
       "image": "Violet Patterns.jpg",
       "width": 6000,
       "height": 4000
+    },
+    {
+      "title": "Wallpaper",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "wallpaper.jpg",
+      "width": 3840,
+      "height": 2160
     },
     {
       "title": "Wallpapersden.Com Ship Monochrome 2560X1617",
@@ -64,6 +271,15 @@
       "height": 1617
     },
     {
+      "title": "Weightlifter 3840X2160 24340",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "weightlifter-3840x2160-24340.png",
+      "width": 3840,
+      "height": 2160
+    },
+    {
       "title": "Windows 11 Dark Mode",
       "category": "dark",
       "device": "desktop",
@@ -71,6 +287,24 @@
       "image": "Windows-11-Dark-Mode.png",
       "width": 7680,
       "height": 4320
+    },
+    {
+      "title": "Windows 11 Purple Abstract Dark Background Dark Purple Dark 3840X2400 8995",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2400",
+      "image": "windows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png",
+      "width": 3840,
+      "height": 2400
+    },
+    {
+      "title": "Yuvraj Singh Parmar Dbc2 Aa E3E Unsplash",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "yuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg",
+      "width": 3840,
+      "height": 2160
     },
     {
       "title": "421C9091 38Ba 4775 9De9 20C8A173D503(1)",
@@ -100,6 +334,51 @@
       "height": 1280
     },
     {
+      "title": "Black Panther Wallpapers Free By Zedge™",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "444×794",
+      "image": "Black Panther Wallpapers - Free By Zedge™.jpeg",
+      "width": 444,
+      "height": 794
+    },
+    {
+      "title": "Black And White 6480X7454 21293",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "6480×7454",
+      "image": "black-and-white-6480x7454-21293.jpg",
+      "width": 6480,
+      "height": 7454
+    },
+    {
+      "title": "Coloros 16 Stock 1440X3168 24290",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1440×3168",
+      "image": "coloros-16-stock-1440x3168-24290.jpg",
+      "width": 1440,
+      "height": 3168
+    },
+    {
+      "title": "Coloros 16 Stock 1440X3168 24292",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1440×3168",
+      "image": "coloros-16-stock-1440x3168-24292.png",
+      "width": 1440,
+      "height": 3168
+    },
+    {
+      "title": "Daniil Silantev Xqo0Mbtuihk Unsplash",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "4000×6000",
+      "image": "daniil-silantev-XQO0MBtUihk-unsplash.jpg",
+      "width": 4000,
+      "height": 6000
+    },
+    {
       "title": "E6E4138B 9932 403F 95F1 B3627Ec89E49",
       "category": "dark",
       "device": "mobile",
@@ -109,6 +388,15 @@
       "height": 1280
     },
     {
+      "title": "Ekmed Ali Djlin5Msptw Unsplash",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "2242×2991",
+      "image": "ekmed-ali-DjLIn5mSptw-unsplash.jpg",
+      "width": 2242,
+      "height": 2991
+    },
+    {
       "title": "F3Ba2De7 E64C 498B Bd37 8A5E77A2Fba7",
       "category": "dark",
       "device": "mobile",
@@ -116,6 +404,33 @@
       "image": "f3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg",
       "width": 720,
       "height": 1280
+    },
+    {
+      "title": "Honor Magic V6 3200X3200 25983",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "3200×3200",
+      "image": "honor-magic-v6-3200x3200-25983.jpg",
+      "width": 3200,
+      "height": 3200
+    },
+    {
+      "title": "Honor Magic V6 3200X3200 25988",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "3200×3200",
+      "image": "honor-magic-v6-3200x3200-25988.jpg",
+      "width": 3200,
+      "height": 3200
+    },
+    {
+      "title": "Honor Magic V6 3200X3200 25993",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "3200×3200",
+      "image": "honor-magic-v6-3200x3200-25993.jpg",
+      "width": 3200,
+      "height": 3200
     },
     {
       "title": "Img 0009",
@@ -154,6 +469,69 @@
       "height": 2160
     },
     {
+      "title": "Iphone 17 Pro Stock 1320X2868 23880",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1320×2868",
+      "image": "iphone-17-pro-stock-1320x2868-23880.png",
+      "width": 1320,
+      "height": 2868
+    },
+    {
+      "title": "Iphone 17 Stock 1206X2622 23879",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1206×2622",
+      "image": "iphone-17-stock-1206x2622-23879.jpg",
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "title": "Iphone 17 Stock 1206X2622 23882",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1206×2622",
+      "image": "iphone-17-stock-1206x2622-23882.jpg",
+      "width": 1206,
+      "height": 2622
+    },
+    {
+      "title": "Iphone Air 2025 Stock 1260X2736 23887",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1260×2736",
+      "image": "iphone-air-2025-stock-1260x2736-23887.png",
+      "width": 1260,
+      "height": 2736
+    },
+    {
+      "title": "Iphone Air 2025 Stock 1260X2736 23890",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1260×2736",
+      "image": "iphone-air-2025-stock-1260x2736-23890.png",
+      "width": 1260,
+      "height": 2736
+    },
+    {
+      "title": "Iridescent Spheres 5120X5120 26346",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "5120×5120",
+      "image": "iridescent-spheres-5120x5120-26346.jpg",
+      "width": 5120,
+      "height": 5120
+    },
+    {
+      "title": "Iwin Yylcfhyrveg Unsplash",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "3375×6000",
+      "image": "iwin-YyLCFhYrVeg-unsplash.jpg",
+      "width": 3375,
+      "height": 6000
+    },
+    {
       "title": "Jon Tyson Eyveslmljla Unsplash",
       "category": "dark",
       "device": "mobile",
@@ -161,6 +539,87 @@
       "image": "jon-tyson-eYVEsLmljlA-unsplash.jpg",
       "width": 3024,
       "height": 4032
+    },
+    {
+      "title": "Cristina Gottardi Cspju6Hyo 0 Unsplash",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "4896×3264",
+      "image": "cristina-gottardi-CSpjU6hYo_0-unsplash.jpg",
+      "width": 4896,
+      "height": 3264
+    },
+    {
+      "title": "Macos Big Sur Apple Layers Fluidic Colorful Dark Wwdc 2020 6016X6016 1432",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "6016×6016",
+      "image": "macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-6016x6016-1432.jpg",
+      "width": 6016,
+      "height": 6016
+    },
+    {
+      "title": "Macos Big Sur Apple Layers Fluidic Colorful Wwdc Stock 4096X2304 1455",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "4096×2304",
+      "image": "macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg",
+      "width": 4096,
+      "height": 2304
+    },
+    {
+      "title": "Macos Monterey Stock Blue Light Layers 5K 6016X6016 5898",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "6016×6016",
+      "image": "macos-monterey-stock-blue-light-layers-5k-6016x6016-5898.jpg",
+      "width": 6016,
+      "height": 6016
+    },
+    {
+      "title": "Macos Monterey Wwdc 21 Stock 5K 6016X6016 5584",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "6016×6016",
+      "image": "macos-monterey-wwdc-21-stock-5k-6016x6016-5584.jpg",
+      "width": 6016,
+      "height": 6016
+    },
+    {
+      "title": "Macos Monterey Wwdc 21 Stock Dark Mode 5K 6016X6016 5585",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "6016×6016",
+      "image": "macos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg",
+      "width": 6016,
+      "height": 6016
+    },
+    {
+      "title": "Macos Tahoe 26 5K 6016X6016 22672",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "6016×6016",
+      "image": "macos-tahoe-26-5k-6016x6016-22672.jpg",
+      "width": 6016,
+      "height": 6016
+    },
+    {
+      "title": "Os X Mavericks Tide 3840X2160 24077",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "3840×2160",
+      "image": "os-x-mavericks-tide-3840x2160-24077.jpg",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "title": "Os X Mountain Lion 3840X2160 24073",
+      "category": "dark",
+      "device": "mac",
+      "resolution": "3840×2160",
+      "image": "os-x-mountain-lion-3840x2160-24073.jpg",
+      "width": 3840,
+      "height": 2160
     }
   ]
 }

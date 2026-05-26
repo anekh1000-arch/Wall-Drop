@@ -261,8 +261,15 @@
     showToast('Downloaded · ' + title);
   }
 
+  function deviceLabel(dev) {
+    if (dev === 'mobile') return 'Mobile';
+    if (dev === 'mac') return 'Mac';
+    return 'Desktop';
+  }
+
   function getQualityTarget(quality, naturalW, naturalH, device) {
     if (quality === '1080p') return { w: 1920, h: 1080 };
+    if (quality === 'mac') return { w: 3024, h: 1964 };
     if (quality === 'mobile') {
       if (device === 'mobile') return { w: 1284, h: 2778 };
       return { w: 1170, h: 2532 };
@@ -383,6 +390,9 @@
     if (/Android/i.test(ua)) {
       return 'Open the download, tap ⋮, then “Set as wallpaper”.';
     }
+    if (/Macintosh|Mac OS X/i.test(ua)) {
+      return 'Open the image → System Settings → Wallpaper → Add Photo.';
+    }
     return 'Right-click the saved image → “Set as desktop background”.';
   }
 
@@ -411,7 +421,7 @@
       ' · ' +
       (card.dataset.cat || '') +
       ' · ' +
-      (card.dataset.dev === 'mobile' ? 'Mobile' : 'Desktop');
+      deviceLabel(card.dataset.dev || 'desktop');
     if (card.dataset.viewUrl) lbFullPage.href = card.dataset.viewUrl;
     if (lbQuality) lbQuality.value = 'original';
     updateWallHint();

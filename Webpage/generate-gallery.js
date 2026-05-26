@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scan images/wallpapers/{desktop,mobile} and write wallpapers.json for Netlify/static hosting.
+ * Scan images/wallpapers/{desktop,mobile,mac} and write wallpapers.json for Netlify/static hosting.
  * Run: node generate-gallery.js  (also via npm run build)
  */
 'use strict';
@@ -11,12 +11,17 @@ const path = require('path');
 const ROOT = __dirname;
 const DESKTOP = path.join(ROOT, 'images', 'wallpapers', 'desktop');
 const MOBILE = path.join(ROOT, 'images', 'wallpapers', 'mobile');
+const MAC = path.join(ROOT, 'images', 'wallpapers', 'mac');
 const OUT = path.join(ROOT, 'wallpapers.json');
 const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
 const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome', 'gradient']);
-const FALLBACK_RES = { desktop: '3840×2160', mobile: '1284×2778' };
+const FALLBACK_RES = {
+  desktop: '3840×2160',
+  mobile: '1284×2778',
+  mac: '3024×1964'
+};
 
 const VIBE_KEYWORDS = {
   black: ['black', 'noir', 'dark mode', 'dark-mode', 'monterey', 'sagittarius'],
@@ -98,6 +103,7 @@ function getCuratedTag(category, device, resolution) {
   if (category === 'gradient') tags.unshift('Gradient Study');
   if (category === 'monochrome') tags.unshift('Monochrome Study');
   if (device === 'mobile') tags.unshift('Pocket Perfect');
+  if (device === 'mac') tags.unshift('MacBook Ready');
   return pick(tags, key) || 'Curated';
 }
 
@@ -121,7 +127,12 @@ function buildSeoAltText(rawFilename, title, category, device, resolution) {
     .toLowerCase();
   const words = stem.split(' ').filter(Boolean);
   const lead = words.slice(0, 3).join(' ') || title.toLowerCase();
-  const devLabel = device === 'mobile' ? 'mobile wallpaper' : 'desktop wallpaper';
+  const devLabel =
+    device === 'mobile'
+      ? 'mobile wallpaper'
+      : device === 'mac'
+        ? 'Mac wallpaper'
+        : 'desktop wallpaper';
   const catLabel = category === 'dark' ? 'dark minimalist' : `${category} minimalist`;
   const resLabel = resolution ? `${resolution} quality` : '4K quality';
   return `${title} — ${lead} ${catLabel} ${devLabel}, ${resLabel}`.replace(/\s+/g, ' ').trim();
@@ -305,19 +316,26 @@ function scanFolder(folder, device) {
 function main() {
   fs.mkdirSync(DESKTOP, { recursive: true });
   fs.mkdirSync(MOBILE, { recursive: true });
+  fs.mkdirSync(MAC, { recursive: true });
 
-  const wallpapers = [...scanFolder(DESKTOP, 'desktop'), ...scanFolder(MOBILE, 'mobile')];
+  const wallpapers = [
+    ...scanFolder(DESKTOP, 'desktop'),
+    ...scanFolder(MOBILE, 'mobile'),
+    ...scanFolder(MAC, 'mac')
+  ];
   const data = { wallpapers, generatedAt: new Date().toISOString() };
 
   fs.writeFileSync(OUT, JSON.stringify(data, null, 2) + '\n', 'utf8');
 
   const d = scanFolder(DESKTOP, 'desktop').length;
   const m = scanFolder(MOBILE, 'mobile').length;
+  const mac = scanFolder(MAC, 'mac').length;
   console.log(`WallDrop: ${wallpapers.length} wallpaper(s) -> wallpapers.json`);
   console.log(`  desktop: ${d}`);
   console.log(`  mobile:  ${m}`);
+  console.log(`  mac:     ${mac}`);
   if (!wallpapers.length) {
-    console.log('  (add JPG/PNG/WebP to images/wallpapers/desktop or mobile)');
+    console.log('  (add JPG/PNG/WebP to images/wallpapers/desktop, mobile, or mac)');
   }
 }
 
