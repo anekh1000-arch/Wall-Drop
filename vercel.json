@@ -1,7 +1,7 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "framework": null,
-  "buildCommand": "npm run build --prefix Webpage",
+  "buildCommand": "npm install --prefix Webpage && npm run build --prefix Webpage",
   "outputDirectory": "Webpage",
   "rewrites": [
     { "source": "/about", "destination": "/about.html" }

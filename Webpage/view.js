@@ -1,14 +1,10 @@
 (function () {
-  const STORAGE_KEY = 'walldrop_v4';
-  const MIGRATION_KEY = 'walldrop_v4_migrated';
-
   const params = new URLSearchParams(location.search);
   const src = params.get('src');
   const title = params.get('title') || 'Wallpaper';
   const cat = params.get('cat') || '';
   const dev = params.get('dev') || 'desktop';
   const res = params.get('res') || '';
-  const index = params.get('i');
   const paramW = params.get('w');
   const paramH = params.get('h');
 
@@ -26,13 +22,6 @@
     return escapeHtml(s).replace(/"/g, '&quot;');
   }
 
-  function wallpaperHintText() {
-    const ua = navigator.userAgent || '';
-    if (/iPhone|iPad|iPod/i.test(ua)) return 'Tap Share, then “Use as Wallpaper”.';
-    if (/Android/i.test(ua)) return 'Open the download, tap ⋮, then “Set as wallpaper”.';
-    return 'Right-click the saved image → “Set as desktop background”.';
-  }
-
   if (!src) {
     main.innerHTML =
       '<p class="view-error">Wallpaper not found. <a href="index.html">Back to browse</a></p>';
@@ -44,6 +33,9 @@
   const devLabel = dev === 'mobile' ? 'Mobile' : dev === 'mac' ? 'Mac' : 'Desktop';
   var initialRes = res;
   if (paramW && paramH) initialRes = paramW + '\u00d7' + paramH;
+
+  const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+  document.documentElement.classList.toggle('is-mobile', isMobile);
 
   main.innerHTML =
     '<div class="view-img-wrap">' +
@@ -59,24 +51,34 @@
     escapeHtml(title) +
     '</h1><p id="viewMetaLine">' +
     escapeHtml([initialRes, cat, devLabel].filter(Boolean).join(' \u00b7 ')) +
-    '</p></div>' +
+    '</p><p class="view-dl-stat" id="viewDlStat"></p></div>' +
     '<div class="view-actions">' +
-    '<label for="viewQuality" style="font-size:0.62rem;color:#555;letter-spacing:0.1em;text-transform:uppercase">Quality</label>' +
-    '<select id="viewQuality" style="background:#0e0e0e;border:1px solid #2a2a2a;color:#a0a0a0;padding:0.45rem 0.6rem;border-radius:8px;font-size:0.72rem">' +
+    '<label for="viewQuality" class="view-quality-label">Quality</label>' +
+    '<select id="viewQuality" class="view-quality">' +
     '<option value="original">Original</option>' +
     '<option value="1080p">1080p</option>' +
     '<option value="mobile">Mobile</option>' +
     '<option value="mac">MacBook</option>' +
     '</select>' +
     '<button type="button" class="dl-btn" id="viewDownload">↓ Download</button>' +
-    '</div></div>' +
-    '<p class="view-dims" id="viewWallHint" style="margin-top:0.75rem"></p>';
+    '</div></div>';
 
   var imgEl = document.getElementById('viewImg');
   var metaLine = document.getElementById('viewMetaLine');
   var dimsEl = document.getElementById('viewDims');
-  var hintEl = document.getElementById('viewWallHint');
-  if (hintEl) hintEl.textContent = wallpaperHintText();
+  var dlStatEl = document.getElementById('viewDlStat');
+
+  function fmtNum(n) {
+    if (n >= 1000) return (n / 1000).toFixed(1).replace(/\.0$/, '') + 'K';
+    return String(n);
+  }
+
+  function updateDlStat() {
+    if (!dlStatEl || !window.WallDropDownloads) return;
+    const stats = window.WallDropDownloads.loadLocal();
+    const n = window.WallDropDownloads.countForImage(stats, src);
+    dlStatEl.textContent = n === 1 ? '1 download' : fmtNum(n) + ' downloads';
+  }
 
   function showNaturalSize() {
     var w = imgEl.naturalWidth;
@@ -90,40 +92,9 @@
   imgEl.addEventListener('load', showNaturalSize);
   if (imgEl.complete && imgEl.naturalWidth) showNaturalSize();
 
-  function resetDownloadStorageOnce() {
-    try {
-      if (localStorage.getItem(MIGRATION_KEY)) return;
-      ['walldrop_v3', 'walldrop_v2', 'walldrop_dl_baseline_v1'].forEach((k) => localStorage.removeItem(k));
-      localStorage.removeItem(STORAGE_KEY);
-      localStorage.setItem(MIGRATION_KEY, '1');
-    } catch (e) {}
-  }
-
-  function loadState() {
-    resetDownloadStorageOnce();
-    const byImage = {};
-    let totalDownloads = 0;
-    try {
-      const s = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      if (s.downloadsByImage) Object.assign(byImage, s.downloadsByImage);
-      if (typeof s.totalDownloads === 'number') totalDownloads = s.totalDownloads;
-    } catch (e) {}
-    return { downloadsByImage: byImage, totalDownloads };
-  }
-
-  function saveState(byImage, totalDownloads) {
-    try {
-      const prev = JSON.parse(localStorage.getItem(STORAGE_KEY)) || {};
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          downloadsByImage: byImage,
-          downloadKeys: prev.downloadKeys || [],
-          downloads: prev.downloads || [],
-          totalDownloads
-        })
-      );
-    } catch (e) {}
+  if (isMobile && dev === 'mobile') {
+    var q = document.getElementById('viewQuality');
+    if (q) q.value = 'mobile';
   }
 
   function getQualityTarget(quality, nw, nh) {
@@ -195,7 +166,7 @@
         }
         return out;
       })
-      .then(function (outBlob) {
+      .then(async function (outBlob) {
         var ext = quality === 'original' ? (src.match(/\.\w+$/) || ['.jpg'])[0] : '.jpg';
         var suffix = quality === 'original' ? '' : '-' + quality;
         var dlUrl = URL.createObjectURL(outBlob);
@@ -207,10 +178,10 @@
         a.remove();
         URL.revokeObjectURL(dlUrl);
 
-        var state = loadState();
-        state.downloadsByImage[src] = (state.downloadsByImage[src] || 0) + 1;
-        state.totalDownloads = (state.totalDownloads || 0) + 1;
-        saveState(state.downloadsByImage, state.totalDownloads);
+        if (window.WallDropDownloads) {
+          await window.WallDropDownloads.recordDownload(src);
+          updateDlStat();
+        }
 
         if (btn) {
           btn.textContent = '✓ Saved';
@@ -232,4 +203,8 @@
   document.getElementById('viewDownload').addEventListener('click', function () {
     downloadWallpaper(this);
   });
+
+  if (window.WallDropDownloads) {
+    window.WallDropDownloads.syncFromServer().then(updateDlStat);
+  }
 })();

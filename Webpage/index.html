@@ -45,6 +45,7 @@
 <link rel="stylesheet" href="brand.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="loader.css">
+<link rel="stylesheet" href="mobile.css">
 <link rel="stylesheet" href="cursor.css">
 <script>document.documentElement.classList.add('is-loading');</script>
 <style>
@@ -561,88 +562,6 @@ footer{
   border:1px dashed var(--border-light);padding:0.5rem 1rem;border-radius:6px;
 }
 
-/* LIGHTBOX — smooth wallpaper view */
-.wall-lightbox{
-  position:fixed;inset:0;z-index:500;
-  display:flex;align-items:center;justify-content:center;
-  padding:1.5rem;
-  opacity:0;visibility:hidden;pointer-events:none;
-  transition:opacity 0.4s cubic-bezier(0.4,0,0.2,1),visibility 0.4s;
-}
-.wall-lightbox.is-open{
-  opacity:1;visibility:visible;pointer-events:auto;
-}
-.wall-lightbox__backdrop{
-  position:absolute;inset:0;
-  background:rgba(0,0,0,0.88);
-  backdrop-filter:blur(28px) saturate(160%);
-  -webkit-backdrop-filter:blur(28px) saturate(160%);
-  opacity:0;transition:opacity 0.45s cubic-bezier(0.4,0,0.2,1);
-}
-.wall-lightbox.is-open .wall-lightbox__backdrop{opacity:1}
-.wall-lightbox__close{
-  position:absolute;top:1.25rem;right:1.25rem;z-index:3;
-  background:rgba(255,255,255,0.08);border:1px solid var(--border-light);
-  color:var(--silver);width:40px;height:40px;border-radius:8px;
-  font-size:1.25rem;cursor:pointer;transition:all 0.2s;
-  display:flex;align-items:center;justify-content:center;
-  opacity:0;transform:scale(0.9);
-  transition:opacity 0.35s 0.05s,transform 0.35s 0.05s,background 0.15s;
-}
-.wall-lightbox.is-open .wall-lightbox__close{
-  opacity:1;transform:scale(1);
-}
-.wall-lightbox__close:hover{background:rgba(255,255,255,0.14);color:var(--white)}
-.wall-lightbox__inner{
-  position:relative;z-index:2;width:100%;max-width:min(1200px,96vw);
-  display:flex;flex-direction:column;align-items:center;gap:1.25rem;
-  transform:translateY(20px) scale(0.94);
-  opacity:0;
-  transition:transform 0.5s cubic-bezier(0.34,1.2,0.64,1),opacity 0.45s cubic-bezier(0.4,0,0.2,1);
-}
-.wall-lightbox.is-open .wall-lightbox__inner{
-  transform:translateY(0) scale(1);opacity:1;
-}
-.wall-lightbox__img-wrap{
-  width:100%;display:flex;align-items:center;justify-content:center;
-  border-radius:14px;border:1px solid var(--border-light);
-  background:#0a0a0a;overflow:hidden;
-  box-shadow:0 28px 90px rgba(0,0,0,0.55);
-  line-height:0;
-}
-.wall-lightbox__img{
-  display:block;max-width:100%;max-height:calc(100vh - 200px);
-  width:auto;height:auto;object-fit:contain;
-  opacity:0;transition:opacity 0.35s ease 0.08s;
-}
-.wall-lightbox__img.is-ready{opacity:1}
-.wall-lightbox__meta{
-  text-align:center;width:100%;
-  opacity:0;transform:translateY(8px);
-  transition:opacity 0.4s 0.12s,transform 0.4s 0.12s;
-}
-.wall-lightbox.is-open .wall-lightbox__meta{opacity:1;transform:translateY(0)}
-.wall-lightbox__title{
-  font-family:'Outfit',sans-serif;font-size:1.15rem;font-weight:600;
-  color:var(--white);letter-spacing:0.02em;
-}
-.wall-lightbox__sub{font-size:0.72rem;color:var(--dim);margin-top:0.35rem;letter-spacing:0.04em}
-.wall-lightbox__actions{
-  display:flex;gap:0.6rem;flex-wrap:wrap;justify-content:center;
-  opacity:0;transform:translateY(8px);
-  transition:opacity 0.4s 0.18s,transform 0.4s 0.18s;
-}
-.wall-lightbox.is-open .wall-lightbox__actions{opacity:1;transform:translateY(0)}
-.wall-card.is-launching .wall-thumb-inner{
-  transform:scale(0.97);filter:brightness(0.55);
-  transition:transform 0.35s cubic-bezier(0.4,0,0.2,1),filter 0.35s;
-}
-@media(prefers-reduced-motion:reduce){
-  .wall-lightbox,.wall-lightbox__backdrop,.wall-lightbox__inner,
-  .wall-lightbox__close,.wall-lightbox__meta,.wall-lightbox__actions{transition:none}
-  .wall-lightbox__inner,.wall-lightbox.is-open .wall-lightbox__inner{transform:none;opacity:1}
-}
-
 /* TOAST */
 .toast{
   position:fixed;bottom:1.5rem;left:50%;transform:translateX(-50%) translateY(80px);
@@ -846,35 +765,8 @@ footer{
 
 <div class="toast" id="toast"></div>
 
-<div class="wall-lightbox" id="wallLightbox" role="dialog" aria-modal="true" aria-label="Wallpaper preview" aria-hidden="true">
-  <div class="wall-lightbox__backdrop" id="lbBackdrop"></div>
-  <button type="button" class="wall-lightbox__close" id="lbClose" aria-label="Close preview">&times;</button>
-  <div class="wall-lightbox__inner">
-    <div class="wall-lightbox__img-wrap">
-      <img class="wall-lightbox__img" id="lbImg" alt="">
-    </div>
-    <div class="wall-lightbox__meta">
-      <div class="wall-lightbox__title" id="lbTitle">—</div>
-      <div class="wall-lightbox__sub" id="lbSub">—</div>
-    </div>
-    <div class="wall-lightbox__actions">
-      <div class="lb-quality-row">
-        <label for="lbQuality">Quality</label>
-        <select class="lb-quality" id="lbQuality" aria-label="Download quality">
-          <option value="original">Original (full resolution)</option>
-          <option value="1080p">1080p optimized</option>
-          <option value="mobile">Mobile aspect</option>
-          <option value="mac">MacBook aspect</option>
-        </select>
-      </div>
-      <button type="button" class="dl-btn" id="lbDownload">↓ Download</button>
-      <a class="pre-btn" id="lbFullPage" href="#">Full page</a>
-    </div>
-    <p class="lb-wall-hint" id="lbWallHint"></p>
-  </div>
-</div>
-
 <script src="gallery.js"></script>
+<script src="downloads-sync.js"></script>
 <script src="walldrop-app.js"></script>
 <script>
 if('serviceWorker' in navigator){

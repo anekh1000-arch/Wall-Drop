@@ -37,6 +37,15 @@ You do **not** need to set Root Directory in the Vercel dashboard when this file
 | Empty gallery | Build must run: `npm run build` in `Webpage/`. Check deployment build logs. |
 | Git errors | Script auto-repairs; or re-clone `D:\Wall-Drop` |
 
+## Shared download counts (desktop + mobile)
+
+Download totals sync across all visitors when storage is enabled:
+
+1. Vercel project → **Storage** → create **Upstash Redis** (free tier) and link it to the project, **or** enable **Blob** storage.
+2. Redeploy. The site uses `/api/downloads` to read/write counts.
+
+Without storage, counts stay in each browser only (localStorage).
+
 ## Custom domain
 
 Vercel → **Settings → Domains**, add your domain, set `SITE_URL` to that HTTPS URL, redeploy.

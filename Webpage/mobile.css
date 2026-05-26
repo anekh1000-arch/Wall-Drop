@@ -1,0 +1,115 @@
+/* Mobile layout and touch optimizations */
+html.is-mobile {
+  -webkit-tap-highlight-color: transparent;
+}
+
+@media (max-width: 768px) {
+  html.is-mobile nav {
+    padding: 0 1rem;
+    height: 56px;
+  }
+
+  html.is-mobile .nav-links {
+    display: none;
+  }
+
+  html.is-mobile .nav-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  html.is-mobile .hero {
+    padding: 3.25rem 1.25rem 2.25rem;
+  }
+
+  html.is-mobile .hero h1 {
+    font-size: clamp(2rem, 11vw, 2.65rem);
+    max-width: none;
+  }
+
+  html.is-mobile .hero-sub {
+    font-size: 0.9rem;
+    max-width: none;
+  }
+
+  html.is-mobile .search-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.65rem;
+    padding: 0 1.25rem;
+  }
+
+  html.is-mobile .search-wrap {
+    width: 100%;
+  }
+
+  html.is-mobile .search-btn {
+    width: 100%;
+    min-height: 44px;
+  }
+
+  html.is-mobile .stats-row {
+    padding: 0 1.25rem;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  html.is-mobile .filter-section {
+    padding: 1rem 1.25rem;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.85rem;
+  }
+
+  html.is-mobile .filters {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.25rem;
+  }
+
+  html.is-mobile .filters .pill,
+  html.is-mobile .device-pill {
+    min-height: 40px;
+    flex-shrink: 0;
+  }
+
+  html.is-mobile .device-group {
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  html.is-mobile .gallery-wrap {
+    padding: 1rem 1.25rem 3rem;
+  }
+
+  html.is-mobile .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 2px;
+    border-radius: 12px;
+  }
+
+  html.is-mobile .wall-card .card-meta {
+    padding: 0.55rem 0.65rem;
+  }
+
+  html.is-mobile .wall-card .card-title {
+    font-size: 0.72rem;
+  }
+
+  html.is-mobile .wall-card .dl-count {
+    font-size: 0.58rem;
+  }
+
+  html.is-mobile footer {
+    padding: 2rem 1.25rem;
+  }
+}
+
+@media (max-width: 420px) {
+  html.is-mobile .gallery {
+    grid-template-columns: 1fr;
+  }
+}

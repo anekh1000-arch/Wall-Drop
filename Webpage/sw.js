@@ -2,7 +2,7 @@ const CACHE = 'walldrop-v4';
 const PRECACHE = ['/', '/index.html', '/manifest.json', '/brand.css', '/icons/logo.svg', '/icons/favicon.svg'];
 
 /** Always fetch fresh — gallery data and scripts change on every upload */
-const NETWORK_FIRST = ['/wallpapers.json', '/gallery.js', '/walldrop-app.js', '/index.html'];
+const NETWORK_FIRST = ['/wallpapers.json', '/gallery.js', '/walldrop-app.js', '/downloads-sync.js', '/index.html', '/api/downloads'];
 
 function isNetworkFirst(url) {
   return NETWORK_FIRST.some((p) => url.pathname.endsWith(p) || url.pathname === p);

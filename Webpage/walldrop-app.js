@@ -1,31 +1,34 @@
-/* WallDrop — gallery UI, filters, lightbox, downloads */
+/* WallDrop — gallery UI, filters, downloads */
 (function () {
-  const STORAGE_KEY = 'walldrop_v4';
-  const MIGRATION_KEY = 'walldrop_v4_migrated';
+  const POPULAR_LIMIT = 10;
+  const dl = () => window.WallDropDownloads;
 
   const cards = () => [...document.querySelectorAll('.wall-card')];
 
-  let state = { downloads: [], downloadsByImage: {}, wallCount: 0, totalDownloads: 0 };
+  let state = { downloadsByImage: {}, totalDownloads: 0 };
   let activeCat = 'all';
   let activeDev = 'all';
   let sortMode = 'default';
   let searchQuery = '';
   let galleryCount = 0;
 
-  const lightbox = document.getElementById('wallLightbox');
-  const lbImg = document.getElementById('lbImg');
-  const lbTitle = document.getElementById('lbTitle');
-  const lbSub = document.getElementById('lbSub');
-  const lbDownload = document.getElementById('lbDownload');
-  const lbFullPage = document.getElementById('lbFullPage');
-  const lbClose = document.getElementById('lbClose');
-  const lbBackdrop = document.getElementById('lbBackdrop');
-  const lbQuality = document.getElementById('lbQuality');
-  const lbWallHint = document.getElementById('lbWallHint');
-
-  let lightboxIndex = null;
-  let lightboxClosing = false;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function isMobileUa() {
+    return /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
+  }
+
+  function initMobileExperience() {
+    const mobile = isMobileUa() || window.matchMedia('(max-width: 768px)').matches;
+    document.documentElement.classList.toggle('is-mobile', mobile);
+    if (!mobile) return;
+    const group = document.getElementById('deviceGroup');
+    if (!group) return;
+    group.querySelectorAll('.device-pill').forEach((b) => {
+      b.classList.toggle('active', b.dataset.dev === 'mobile');
+    });
+    activeDev = 'mobile';
+  }
 
   function fmtNum(n) {
     if (n >= 1000000) return (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
@@ -37,10 +40,6 @@
     return 1 - Math.pow(1 - t, 3);
   }
 
-  function cardIndex(card) {
-    return cards().indexOf(card);
-  }
-
   function showToast(msg) {
     const t = document.getElementById('toast');
     if (!t) return;
@@ -50,72 +49,13 @@
     showToast._t = setTimeout(() => t.classList.remove('show'), 2400);
   }
 
-  function resetDownloadStorageOnce() {
-    try {
-      if (localStorage.getItem(MIGRATION_KEY)) return;
-      ['walldrop_v3', 'walldrop_v2', 'walldrop_dl_baseline_v1'].forEach((k) => localStorage.removeItem(k));
-      localStorage.removeItem(STORAGE_KEY);
-      localStorage.setItem(MIGRATION_KEY, '1');
-    } catch (e) {}
-  }
-
-  function getDisplayDownloads() {
-    return state.totalDownloads || 0;
-  }
-
   function downloadCountForCard(card) {
-    const key = card.dataset.image;
-    if (key && state.downloadsByImage) return state.downloadsByImage[key] || 0;
-    const i = card.dataset.index != null ? +card.dataset.index : -1;
-    return i >= 0 ? state.downloads[i] || 0 : 0;
+    if (!card || !dl()) return 0;
+    return dl().countForImage(state, card.dataset.image);
   }
 
-  function loadState() {
-    const total = cards().length;
-    const byImage = {};
-    let totalDownloads = 0;
-    try {
-      let s = JSON.parse(localStorage.getItem(STORAGE_KEY));
-      if (!s) {
-        const old = JSON.parse(localStorage.getItem('walldrop_v2'));
-        if (old) s = old;
-      }
-      s = s || {};
-      if (s.downloadsByImage && typeof s.downloadsByImage === 'object') {
-        Object.assign(byImage, s.downloadsByImage);
-      }
-      if (Array.isArray(s.downloadKeys) && Array.isArray(s.downloads)) {
-        s.downloadKeys.forEach((key, i) => {
-          if (key) byImage[key] = (byImage[key] || 0) + (s.downloads[i] || 0);
-        });
-      }
-      if (typeof s.totalDownloads === 'number') totalDownloads = s.totalDownloads;
-    } catch (e) {}
-    const downloads = cards().map((c) => byImage[c.dataset.image] || 0);
-    const sum = downloads.reduce((a, b) => a + b, 0);
-    if (!totalDownloads) totalDownloads = sum;
-    return { downloads, downloadsByImage: byImage, wallCount: total, totalDownloads };
-  }
-
-  function saveState(s) {
-    const downloadsByImage = {};
-    const downloadKeys = [];
-    cards().forEach((card, i) => {
-      const key = card.dataset.image;
-      downloadKeys.push(key);
-      downloadsByImage[key] = s.downloads[i] || 0;
-    });
-    try {
-      localStorage.setItem(
-        STORAGE_KEY,
-        JSON.stringify({
-          downloads: s.downloads,
-          downloadsByImage,
-          downloadKeys,
-          totalDownloads: s.totalDownloads || 0
-        })
-      );
-    } catch (e) {}
+  function rebuildDownloadsArray() {
+    state.downloads = cards().map((c) => downloadCountForCard(c));
   }
 
   function cardMatches(card) {
@@ -137,7 +77,7 @@
     return catOk && devOk && searchOk;
   }
 
-  function sortCards() {
+  function sortCardsPopular() {
     const gallery = document.getElementById('gallery');
     const emptyEl = document.getElementById('emptyState');
     if (!gallery || sortMode !== 'popular') return;
@@ -157,10 +97,17 @@
     const q = searchQuery.trim().toLowerCase();
     let visible = 0;
 
-    if (sortMode === 'popular') sortCards();
+    if (sortMode === 'popular') sortCardsPopular();
+
+    let popularShown = 0;
+    const popularLimit = sortMode === 'popular' ? POPULAR_LIMIT : Infinity;
 
     cards().forEach((card) => {
-      const show = cardMatches(card);
+      let show = cardMatches(card);
+      if (show && sortMode === 'popular') {
+        if (popularShown >= popularLimit) show = false;
+        else popularShown++;
+      }
       card.classList.toggle('hidden', !show);
       card.classList.remove('is-search-hit');
       if (show) visible++;
@@ -186,8 +133,12 @@
 
     emptyEl.classList.toggle('visible', visible === 0);
     if (visible === 0) {
-      emptyEl.querySelector('.empty-title').textContent = 'No wallpapers found';
-      emptyEl.querySelector('p').textContent = 'Try a different search or filter.';
+      emptyEl.querySelector('.empty-title').textContent =
+        sortMode === 'popular' ? 'No downloads yet' : 'No wallpapers found';
+      emptyEl.querySelector('p').textContent =
+        sortMode === 'popular'
+          ? 'Download wallpapers to build the popular list.'
+          : 'Try a different search or filter.';
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.style.display = 'none';
     }
@@ -207,17 +158,17 @@
   }
 
   function renderStats(animate) {
-    const total = galleryCount || cards().length;
-    const totalDl = getDisplayDownloads();
-    state.wallCount = total;
+    galleryCount = galleryCount || cards().length;
+    state.wallCount = galleryCount;
     updateFilterBar();
 
     document.querySelectorAll('[data-dlkey]').forEach((el) => {
       const card = el.closest('.wall-card');
-      const n = card ? downloadCountForCard(card) : state.downloads[+el.dataset.dlkey] || 0;
+      const n = card ? downloadCountForCard(card) : 0;
       el.textContent = n === 0 ? '0 dls' : fmtNum(n) + ' dls';
     });
 
+    const totalDl = state.totalDownloads || 0;
     const dlEl = document.getElementById('dl-count');
     if (animate && totalDl > 0) {
       animateNum(dlEl, totalDl);
@@ -234,234 +185,28 @@
     const t0 = performance.now();
     function step(now) {
       const p = Math.min((now - t0) / dur, 1);
-      const val = Math.round(target * easeOut(p));
-      el.textContent = fmtNum(val);
+      el.textContent = fmtNum(Math.round(target * easeOut(p)));
       if (p < 1) requestAnimationFrame(step);
     }
     requestAnimationFrame(step);
   }
 
-  function slugFilename(title, ext) {
-    return title.replace(/\s+/g, '-').toLowerCase() + '-walldrop' + ext;
-  }
-
-  function recordDownload(index, title) {
-    const card = cards()[index];
-    const key = card && card.dataset.image;
-    state.downloads[index] = (state.downloads[index] || 0) + 1;
-    if (key) {
-      state.downloadsByImage = state.downloadsByImage || {};
-      state.downloadsByImage[key] = state.downloads[index];
-    }
-    state.totalDownloads = (state.totalDownloads || 0) + 1;
-    saveState(state);
-    renderStats(false);
-    showToast('Downloaded · ' + title);
-  }
-
-  function deviceLabel(dev) {
-    if (dev === 'mobile') return 'Mobile';
-    if (dev === 'mac') return 'Mac';
-    return 'Desktop';
-  }
-
-  function getQualityTarget(quality, naturalW, naturalH, device) {
-    if (quality === '1080p') return { w: 1920, h: 1080 };
-    if (quality === 'mac') return { w: 3024, h: 1964 };
-    if (quality === 'mobile') {
-      if (device === 'mobile') return { w: 1284, h: 2778 };
-      return { w: 1170, h: 2532 };
-    }
-    return { w: naturalW, h: naturalH };
-  }
-
-  function resizeBlob(blob, targetW, targetH, naturalW, naturalH) {
-    return new Promise((resolve, reject) => {
-      const url = URL.createObjectURL(blob);
-      const img = new Image();
-      img.onload = () => {
-        const canvas = document.createElement('canvas');
-        canvas.width = targetW;
-        canvas.height = targetH;
-        const ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#080808';
-        ctx.fillRect(0, 0, targetW, targetH);
-        const scale = Math.min(targetW / naturalW, targetH / naturalH);
-        const dw = Math.round(naturalW * scale);
-        const dh = Math.round(naturalH * scale);
-        const ox = Math.floor((targetW - dw) / 2);
-        const oy = Math.floor((targetH - dh) / 2);
-        ctx.drawImage(img, ox, oy, dw, dh);
-        canvas.toBlob(
-          (b) => {
-            URL.revokeObjectURL(url);
-            if (b) resolve(b);
-            else reject(new Error('canvas'));
-          },
-          blob.type === 'image/png' ? 'image/png' : 'image/jpeg',
-          0.92
-        );
-      };
-      img.onerror = () => {
-        URL.revokeObjectURL(url);
-        reject(new Error('img'));
-      };
-      img.src = url;
-    });
-  }
-
-  function downloadImageFile(src, title, index, quality) {
-    const card = cards()[index];
-    const device = (card && card.dataset.dev) || 'desktop';
-    const q = quality || (lbQuality ? lbQuality.value : 'original');
-
-    fetch(src)
-      .then((r) => {
-        if (!r.ok) throw new Error('fetch');
-        return r.blob();
-      })
-      .then(async (blob) => {
-        const img = new Image();
-        const url = URL.createObjectURL(blob);
-        await new Promise((res, rej) => {
-          img.onload = res;
-          img.onerror = rej;
-          img.src = url;
-        });
-        const nw = img.naturalWidth;
-        const nh = img.naturalHeight;
-        URL.revokeObjectURL(url);
-
-        let out = blob;
-        if (q !== 'original') {
-          const target = getQualityTarget(q, nw, nh, device);
-          out = await resizeBlob(blob, target.w, target.h, nw, nh);
-        }
-
-        const ext = q === 'original' ? (src.match(/\.\w+$/) || ['.jpg'])[0] : '.jpg';
-        const suffix = q === 'original' ? '' : '-' + q;
-        const dlUrl = URL.createObjectURL(out);
-        const a = document.createElement('a');
-        a.href = dlUrl;
-        a.download = slugFilename(title, ext).replace('-walldrop', '-walldrop' + suffix);
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(dlUrl);
-        recordDownload(index, title);
-      })
-      .catch(() => showToast('Download failed — check image path'));
-  }
-
-  function downloadWallpaper(index) {
-    const card = cards()[index];
-    if (!card) return;
-    const title = card.querySelector('.card-title').textContent.trim();
-    const imageSrc = card.dataset.image;
-    if (!imageSrc) {
-      showToast('No image file for this wallpaper');
-      return;
-    }
-    const quality = lbQuality ? lbQuality.value : 'original';
-    downloadImageFile(imageSrc, title, index, quality);
-  }
-
-  function markDownloadBtn(btn) {
-    btn.textContent = '✓ Saved';
-    btn.classList.add('done');
-    setTimeout(() => {
-      btn.textContent = '↓ Download';
-      btn.classList.remove('done');
-    }, 1800);
-  }
-
-  function triggerDownload(index, btn) {
-    downloadWallpaper(index);
-    if (btn) markDownloadBtn(btn);
-  }
-
-  function wallpaperHintText() {
-    const ua = navigator.userAgent || '';
-    if (/iPhone|iPad|iPod/i.test(ua)) {
-      return 'Tap Share, then “Use as Wallpaper”.';
-    }
-    if (/Android/i.test(ua)) {
-      return 'Open the download, tap ⋮, then “Set as wallpaper”.';
-    }
-    if (/Macintosh|Mac OS X/i.test(ua)) {
-      return 'Open the image → System Settings → Wallpaper → Add Photo.';
-    }
-    return 'Right-click the saved image → “Set as desktop background”.';
-  }
-
-  function updateWallHint() {
-    if (lbWallHint) lbWallHint.textContent = wallpaperHintText();
-  }
-
-  function openLightbox(index) {
-    const card = cards()[index];
-    if (!card || card.classList.contains('hidden') || lightboxClosing) return;
-    const src = card.dataset.image;
-    const img = card.querySelector('.wall-thumb-inner img');
-    if (!src || !img) return;
-
-    lightboxIndex = index;
-    lbImg.classList.remove('is-ready');
-    lbImg.onload = function () {
-      lbImg.classList.add('is-ready');
-    };
-    if (lbImg.src !== new URL(src, location.href).href) lbImg.src = src;
-    else if (lbImg.complete) lbImg.classList.add('is-ready');
-    lbImg.alt = card.querySelector('.card-title').textContent;
-    lbTitle.textContent = card.querySelector('.card-title').textContent;
-    lbSub.textContent =
-      (card.dataset.res || '') +
-      ' · ' +
-      (card.dataset.cat || '') +
-      ' · ' +
-      deviceLabel(card.dataset.dev || 'desktop');
-    if (card.dataset.viewUrl) lbFullPage.href = card.dataset.viewUrl;
-    if (lbQuality) lbQuality.value = 'original';
-    updateWallHint();
-
-    card.classList.add('is-launching');
-    setTimeout(() => card.classList.remove('is-launching'), reducedMotion ? 0 : 380);
-
-    lightbox.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    if (reducedMotion) {
-      lightbox.classList.add('is-open');
-      return;
-    }
-    lightbox.classList.remove('is-open');
-    void lightbox.offsetWidth;
-    requestAnimationFrame(() => lightbox.classList.add('is-open'));
-  }
-
-  function closeLightbox() {
-    if (!lightbox.classList.contains('is-open') || lightboxClosing) return;
-    lightboxClosing = true;
-    lightbox.classList.remove('is-open');
-    const wait = reducedMotion ? 0 : 420;
-    setTimeout(() => {
-      lightbox.setAttribute('aria-hidden', 'true');
-      document.body.style.overflow = '';
-      lbImg.removeAttribute('src');
-      lbImg.classList.remove('is-ready');
-      lightboxIndex = null;
-      lightboxClosing = false;
-    }, wait);
+  function openWallpaperPage(card) {
+    const url = card && card.dataset.viewUrl;
+    if (!url) return;
+    window.location.href = url;
   }
 
   function bindCardInteractions() {
-    cards().forEach((card, i) => {
+    cards().forEach((card) => {
       const thumb = card.querySelector('.wall-thumb');
-      if (thumb) {
-        thumb.addEventListener('click', (e) => {
-          e.preventDefault();
-          openLightbox(i);
-        });
-      }
+      const overlay = card.querySelector('.wall-overlay');
+      const go = (e) => {
+        e.preventDefault();
+        openWallpaperPage(card);
+      };
+      if (thumb) thumb.addEventListener('click', go);
+      if (overlay) overlay.addEventListener('click', go);
     });
   }
 
@@ -480,33 +225,23 @@
   }
 
   let searchInputTimer;
-
   function onSearchInput() {
     clearTimeout(searchInputTimer);
     searchInputTimer = setTimeout(() => runSearch(true), 70);
   }
 
-  function bootWallDrop(ev) {
-    resetDownloadStorageOnce();
+  async function bootWallDrop(ev) {
+    initMobileExperience();
     galleryCount = (ev && ev.detail && ev.detail.count) || cards().length;
-    state = loadState();
+    if (dl()) {
+      state = await dl().syncFromServer();
+    } else {
+      state = { downloadsByImage: {}, totalDownloads: 0 };
+    }
+    rebuildDownloadsArray();
     bindCardInteractions();
     renderStats(true);
-    updateWallHint();
   }
-
-  /* Event bindings */
-  if (lbClose) lbClose.addEventListener('click', closeLightbox);
-  if (lbBackdrop) lbBackdrop.addEventListener('click', closeLightbox);
-  if (lbDownload) {
-    lbDownload.addEventListener('click', () => {
-      if (lightboxIndex !== null) triggerDownload(lightboxIndex, lbDownload);
-    });
-  }
-
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && lightbox && lightbox.classList.contains('is-open')) closeLightbox();
-  });
 
   const filtersEl = document.getElementById('filters');
   if (filtersEl) {
@@ -552,13 +287,13 @@
       if (nav === 'collections') {
         sortMode = 'default';
         activeCat = 'all';
-        activeDev = 'all';
+        activeDev = isMobileUa() ? 'mobile' : 'all';
         document.querySelectorAll('#filters .pill').forEach((b) => {
           b.classList.toggle('active', b.dataset.cat === 'all');
         });
         if (deviceGroup) {
           deviceGroup.querySelectorAll('.device-pill').forEach((b) => {
-            b.classList.toggle('active', b.dataset.dev === 'all');
+            b.classList.toggle('active', b.dataset.dev === activeDev);
           });
         }
         scrollToGallery();
@@ -577,9 +312,8 @@
           });
         }
         scrollToGallery();
-        sortCards();
         applyFilters(false);
-        showToast('Most downloaded first');
+        showToast('Top 10 most downloaded');
       }
     });
   });
