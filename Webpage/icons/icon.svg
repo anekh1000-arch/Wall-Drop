@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WallDrop">
   <rect width="512" height="512" rx="96" fill="#080808"/>
   <path fill="#f0f0f0" d="M61 92h154l41 369H102L61 92z"/>
-  <path fill="#f0f0f0" d="M215 92h82v72h-82V92z"/>
+  <path fill="#f0f0f0" d="M215 92 297 92 256 196Z"/>
   <path fill="#f0f0f0" d="M297 92h154l-41 369H358L297 92z"/>
 </svg>
