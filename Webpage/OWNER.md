@@ -39,7 +39,7 @@ minimal--plain-grey.jpg
 abstract--waves.png
 ```
 
-Prefix must be one of: `dark`, `minimal`, `abstract`, `monochrome`, `gradient`  
+Prefix must be one of: `dark`, `minimal`, `abstract`, `monochrome`  
 Then `--` then the rest of the name.
 
 ## View locally

@@ -16,7 +16,7 @@ const OUT = path.join(ROOT, 'wallpapers.json');
 const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
-const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome', 'gradient']);
+const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome']);
 const FALLBACK_RES = {
   desktop: '3840×2160',
   mobile: '1284×2778',
@@ -70,7 +70,6 @@ function getAestheticTitle(filename, category) {
 
   const titleMap = [
     { test: /\b(dark|black|amoled|noir|night|midnight)\b/i, titles: ['Eternal Void', 'Midnight Eclipse', 'Noir Silence', 'Obsidian Drift'] },
-    { test: /\b(gradient|aurora|fade|glow)\b/i, titles: ['Liquid Aurora', 'Fade To Silence', 'Prism Haze', 'Soft Horizon'] },
     { test: /\b(tech|code|terminal|system|subsystem|matrix|digital)\b/i, titles: ['Subsystem 01', 'Digital Oasis', 'Signal Black', 'Kernel Dream'] },
     { test: /\b(minimal|minimalist|simple|clean)\b/i, titles: ['Quiet Geometry', 'Minimal Stillness', 'Slate Calm', 'Plainlight'] },
     { test: /\b(mono|monochrome|bw)\b/i, titles: ['Monochrome Temple', 'Two-Tone Drift', 'Ink & Air', 'Silent Contrast'] },
@@ -100,7 +99,6 @@ function getCuratedTag(category, device, resolution) {
     'Night Mode Curated',
     'Stillness Collection'
   ];
-  if (category === 'gradient') tags.unshift('Gradient Study');
   if (category === 'monochrome') tags.unshift('Monochrome Study');
   if (device === 'mobile') tags.unshift('Pocket Perfect');
   if (device === 'mac') tags.unshift('MacBook Ready');
@@ -169,10 +167,7 @@ function inferVibes(title, category, filename, extraVibes = []) {
 
   if (category === 'dark' || category === 'monochrome') vibes.add('black');
   if (category === 'minimal') vibes.add('gray');
-  if (category === 'gradient') {
-    vibes.add('purple');
-    vibes.add('blue');
-  }
+  // legacy gradient category removed from UI; keep existing wallpapers as dark/abstract/monochrome
 
   if (!vibes.size) vibes.add('black');
   return [...vibes];
