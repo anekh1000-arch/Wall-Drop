@@ -21,12 +21,17 @@ if errorlevel 1 (
 echo.
 echo === Git commit ===
 git add -A
-git commit -m "Update WallDrop site and wallpapers"
-if errorlevel 1 echo Nothing new to commit, or first-time setup needed.
+git diff --cached --quiet
+if errorlevel 1 (
+  git commit -m "Update WallDrop site and wallpapers"
+  if errorlevel 1 echo Commit failed.
+) else (
+  echo Nothing new to commit.
+)
 
 echo.
 echo === Push to GitHub ===
-git push
+git push origin main
 if errorlevel 1 (
   echo.
   echo Push failed. First time? Run:
