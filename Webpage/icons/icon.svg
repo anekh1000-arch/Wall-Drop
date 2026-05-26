@@ -1,7 +1,7 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WallDrop">
   <rect width="512" height="512" rx="96" fill="#080808"/>
-  <rect x="132" y="112" width="248" height="184" rx="46" fill="none" stroke="#3a3a3a" stroke-width="10"/>
-  <rect x="102" y="142" width="248" height="184" rx="46" fill="none" stroke="#f0f0f0" stroke-width="14"/>
-  <path fill="none" stroke="#ef4444" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" d="M164 256 256 174 348 256"/>
-  <circle cx="256" cy="368" r="20" fill="#ef4444"/>
+  <circle cx="256" cy="236" r="174" fill="none" stroke="#3a3a3a" stroke-width="10"/>
+  <circle cx="256" cy="236" r="174" fill="none" stroke="#f0f0f0" stroke-width="14" stroke-linecap="round" stroke-dasharray="368 726" stroke-dashoffset="92"/>
+  <path fill="none" stroke="#f0f0f0" stroke-width="22" stroke-linecap="round" stroke-linejoin="round" d="M164 204 256 328 348 204"/>
+  <path fill="#f0f0f0" d="M256 358c16.4 24.6 16.4 42 0 67.6-16.4-25.6-16.4-43 0-67.6z"/>
 </svg>

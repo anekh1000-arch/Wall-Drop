@@ -63,7 +63,6 @@
   --dim:#555;
   --accent:#ffffff;
   --live:#ef4444;
-  --live-soft:rgba(239,68,68,0.14);
   --grid-line:rgba(255,255,255,0.03);
   --grid-size:60px;
 }
@@ -142,11 +141,6 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 .hero{
   position:relative;padding:5rem 3rem 3.5rem;
   overflow:hidden;
-}
-.hero::before{
-  content:'';position:absolute;inset:0;pointer-events:none;
-  background:radial-gradient(ellipse 80% 55% at 50% -10%,var(--live-soft),transparent 70%);
-  opacity:0.9;
 }
 .hero-grid{
   position:absolute;inset:0;

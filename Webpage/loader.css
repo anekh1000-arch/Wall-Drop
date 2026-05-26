@@ -50,7 +50,7 @@ html.is-loading{overflow:hidden}
   stroke-width:1.5;
 }
 .page-loader__ring .ring-progress{
-  stroke:#ef4444;
+  stroke:#a0a0a0;
   stroke-width:1.5;
   stroke-linecap:round;
   stroke-dasharray:113;
@@ -66,7 +66,7 @@ html.is-loading{overflow:hidden}
 }
 .page-loader__bar-fill{
   height:100%;width:0;
-  background:linear-gradient(90deg,transparent,#ef4444,transparent);
+  background:linear-gradient(90deg,transparent,#f5f5f5,transparent);
   animation:loaderBar 1.2s cubic-bezier(0.4,0,0.2,1) infinite;
 }
 
