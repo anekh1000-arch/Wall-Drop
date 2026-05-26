@@ -36,7 +36,6 @@
 
   const isMobile = /Android|iPhone|iPad|iPod|Mobile/i.test(navigator.userAgent || '');
   document.documentElement.classList.toggle('is-mobile', isMobile);
-  if (!isMobile) document.body.classList.add('view-desktop-back');
 
   main.innerHTML =
     '<div class="view-img-wrap">' +
