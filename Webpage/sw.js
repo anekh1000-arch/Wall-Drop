@@ -1,58 +1,80 @@
-const CACHE = 'walldrop-v4';
-const PRECACHE = ['/', '/index.html', '/manifest.json', '/brand.css', '/icons/logo.svg', '/icons/favicon.svg'];
+const CACHE = 'walldrop-v5';
 
-/** Always fetch fresh — gallery data and scripts change on every upload */
-const NETWORK_FIRST = ['/wallpapers.json', '/gallery.js', '/walldrop-app.js', '/downloads-sync.js', '/index.html', '/api/downloads'];
-
-function isNetworkFirst(url) {
-  return NETWORK_FIRST.some((p) => url.pathname.endsWith(p) || url.pathname === p);
+/** HTML, scripts, styles, icons, and data — always prefer network so deploys show up immediately */
+function networkFirst(request) {
+  return fetch(request, { cache: 'no-store' })
+    .then(function (res) {
+      if (res && res.ok) {
+        var clone = res.clone();
+        caches.open(CACHE).then(function (c) {
+          c.put(request, clone);
+        });
+      }
+      return res;
+    })
+    .catch(function () {
+      return caches.match(request);
+    });
 }
 
-self.addEventListener('install', (event) => {
-  event.waitUntil(
-    caches.open(CACHE).then((cache) => cache.addAll(PRECACHE)).then(() => self.skipWaiting())
-  );
+function isAppShell(pathname) {
+  if (pathname.endsWith('.html') || pathname === '/') return true;
+  if (/\.(js|css|json)$/i.test(pathname)) return true;
+  if (pathname.indexOf('/icons/') === 0) return true;
+  if (pathname === '/sw.js') return true;
+  if (pathname.indexOf('/api/') === 0) return true;
+  return false;
+}
+
+self.addEventListener('install', function (event) {
+  event.waitUntil(self.skipWaiting());
 });
 
-self.addEventListener('activate', (event) => {
+self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches
       .keys()
-      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
-      .then(() => self.clients.claim())
+      .then(function (keys) {
+        return Promise.all(
+          keys.filter(function (k) {
+            return k !== CACHE;
+          }).map(function (k) {
+            return caches.delete(k);
+          })
+        );
+      })
+      .then(function () {
+        return self.clients.claim();
+      })
   );
 });
 
-self.addEventListener('fetch', (event) => {
+self.addEventListener('fetch', function (event) {
   if (event.request.method !== 'GET') return;
-  const url = new URL(event.request.url);
+  var url = new URL(event.request.url);
   if (url.origin !== location.origin) return;
 
-  if (isNetworkFirst(url)) {
+  if (isAppShell(url.pathname)) {
+    event.respondWith(networkFirst(event.request));
+    return;
+  }
+
+  if (url.pathname.indexOf('/images/') !== -1) {
     event.respondWith(
-      fetch(event.request)
-        .then((res) => {
+      caches.match(event.request).then(function (cached) {
+        var network = fetch(event.request).then(function (res) {
           if (res.ok) {
-            caches.open(CACHE).then((c) => c.put(event.request, res.clone()));
+            caches.open(CACHE).then(function (c) {
+              c.put(event.request, res.clone());
+            });
           }
           return res;
-        })
-        .catch(() => caches.match(event.request))
+        });
+        return cached || network;
+      })
     );
     return;
   }
 
-  event.respondWith(
-    caches.match(event.request).then((cached) => {
-      const network = fetch(event.request)
-        .then((res) => {
-          if (res.ok && url.pathname.includes('/images/')) {
-            caches.open(CACHE).then((c) => c.put(event.request, res.clone()));
-          }
-          return res;
-        })
-        .catch(() => cached);
-      return cached || network;
-    })
-  );
+  event.respondWith(networkFirst(event.request));
 });

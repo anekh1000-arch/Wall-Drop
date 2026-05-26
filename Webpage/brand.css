@@ -1,11 +1,11 @@
-/* WallDrop logo mark — use with icons/logo.svg */
+/* WallDrop logo — icons/logo.png (black bg matches site) */
 .site-logo{
-  width:28px;height:28px;
+  width:32px;height:32px;
   display:block;flex-shrink:0;
   object-fit:contain;
 }
-.site-logo--sm{width:22px;height:22px}
-.site-logo--lg{width:40px;height:40px}
+.site-logo--sm{width:26px;height:26px}
+.site-logo--lg{width:44px;height:44px}
 .logo,
 .footer-brand,
 .page-loader__brand{
@@ -32,4 +32,4 @@
   transition:color 0.15s;
 }
 .footer-brand:hover .footer-brand__text{color:var(--silver,#a0a0a0)}
-.footer-brand .site-logo--sm{opacity:0.85}
+.footer-brand .site-logo--sm{opacity:0.92}

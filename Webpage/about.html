@@ -5,8 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>About — WallDrop</title>
 <meta name="description" content="WallDrop — dark and minimal wallpapers. Free, curated, made for calm screens.">
-<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="icon" href="icons/logo.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon.png?v=2">
+<link rel="stylesheet" href="scroll-reveal.css">
 <link rel="stylesheet" href="brand.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="loader.css">
@@ -267,7 +268,7 @@ footer{
   <div class="page-loader__grid"></div>
   <div class="page-loader__inner">
     <div class="page-loader__brand">
-      <img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">
+      <img src="icons/logo.png?v=2" alt="" class="site-logo site-logo--sm" width="26" height="26">
       <span class="logo-text">WallDrop</span>
     </div>
     <svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">
@@ -282,7 +283,7 @@ footer{
 <nav>
   <a href="index.html" class="logo-link" aria-label="WallDrop home">
     <div class="logo">
-      <img src="icons/logo.svg" alt="" class="site-logo" width="28" height="28">
+      <img src="icons/logo.png?v=2" alt="" class="site-logo" width="32" height="32">
       <span class="logo-text">WallDrop</span>
     </div>
   </a>
@@ -308,16 +309,16 @@ footer{
 
 <div class="about-body">
 
-  <div class="story">
+  <div class="story reveal--soft" data-reveal>
     <p><strong>WallDrop</strong> was created for people who enjoy simplicity. A place where dark tones, subtle gradients, and minimal compositions come together.</p>
   </div>
 
-  <div class="goal-card">
+  <div class="goal-card reveal--soft" data-reveal>
     <div class="goal-label">The goal is simple</div>
     <p>Create wallpapers that make your screen feel cleaner, calmer, and more focused.</p>
   </div>
 
-  <div class="pillars">
+  <div class="pillars" data-reveal>
     <div class="pillar">
       <h3>Minimal</h3>
       <p>By design</p>
@@ -342,9 +343,9 @@ footer{
 </div>
 </main>
 
-<footer>
+<footer class="reveal--soft" data-reveal>
   <a href="index.html" class="footer-brand" aria-label="WallDrop home">
-    <img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">
+    <img src="icons/logo.png?v=2" alt="" class="site-logo site-logo--sm" width="26" height="26">
     <span class="footer-brand__text">WallDrop</span>
   </a>
   <nav class="footer-nav" aria-label="Footer navigation">
@@ -354,6 +355,7 @@ footer{
   <p class="footer-copy">© 2026 WallDrop · Dark &amp; minimal wallpapers</p>
 </footer>
 
+<script src="scroll-reveal.js"></script>
 <script src="site.js"></script>
 <script src="loader.js"></script>
 </body>

@@ -40,8 +40,9 @@
 }
 </script>
 <meta name="twitter:image" content="https://wall-drops.vercel.app/images/wallpapers/desktop/sagittarius-black.jpg">
-<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
-<link rel="apple-touch-icon" href="icons/icon.svg">
+<link rel="icon" href="icons/logo.png?v=2" type="image/png">
+<link rel="apple-touch-icon" href="icons/icon.png?v=2">
+<link rel="stylesheet" href="scroll-reveal.css">
 <link rel="stylesheet" href="brand.css">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="loader.css">
@@ -599,16 +600,6 @@ footer{
 .hero-sub{animation:fadeUp 0.5s 0.15s ease both}
 .search-row{animation:fadeUp 0.5s 0.2s ease both}
 .stats-row{animation:fadeUp 0.5s 0.25s ease both}
-.wall-card{animation:fadeUp 0.5s ease both}
-.wall-card:nth-child(1){animation-delay:0.05s}
-.wall-card:nth-child(2){animation-delay:0.1s}
-.wall-card:nth-child(3){animation-delay:0.14s}
-.wall-card:nth-child(4){animation-delay:0.18s}
-.wall-card:nth-child(5){animation-delay:0.22s}
-.wall-card:nth-child(6){animation-delay:0.26s}
-.wall-card:nth-child(7){animation-delay:0.3s}
-.wall-card:nth-child(8){animation-delay:0.34s}
-
 @media(max-width:640px){
   nav,.hero,.gallery-wrap,.filter-section,footer{padding-left:1rem;padding-right:1rem}
   nav{padding:0 1rem;position:relative;flex-wrap:wrap}
@@ -641,7 +632,7 @@ footer{
   <div class="page-loader__grid"></div>
   <div class="page-loader__inner">
     <div class="page-loader__brand">
-      <img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">
+      <img src="icons/logo.png?v=2" alt="" class="site-logo site-logo--sm" width="26" height="26">
       <span class="logo-text">WallDrop</span>
     </div>
     <svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">
@@ -657,7 +648,7 @@ footer{
 <nav>
   <a href="index.html" class="logo-link" style="text-decoration:none;color:inherit" aria-label="WallDrop home">
     <div class="logo">
-      <img src="icons/logo.svg" alt="" class="site-logo" width="28" height="28">
+      <img src="icons/logo.png?v=2" alt="" class="site-logo" width="32" height="32">
       <span class="logo-text">WallDrop</span>
     </div>
   </a>
@@ -714,7 +705,7 @@ footer{
     <button class="search-btn">Search</button>
   </div>
 
-  <div class="stats-row">
+  <div class="stats-row reveal--soft" data-reveal>
     <div class="stat">
       <div class="stat-val" id="wall-count">0</div>
       <div class="stat-label">Uploaded</div>
@@ -735,7 +726,7 @@ footer{
 </section>
 
 <!-- FILTER BAR -->
-<div class="filter-section" id="filterSection" aria-label="Filter wallpapers">
+<div class="filter-section reveal--soft" id="filterSection" data-reveal aria-label="Filter wallpapers">
   <div style="width:100%">
     <div class="filters" id="filters">
       <button class="pill active" data-cat="all">All</button>
@@ -755,7 +746,7 @@ footer{
 </div>
 
 <!-- GALLERY -->
-<div class="gallery-wrap">
+<div class="gallery-wrap" data-reveal>
   <div class="gallery" id="gallery">
     <div class="empty-state visible" id="emptyState">
       <div class="empty-title">No wallpapers yet</div>
@@ -768,9 +759,9 @@ footer{
 </main>
 
 <!-- FOOTER -->
-<footer>
+<footer class="reveal--soft" data-reveal>
   <a href="index.html" class="footer-brand" aria-label="WallDrop home">
-    <img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">
+    <img src="icons/logo.png?v=2" alt="" class="site-logo site-logo--sm" width="26" height="26">
     <span class="footer-brand__text">WallDrop</span>
   </a>
   <nav class="footer-nav" aria-label="Footer navigation">
@@ -783,13 +774,19 @@ footer{
 <div class="toast" id="toast"></div>
 
 <script src="loader.js"></script>
+<script src="scroll-reveal.js"></script>
 <script src="gallery.js"></script>
 <script src="downloads-sync.js"></script>
 <script src="walldrop-app.js"></script>
 <script>
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
-    navigator.serviceWorker.register('sw.js').catch(function(){});
+    navigator.serviceWorker.register('sw.js').then(function(reg){
+      reg.update();
+      document.addEventListener('visibilitychange',function(){
+        if(document.visibilityState==='visible') reg.update();
+      });
+    }).catch(function(){});
   });
 }
 </script>

@@ -1,0 +1,39 @@
+.reveal{
+  opacity:0;
+  transform:translate3d(0,36px,0);
+  filter:blur(6px);
+  transition:
+    opacity 0.85s cubic-bezier(0.22,1,0.36,1),
+    transform 0.85s cubic-bezier(0.22,1,0.36,1),
+    filter 0.85s cubic-bezier(0.22,1,0.36,1);
+  transition-delay:var(--reveal-delay,0ms);
+  will-change:opacity,transform,filter;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform:translate3d(0,0,0);
+  filter:blur(0);
+  will-change:auto;
+}
+.reveal--soft{
+  transform:translate3d(0,20px,0);
+  filter:none;
+}
+.reveal--soft.is-visible{filter:none}
+.reveal--left{
+  transform:translate3d(-28px,0,0);
+  filter:none;
+}
+.reveal--right{
+  transform:translate3d(28px,0,0);
+  filter:none;
+}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{
+    opacity:1;
+    transform:none;
+    filter:none;
+    transition:none;
+  }
+}
