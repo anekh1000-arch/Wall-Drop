@@ -615,7 +615,18 @@ footer{
   .search-row{flex-direction:column;align-items:stretch}
   .search-wrap{width:100%}
   .footer-nav{gap:1.5rem;flex-wrap:wrap;justify-content:center}
-  .filter-section{flex-direction:column;gap:0.8rem;align-items:flex-start;padding:1rem}
+  .filter-section{
+    position:static;top:auto;z-index:1;
+    background:var(--bg);
+    backdrop-filter:none;-webkit-backdrop-filter:none;
+    border-bottom:none;
+    flex-direction:column;gap:0.8rem;align-items:flex-start;padding:1rem;
+  }
+  .filters,.device-group{
+    overflow-x:auto;overscroll-behavior-x:contain;
+    -webkit-overflow-scrolling:touch;
+  }
+  .filters{flex-wrap:nowrap}
 }
 </style>
 </head>
