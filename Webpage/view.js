@@ -207,4 +207,31 @@
   if (window.WallDropDownloads) {
     window.WallDropDownloads.syncFromServer().then(updateDlStat);
   }
+
+  // Desktop / Mac: clicking the empty left/right gutters should go back.
+  // (Avoids interfering with the image + controls.)
+  document.addEventListener(
+    'click',
+    function (e) {
+      if (isMobile) return;
+      if (e.defaultPrevented) return;
+      if (e.button && e.button !== 0) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+
+      var t = e.target;
+      if (t && t.closest && t.closest('a,button,select,option,label,input,textarea,.view-img-wrap,.view-meta,nav')) return;
+
+      var x = typeof e.clientX === 'number' ? e.clientX : 0;
+      var edge = 120; // px
+      if (x > edge && x < window.innerWidth - edge) return;
+
+      e.preventDefault();
+      if (window.WallDropLoader && typeof window.WallDropLoader.navigate === 'function') {
+        window.WallDropLoader.navigate('index.html');
+      } else {
+        location.href = 'index.html';
+      }
+    },
+    true
+  );
 })();
