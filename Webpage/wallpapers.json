@@ -1,7 +1,7 @@
 {
   "wallpapers": [
     {
-      "title": "Car",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -13,11 +13,12 @@
         "dark",
         "desktop"
       ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Fox",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -29,10 +30,11 @@
       "tags": [
         "dark",
         "desktop"
-      ]
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Macos Monterey Stock Black",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -42,13 +44,12 @@
       ],
       "tags": [
         "dark",
-        "desktop",
-        "stock",
-        "os"
-      ]
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Sagittarius Black",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -59,10 +60,11 @@
       "tags": [
         "dark",
         "desktop"
-      ]
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Spider Man",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -74,10 +76,11 @@
       "tags": [
         "dark",
         "desktop"
-      ]
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Violet Patterns",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
@@ -88,12 +91,28 @@
       ],
       "tags": [
         "dark",
-        "desktop",
-        "patterns"
-      ]
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Windows 11 Dark Mode",
+      "title": "Obsidian Drift",
+      "category": "dark",
+      "device": "desktop",
+      "resolution": "3840×2160",
+      "image": "wallpapersden.com_ship-monochrome_2560x1617.jpg",
+      "vibes": [
+        "gray",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
+    },
+    {
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "7680×4320",
@@ -103,12 +122,162 @@
       ],
       "tags": [
         "dark",
-        "desktop",
-        "os"
+        "desktop"
       ],
+      "curatedTag": "Stillness Collection",
       "width": 7680,
       "height": 4320
+    },
+    {
+      "title": "Eternal Void",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "421c9091-38ba-4775-9de9-20c8a173d503(1).jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Noir Silence",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Obsidian Drift",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "a68e939b-5014-446f-937c-3d46d5aa20a5.jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Eternal Void",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "e6e4138b-9932-403f-95f1-b3627ec89e49.jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Midnight Eclipse",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "f3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Midnight Eclipse",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "IMG_0009.JPG",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Obsidian Drift",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "IMG_0010.JPG",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Midnight Eclipse",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "IMG_1345.JPG",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Midnight Eclipse",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "IMG_1558.JPG",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
+    },
+    {
+      "title": "Midnight Eclipse",
+      "category": "dark",
+      "device": "mobile",
+      "resolution": "1284×2778",
+      "image": "jon-tyson-eYVEsLmljlA-unsplash.jpg",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     }
   ],
-  "generatedAt": "2026-05-26T06:46:07.347Z"
+  "generatedAt": "2026-05-26T07:35:30.835Z"
 }

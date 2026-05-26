@@ -36,6 +36,70 @@ function titleFromStem(stem) {
   return s ? s.replace(/\b\w/g, (c) => c.toUpperCase()) : 'Untitled';
 }
 
+function stableHash(input) {
+  // small deterministic hash for repeatable “random” title choices
+  let h = 2166136261;
+  for (let i = 0; i < input.length; i++) {
+    h ^= input.charCodeAt(i);
+    h = Math.imul(h, 16777619);
+  }
+  return h >>> 0;
+}
+
+function pick(arr, key) {
+  if (!arr.length) return '';
+  return arr[stableHash(key) % arr.length];
+}
+
+function getAestheticTitle(filename, category) {
+  const base = path.parse(filename).name;
+  const cleaned = base
+    .replace(/^\d+[-_ ]*/g, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+
+  const key = `${filename}|${category}`;
+
+  const titleMap = [
+    { test: /\b(dark|black|amoled|noir|night|midnight)\b/i, titles: ['Eternal Void', 'Midnight Eclipse', 'Noir Silence', 'Obsidian Drift'] },
+    { test: /\b(gradient|aurora|fade|glow)\b/i, titles: ['Liquid Aurora', 'Fade To Silence', 'Prism Haze', 'Soft Horizon'] },
+    { test: /\b(tech|code|terminal|system|subsystem|matrix|digital)\b/i, titles: ['Subsystem 01', 'Digital Oasis', 'Signal Black', 'Kernel Dream'] },
+    { test: /\b(minimal|minimalist|simple|clean)\b/i, titles: ['Quiet Geometry', 'Minimal Stillness', 'Slate Calm', 'Plainlight'] },
+    { test: /\b(mono|monochrome|bw)\b/i, titles: ['Monochrome Temple', 'Two-Tone Drift', 'Ink & Air', 'Silent Contrast'] },
+    { test: /\b(violet|purple|lavender)\b/i, titles: ['Violet Current', 'Amethyst Calm', 'Orchid Night', 'Plum Vapor'] },
+    { test: /\b(fox|amber|orange|sunset)\b/i, titles: ['Amber Wake', 'Copper Dusk', 'Foxfire', 'Warm Signal'] },
+    { test: /\b(spider|spiderman|spider-man)\b/i, titles: ['Scarlet Night', 'Webline', 'Crimson City', 'Neon Swing'] },
+    { test: /\b(windows|mac|macos|monterey)\b/i, titles: ['System Noir', 'Monterey Afterdark', 'OS Shadow', 'Stock Serenity'] }
+  ];
+
+  for (const rule of titleMap) {
+    if (rule.test.test(cleaned) || rule.test.test(filename) || (category && rule.test.test(category))) {
+      return pick(rule.titles, key);
+    }
+  }
+
+  const baseTitle = titleFromStem(cleaned || base);
+  const suffixes = ['Nordic Dusk', 'Quiet Edition', 'Minimal Selection', 'Studio Cut', 'Stillness Series'];
+  return `${baseTitle} · ${pick(suffixes, key)}`;
+}
+
+function getCuratedTag(category, device, resolution) {
+  const key = `${category}|${device}|${resolution}`;
+  const tags = [
+    'Premium AMOLED Edition',
+    'Minimalist Selection',
+    'Studio Cut',
+    'Night Mode Curated',
+    'Stillness Collection'
+  ];
+  if (category === 'gradient') tags.unshift('Gradient Study');
+  if (category === 'monochrome') tags.unshift('Monochrome Study');
+  if (device === 'mobile') tags.unshift('Pocket Perfect');
+  return pick(tags, key) || 'Curated';
+}
+
 function parseFilename(name) {
   const stem = path.parse(name).name;
   if (stem.includes('--')) {
@@ -180,19 +244,20 @@ function scanFolder(folder, device) {
   for (const filename of names) {
     const parsed = parseFilename(filename);
     const filePath = path.join(folder, filename);
-    const title = titleFromStem(parsed.titleStem);
+    const aestheticTitle = getAestheticTitle(filename, parsed.category);
     const size = readImageSize(filePath);
     const res = size ? formatRes(size.w, size.h) : FALLBACK_RES[device];
-    const vibes = inferVibes(title, parsed.category, filename, parsed.extraVibes || []);
+    const vibes = inferVibes(aestheticTitle, parsed.category, filename, parsed.extraVibes || []);
 
     const entry = {
-      title,
+      title: aestheticTitle,
       category: parsed.category,
       device,
       resolution: res,
       image: filename,
       vibes,
-      tags: inferTags(title, parsed.category, device)
+      tags: inferTags(aestheticTitle, parsed.category, device),
+      curatedTag: getCuratedTag(parsed.category, device, res)
     };
     if (size) {
       entry.width = size.w;

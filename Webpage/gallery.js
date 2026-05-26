@@ -155,6 +155,8 @@
       })
       .join('');
 
+    const curated = item.curatedTag ? String(item.curatedTag) : '';
+
     card.innerHTML =
       '<div class="wall-thumb"></div>' +
       '<div class="res-badge">' +
@@ -162,9 +164,14 @@
       '</div>' +
       '<div class="wall-overlay"><span class="wall-view-hint">View</span></div>' +
       '<div class="card-meta">' +
+      '<div class="card-text">' +
       '<span class="card-title">' +
       escapeHtml(item.title) +
       '</span>' +
+      '<span class="card-subtitle">' +
+      escapeHtml(curated || 'Curated · 4K') +
+      '</span>' +
+      '</div>' +
       '<div class="card-right">' +
       tagsHtml +
       '<span class="dl-count" data-dlkey="' +
