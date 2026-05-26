@@ -191,25 +191,6 @@
     requestAnimationFrame(step);
   }
 
-  function openWallpaperPage(card) {
-    const url = card && card.dataset.viewUrl;
-    if (!url) return;
-    window.location.href = url;
-  }
-
-  function bindCardInteractions() {
-    cards().forEach((card) => {
-      const thumb = card.querySelector('.wall-thumb');
-      const overlay = card.querySelector('.wall-overlay');
-      const go = (e) => {
-        e.preventDefault();
-        openWallpaperPage(card);
-      };
-      if (thumb) thumb.addEventListener('click', go);
-      if (overlay) overlay.addEventListener('click', go);
-    });
-  }
-
   function scrollToGallery() {
     const el = document.getElementById('gallery') || document.getElementById('filterSection');
     if (el) el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
@@ -239,7 +220,6 @@
       state = { downloadsByImage: {}, totalDownloads: 0 };
     }
     rebuildDownloadsArray();
-    bindCardInteractions();
     renderStats(true);
   }
 

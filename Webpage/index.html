@@ -165,8 +165,8 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 }
 .badge-dot{
   width:6px;height:6px;border-radius:50%;flex-shrink:0;
-  background:#a78bfa;
-  box-shadow:0 0 10px rgba(167,139,250,0.95),0 0 24px rgba(139,92,246,0.45);
+  background:#fbbf24;
+  box-shadow:0 0 10px rgba(251,191,36,0.95),0 0 22px rgba(245,158,11,0.5);
   animation:badgePulse 2.4s ease-in-out infinite;
 }
 .badge-label{
@@ -189,12 +189,12 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   0%,100%{
     opacity:1;
     transform:scale(1);
-    box-shadow:0 0 10px rgba(167,139,250,0.95),0 0 24px rgba(139,92,246,0.5);
+    box-shadow:0 0 10px rgba(251,191,36,0.95),0 0 22px rgba(245,158,11,0.55);
   }
   50%{
-    opacity:0.9;
+    opacity:0.92;
     transform:scale(1.18);
-    box-shadow:0 0 14px rgba(196,181,253,1),0 0 30px rgba(167,139,250,0.7);
+    box-shadow:0 0 14px rgba(253,224,71,1),0 0 28px rgba(251,191,36,0.75);
   }
 }
 
@@ -465,6 +465,15 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   cursor:pointer;transition:all 0.15s;text-decoration:none;display:inline-block;
 }
 .pre-btn:hover,a.pre-btn:hover{border-color:rgba(255,255,255,0.4);color:white;background:rgba(0,0,0,0.6)}
+.wall-card-link{
+  display:block;text-decoration:none;color:inherit;
+  position:relative;
+}
+.wall-card-link:focus-visible{
+  outline:2px solid rgba(255,255,255,0.35);
+  outline-offset:3px;
+  border-radius:4px;
+}
 .wall-thumb{cursor:pointer}
 
 /* RESOLUTION badge */
@@ -765,6 +774,7 @@ footer{
 
 <div class="toast" id="toast"></div>
 
+<script src="loader.js"></script>
 <script src="gallery.js"></script>
 <script src="downloads-sync.js"></script>
 <script src="walldrop-app.js"></script>
@@ -777,6 +787,5 @@ if('serviceWorker' in navigator){
 </script>
 <script src="hero-anim.js"></script>
 <script src="site.js"></script>
-<script src="loader.js"></script>
 </body>
 </html>

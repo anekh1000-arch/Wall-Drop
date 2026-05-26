@@ -190,11 +190,15 @@
     const curated = item.curatedTag ? String(item.curatedTag) : '';
 
     card.innerHTML =
+      '<a class="wall-card-link" href="' +
+      escapeAttr(viewUrl) +
+      '">' +
       '<div class="wall-thumb"></div>' +
       '<div class="res-badge">' +
       escapeHtml(resolution) +
       '</div>' +
       '<div class="wall-overlay"><span class="wall-view-hint">View</span></div>' +
+      '</a>' +
       '<div class="card-meta">' +
       '<div class="card-text">' +
       '<span class="card-title">' +
@@ -221,6 +225,10 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function escapeAttr(s) {
+    return escapeHtml(s);
   }
 
   function appendCardsInChunks(validItems, gallery, emptyEl, onDone) {

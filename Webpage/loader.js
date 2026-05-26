@@ -7,7 +7,9 @@
     '<div id="page-loader" class="page-loader" aria-live="polite" aria-busy="true">' +
     '<div class="page-loader__grid"></div>' +
     '<div class="page-loader__inner">' +
-    '<div class="page-loader__brand"><span class="page-loader__dot"></span>WallDrop</div>' +
+    '<div class="page-loader__brand">' +
+    '<img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">' +
+    '<span class="logo-text">WallDrop</span></div>' +
     '<svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">' +
     '<circle cx="22" cy="22" r="18"></circle>' +
     '<circle class="ring-progress" cx="22" cy="22" r="18"></circle>' +
@@ -23,7 +25,12 @@
       const url = new URL(href, location.href);
       if (url.origin !== location.origin) return false;
       const path = url.pathname.toLowerCase();
-      return path.endsWith('.html') || path.endsWith('/') || path.endsWith('/index.html');
+      return (
+        path.endsWith('.html') ||
+        path.endsWith('/') ||
+        path.endsWith('/index.html') ||
+        path.indexOf('view.html') !== -1
+      );
     } catch {
       return false;
     }
@@ -62,6 +69,20 @@
     }, wait);
   }
 
+  function navigateWithLoader(url) {
+    if (!url) return;
+    try {
+      const target = new URL(url, location.href);
+      if (target.href === location.href) return;
+    } catch (e) {
+      return;
+    }
+    showLoader();
+    setTimeout(function () {
+      location.href = url;
+    }, NAV_DELAY_MS);
+  }
+
   document.addEventListener('click', function (e) {
     var a = e.target.closest('a[href]');
     if (!a || !isPageLink(a)) return;
@@ -72,10 +93,7 @@
       return;
     }
     e.preventDefault();
-    showLoader();
-    setTimeout(function () {
-      location.href = a.href;
-    }, NAV_DELAY_MS);
+    navigateWithLoader(a.href);
   });
 
   if (document.readyState === 'loading') {
@@ -87,4 +105,10 @@
   window.addEventListener('pageshow', function (e) {
     if (e.persisted) hideLoader();
   });
+
+  window.WallDropLoader = {
+    show: showLoader,
+    hide: hideLoader,
+    navigate: navigateWithLoader
+  };
 })();

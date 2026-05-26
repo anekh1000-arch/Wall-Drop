@@ -100,8 +100,26 @@ nav a:hover{color:var(--white)}
   .view-img{max-height:calc(100vh - 280px)}
 }
 </style>
+<script>document.documentElement.classList.add('is-loading');</script>
 </head>
 <body>
+
+<div id="page-loader" class="page-loader" aria-live="polite" aria-busy="true">
+  <div class="page-loader__grid"></div>
+  <div class="page-loader__inner">
+    <div class="page-loader__brand">
+      <img src="icons/logo.svg" alt="" class="site-logo site-logo--sm" width="22" height="22">
+      <span class="logo-text">WallDrop</span>
+    </div>
+    <svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">
+      <circle cx="22" cy="22" r="18"></circle>
+      <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
+    </svg>
+    <div class="page-loader__bar"><div class="page-loader__bar-fill"></div></div>
+    <span class="page-loader__label">Loading</span>
+  </div>
+</div>
+
 <nav>
   <a href="index.html" class="logo" aria-label="WallDrop home">
     <img src="icons/logo.svg" alt="" class="site-logo" width="28" height="28">
@@ -114,8 +132,8 @@ nav a:hover{color:var(--white)}
   <p class="view-error">Loading…</p>
 </main>
 
+<script src="loader.js"></script>
 <script src="downloads-sync.js"></script>
 <script src="view.js"></script>
-<script src="loader.js"></script>
 </body>
 </html>
