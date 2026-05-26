@@ -12,10 +12,12 @@
   };
 
   const VALID_DEVICES = new Set(['desktop', 'mobile', 'mac']);
-  const CARD_CHUNK = 10;
-  const LAZY_ROOT_MARGIN = '500px 0px';
+  const CARD_CHUNK = 24;
+  const EAGER_COUNT = 20;
+  const LAZY_ROOT_MARGIN = '1400px 0px';
 
   let lazyObserver = null;
+  let scrollPrimeBound = false;
 
   function formatRes(w, h) {
     return w + '\u00d7' + h;
@@ -37,6 +39,42 @@
       { rootMargin: LAZY_ROOT_MARGIN, threshold: 0.01 }
     );
     return lazyObserver;
+  }
+
+  function primeImage(img) {
+    var src = img.dataset.src;
+    if (!src || img.getAttribute('src')) return;
+    img.src = src;
+    if (lazyObserver) lazyObserver.unobserve(img);
+  }
+
+  function primeNearbyImages() {
+    var ahead = Math.max(window.innerHeight * 1.25, 900);
+    document.querySelectorAll('.wall-card:not(.hidden) img[data-src]').forEach(function (img) {
+      var card = img.closest('.wall-card');
+      if (!card) return;
+      var r = card.getBoundingClientRect();
+      if (r.top < ahead && r.bottom > -ahead) primeImage(img);
+    });
+  }
+
+  function bindScrollPrime() {
+    if (scrollPrimeBound) return;
+    scrollPrimeBound = true;
+    var ticking = false;
+    function onScroll() {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () {
+        ticking = false;
+        primeNearbyImages();
+        if (window.WallDropReveal && typeof window.WallDropReveal.flushCards === 'function') {
+          window.WallDropReveal.flushCards();
+        }
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll, { passive: true });
   }
 
   function applyNaturalSize(card, img, item) {
@@ -119,7 +157,7 @@
     return 'view.html?' + q.toString();
   }
 
-  function buildCard(item, index) {
+  function buildCard(item, index, eager) {
     const imagePath = resolveImagePath(item);
     const resolution =
       item.width && item.height
@@ -156,7 +194,6 @@
     skeleton.setAttribute('aria-hidden', 'true');
 
     const img = document.createElement('img');
-    img.dataset.src = imagePath;
     img.alt =
       item.alt ||
       (item.title +
@@ -167,8 +204,16 @@
             ? 'Mac wallpaper'
             : 'desktop wallpaper') +
         ' 4K');
-    img.loading = 'lazy';
     img.decoding = 'async';
+    if (eager) {
+      img.src = imagePath;
+      img.loading = 'eager';
+      if (index < 6) img.fetchPriority = 'high';
+    } else {
+      img.dataset.src = imagePath;
+      img.loading = 'lazy';
+      ensureLazyObserver().observe(img);
+    }
     img.addEventListener('load', function () {
       thumbInner.classList.remove('is-loading');
       applyNaturalSize(card, img, item);
@@ -179,7 +224,6 @@
     });
     thumbInner.appendChild(skeleton);
     thumbInner.appendChild(img);
-    ensureLazyObserver().observe(img);
 
     const tagsHtml = deviceTags(item.device)
       .map(function (t) {
@@ -235,20 +279,30 @@
     var index = 0;
     var pos = 0;
 
+    function afterChunk() {
+      primeNearbyImages();
+      if (window.WallDropReveal && typeof window.WallDropReveal.flushCards === 'function') {
+        window.WallDropReveal.flushCards();
+      }
+    }
+
     function chunk() {
       var end = Math.min(pos + CARD_CHUNK, validItems.length);
       for (; pos < end; pos++) {
-        gallery.insertBefore(buildCard(validItems[pos], index), emptyEl);
+        gallery.insertBefore(buildCard(validItems[pos], index, pos < EAGER_COUNT), emptyEl);
         index++;
       }
+      afterChunk();
       if (pos < validItems.length) {
         requestAnimationFrame(chunk);
       } else if (onDone) {
+        bindScrollPrime();
+        afterChunk();
         onDone(index);
       }
     }
 
-    requestAnimationFrame(chunk);
+    chunk();
   }
 
   window.initWallDropGallery = async function () {

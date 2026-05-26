@@ -10,10 +10,26 @@
     el.classList.add('reveal', 'is-visible');
   }
 
+  function isNearViewport(el, margin) {
+    margin = margin || 0;
+    var r = el.getBoundingClientRect();
+    return r.top < window.innerHeight + margin && r.bottom > -margin;
+  }
+
   function observe(el, index) {
     if (!el || el.classList.contains('is-visible')) return;
     el.classList.add('reveal');
-    if (typeof index === 'number' && index > 0) {
+    if (el.classList.contains('wall-card')) {
+      if (typeof index === 'number' && index > 0 && index < 12) {
+        el.style.setProperty('--reveal-delay', Math.min(index * STAGGER_MS, 280) + 'ms');
+      } else {
+        el.style.removeProperty('--reveal-delay');
+      }
+      if (prefersReducedMotion() || isNearViewport(el, 320)) {
+        el.classList.add('is-visible');
+        return;
+      }
+    } else if (typeof index === 'number' && index > 0) {
       el.style.setProperty('--reveal-delay', index * STAGGER_MS + 'ms');
     }
     if (prefersReducedMotion()) {
@@ -21,6 +37,13 @@
       return;
     }
     if (observer) observer.observe(el);
+  }
+
+  function flushCards() {
+    document.querySelectorAll('.wall-card.reveal:not(.is-visible)').forEach(function (card) {
+      if (card.classList.contains('hidden')) return;
+      if (isNearViewport(card, 480)) card.classList.add('is-visible');
+    });
   }
 
   function initObserver() {
@@ -32,7 +55,7 @@
           observer.unobserve(entry.target);
         });
       },
-      { root: null, rootMargin: '0px 0px -6%', threshold: 0.12 }
+      { root: null, rootMargin: '0px 0px 12%', threshold: 0.05 }
     );
   }
 
@@ -82,5 +105,5 @@
     }
   }
 
-  window.WallDropReveal = { observe: observe, scan: scan };
+  window.WallDropReveal = { observe: observe, scan: scan, flushCards: flushCards };
 })();
