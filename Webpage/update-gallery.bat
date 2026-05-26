@@ -41,7 +41,7 @@ if errorlevel 1 (
 
 echo.
 
-echo Done. Refresh your browser or push to Netlify.
+echo Done. Refresh your browser or run push-github.bat for Vercel.
 
 echo.
 

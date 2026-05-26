@@ -1,47 +1,42 @@
-# Deploy WallDrop on Vercel
+# WallDrop on Vercel
 
-Repo on GitHub: [anekh1000-arch/Wall-Drop](https://github.com/anekh1000-arch/Wall-Drop)
+**Live site:** https://wall-drops.vercel.app/
 
-**Important:** the live site files are in the **`Webpage`** folder, not the repo root. Vercel must use that folder or you will get **404 NOT_FOUND**.
+Repo: [anekh1000-arch/Wall-Drop](https://github.com/anekh1000-arch/Wall-Drop) — site files are in **`Webpage/`**.
 
-## Vercel project settings
+## How deployment works
 
-In the Vercel dashboard → your project → **Settings → General**:
+`vercel.repo.json` (copied to the **repo root** as `vercel.json` by `push-github.bat`) tells Vercel:
 
-| Setting | Value |
-|---------|--------|
-| **Root Directory** | `Webpage` |
-| **Framework Preset** | Other (or None) |
-| **Build Command** | `npm run build` |
-| **Output Directory** | `.` (dot = same folder as `index.html`) |
-| **Install Command** | leave empty, or `npm install` if you add dependencies later |
+- Run `npm run build` inside `Webpage/`
+- Serve static files from `Webpage/` as the site root
 
-`vercel.json` in `Webpage/` repeats these settings for consistency.
+You do **not** need to set Root Directory in the Vercel dashboard when this file is at the repo root.
 
-## Environment variable
+`Webpage/vercel.json` is the same config if you ever set Root Directory to `Webpage` instead.
 
-**Settings → Environment Variables**
+## Vercel dashboard (one-time)
 
-| Name | Value | Environments |
-|------|--------|----------------|
-| `SITE_URL` | `https://wall-drops.vercel.app` | Production |
+1. Import **anekh1000-arch/Wall-Drop** from GitHub.
+2. **Framework Preset:** Other  
+3. **Environment variable** (Production):  
+   - `SITE_URL` = `https://wall-drops.vercel.app`
+4. Deploy. Each `push-github.bat` run triggers a new deploy.
 
-Live site: **https://wall-drops.vercel.app/**
-
-After adding or changing `SITE_URL`, redeploy so `sitemap.xml` and `robots.txt` use the correct domain.
-
-## Publish code from your PC
+## Publish from your PC
 
 1. Edit in `D:\Webpage`
-2. Run **`push-github.bat`** (copies into `D:\Wall-Drop\Webpage` and pushes)
-3. Vercel redeploys automatically on push
+2. Double-click **`push-github.bat`**
+3. Wait for **Push OK**
 
-## If you still see 404
+## Troubleshooting
 
-1. Confirm **Root Directory** is exactly `Webpage` (case-sensitive).
-2. Open the latest deployment → **Build Logs** — build should finish without errors.
-3. Open **Deployment → Source** and check that `index.html` appears at the top level of the deployed output (not only under another folder).
+| Problem | Fix |
+|---------|-----|
+| 404 NOT_FOUND | Ensure repo root has `vercel.json` (run `push-github.bat`). Clear **Root Directory** in Vercel settings (leave empty) *or* set it to `Webpage` — not both wrongly. |
+| Empty gallery | Build must run: `npm run build` in `Webpage/`. Check deployment build logs. |
+| Git errors | Script auto-repairs; or re-clone `D:\Wall-Drop` |
 
 ## Custom domain
 
-**Settings → Domains** → add your domain, then set `SITE_URL` to that HTTPS URL and redeploy.
+Vercel → **Settings → Domains**, add your domain, set `SITE_URL` to that HTTPS URL, redeploy.

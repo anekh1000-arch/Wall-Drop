@@ -4,8 +4,8 @@ Repo: [anekh1000-arch/Wall-Drop](https://github.com/anekh1000-arch/Wall-Drop)
 
 Your site files live in the **`Webpage`** folder on GitHub. Edit locally in `D:\Webpage`, then publish with **`push-github.bat`** (easiest) or the steps below.
 
-Live URL (after Pages is enabled):  
-`https://anekh1000-arch.github.io/Wall-Drop/Webpage/`
+**Live URL (Vercel):** https://wall-drops.vercel.app/  
+(GitHub Pages, optional): `https://anekh1000-arch.github.io/Wall-Drop/Webpage/`
 
 ## One-time setup
 

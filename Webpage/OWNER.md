@@ -59,8 +59,8 @@ Upload the whole `Webpage` folder including `images/wallpapers/` and `wallpapers
 
 | Tool | Best for |
 |------|----------|
-| **Decap CMS** | Browser editor + Netlify/GitHub hosting |
+| **Decap CMS** | Browser editor + GitHub hosting |
 | **Cloudinary** | Many large images; CDN URLs in JSON |
-| **Netlify Drop** | Drag entire site folder to deploy |
+| **Vercel** | Git push deploy — see VERCEL-DEPLOY.md |
 
 Day-to-day on your PC: **folders + update-gallery.bat** is enough.
