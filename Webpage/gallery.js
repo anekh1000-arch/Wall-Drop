@@ -12,9 +12,31 @@
   };
 
   const VALID_DEVICES = new Set(['desktop', 'mobile', 'mac']);
+  const CARD_CHUNK = 10;
+  const LAZY_ROOT_MARGIN = '500px 0px';
+
+  let lazyObserver = null;
 
   function formatRes(w, h) {
     return w + '\u00d7' + h;
+  }
+
+  function ensureLazyObserver() {
+    if (lazyObserver) return lazyObserver;
+    lazyObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          var img = entry.target;
+          var src = img.dataset.src;
+          if (!src || img.getAttribute('src')) return;
+          img.src = src;
+          lazyObserver.unobserve(img);
+        });
+      },
+      { rootMargin: LAZY_ROOT_MARGIN, threshold: 0.01 }
+    );
+    return lazyObserver;
   }
 
   function applyNaturalSize(card, img, item) {
@@ -134,7 +156,7 @@
     skeleton.setAttribute('aria-hidden', 'true');
 
     const img = document.createElement('img');
-    img.src = imagePath;
+    img.dataset.src = imagePath;
     img.alt =
       item.alt ||
       (item.title +
@@ -155,12 +177,9 @@
       thumbInner.classList.remove('is-loading');
       thumbInner.classList.add('is-error');
     });
-    if (img.complete && img.naturalWidth) {
-      thumbInner.classList.remove('is-loading');
-      applyNaturalSize(card, img, item);
-    }
     thumbInner.appendChild(skeleton);
     thumbInner.appendChild(img);
+    ensureLazyObserver().observe(img);
 
     const tagsHtml = deviceTags(item.device)
       .map(function (t) {
@@ -204,6 +223,26 @@
       .replace(/"/g, '&quot;');
   }
 
+  function appendCardsInChunks(validItems, gallery, emptyEl, onDone) {
+    var index = 0;
+    var pos = 0;
+
+    function chunk() {
+      var end = Math.min(pos + CARD_CHUNK, validItems.length);
+      for (; pos < end; pos++) {
+        gallery.insertBefore(buildCard(validItems[pos], index), emptyEl);
+        index++;
+      }
+      if (pos < validItems.length) {
+        requestAnimationFrame(chunk);
+      } else if (onDone) {
+        onDone(index);
+      }
+    }
+
+    requestAnimationFrame(chunk);
+  }
+
   window.initWallDropGallery = async function () {
     const gallery = document.getElementById('gallery');
     const emptyEl = document.getElementById('emptyState');
@@ -231,14 +270,9 @@
       el.remove();
     });
 
-    var index = 0;
-    items.forEach(function (item) {
-      if (!isValidItem(item)) return;
-      gallery.insertBefore(buildCard(item, index), emptyEl);
-      index++;
-    });
+    var validItems = items.filter(isValidItem);
 
-    if (index === 0) {
+    if (validItems.length === 0) {
       emptyEl.classList.add('visible');
       emptyEl.querySelector('.empty-title').textContent = 'No wallpapers yet';
       emptyEl.querySelector('p').textContent =
@@ -246,10 +280,14 @@
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.textContent = 'Tip: use WebP/AVIF for faster loads — see PERFORMANCE.md';
       if (hint) hint.style.display = 'inline-block';
-    } else {
-      emptyEl.classList.remove('visible');
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: 0 } }));
+      return;
     }
 
-    window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: index } }));
+    emptyEl.classList.remove('visible');
+
+    appendCardsInChunks(validItems, gallery, emptyEl, function (count) {
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: count } }));
+    });
   };
 })();

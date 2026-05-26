@@ -349,35 +349,6 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 .device-pill:hover{border-color:var(--silver);color:var(--silver)}
 .device-pill.active{background:rgba(255,255,255,0.08);border-color:var(--border-light);color:var(--white)}
 .filter-section.is-disabled{opacity:0.4;pointer-events:none;user-select:none}
-.filter-vibes{
-  display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;
-  margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid var(--border);
-  width:100%;
-}
-.filter-vibes-label{
-  font-size:0.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.12em;margin-right:0.25rem;
-}
-.vibe-swatch{
-  width:22px;height:22px;border-radius:50%;padding:0;cursor:pointer;
-  border:2px solid transparent;transition:transform 0.15s,border-color 0.15s,box-shadow 0.15s;
-  flex-shrink:0;
-}
-.vibe-swatch[data-vibe="all"]{
-  background:conic-gradient(#f5f5f5,#888,#222,#f5f5f5);
-}
-.vibe-swatch[data-vibe="black"]{background:#0a0a0a}
-.vibe-swatch[data-vibe="white"]{background:#e8e8e8}
-.vibe-swatch[data-vibe="gray"]{background:#6b6b6b}
-.vibe-swatch[data-vibe="red"]{background:#9b1c1c}
-.vibe-swatch[data-vibe="orange"]{background:#c45c1a}
-.vibe-swatch[data-vibe="yellow"]{background:#b89a2a}
-.vibe-swatch[data-vibe="green"]{background:#2d6b4a}
-.vibe-swatch[data-vibe="blue"]{background:#2a4a7a}
-.vibe-swatch[data-vibe="purple"]{background:#5a3d8a}
-.vibe-swatch[data-vibe="pink"]{background:#8a4a6a}
-.vibe-swatch[data-vibe="pastel"]{background:linear-gradient(135deg,#c8b8e8,#f0d8c8)}
-.vibe-swatch:hover{transform:scale(1.08)}
-.vibe-swatch.active{border-color:var(--white);box-shadow:0 0 0 2px rgba(255,255,255,0.15)}
 .thumb-skeleton{
   position:absolute;inset:0;
   background:linear-gradient(110deg,#0e0e0e 8%,#161616 18%,#0e0e0e 33%);
@@ -834,16 +805,6 @@ footer{
       <button class="pill" data-cat="abstract">Abstract</button>
       <button class="pill" data-cat="monochrome">Monochrome</button>
       <button class="pill" data-cat="gradient">Gradient</button>
-    </div>
-    <div class="filter-vibes" id="vibeFilters" aria-label="Filter by color vibe">
-      <span class="filter-vibes-label">Vibe</span>
-      <button type="button" class="vibe-swatch pill active" data-vibe="all" title="All colors" aria-label="All colors"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="black" title="Dark / black" aria-label="Black"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="purple" title="Purple" aria-label="Purple"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="blue" title="Blue" aria-label="Blue"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="orange" title="Orange" aria-label="Orange"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="red" title="Red" aria-label="Red"></button>
-      <button type="button" class="vibe-swatch pill" data-vibe="pastel" title="Pastel" aria-label="Pastel"></button>
     </div>
   </div>
   <div class="device-group" id="deviceGroup">

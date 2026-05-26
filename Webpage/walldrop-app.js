@@ -1,15 +1,13 @@
 /* WallDrop — gallery UI, filters, lightbox, downloads */
 (function () {
-  const STORAGE_KEY = 'walldrop_v3';
-  const DOWNLOAD_BASELINE = 1240;
-  const BASELINE_KEY = 'walldrop_dl_baseline_v1';
+  const STORAGE_KEY = 'walldrop_v4';
+  const MIGRATION_KEY = 'walldrop_v4_migrated';
 
   const cards = () => [...document.querySelectorAll('.wall-card')];
 
   let state = { downloads: [], downloadsByImage: {}, wallCount: 0, totalDownloads: 0 };
   let activeCat = 'all';
   let activeDev = 'all';
-  let activeVibe = 'all';
   let sortMode = 'default';
   let searchQuery = '';
   let galleryCount = 0;
@@ -52,21 +50,24 @@
     showToast._t = setTimeout(() => t.classList.remove('show'), 2400);
   }
 
-  function ensureBaseline() {
+  function resetDownloadStorageOnce() {
     try {
-      if (!localStorage.getItem(BASELINE_KEY)) {
-        localStorage.setItem(BASELINE_KEY, String(DOWNLOAD_BASELINE));
-      }
+      if (localStorage.getItem(MIGRATION_KEY)) return;
+      ['walldrop_v3', 'walldrop_v2', 'walldrop_dl_baseline_v1'].forEach((k) => localStorage.removeItem(k));
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(MIGRATION_KEY, '1');
     } catch (e) {}
   }
 
   function getDisplayDownloads() {
-    const local = state.totalDownloads || 0;
-    let stored = DOWNLOAD_BASELINE;
-    try {
-      stored = parseInt(localStorage.getItem(BASELINE_KEY) || String(DOWNLOAD_BASELINE), 10);
-    } catch (e) {}
-    return stored + local;
+    return state.totalDownloads || 0;
+  }
+
+  function downloadCountForCard(card) {
+    const key = card.dataset.image;
+    if (key && state.downloadsByImage) return state.downloadsByImage[key] || 0;
+    const i = card.dataset.index != null ? +card.dataset.index : -1;
+    return i >= 0 ? state.downloads[i] || 0 : 0;
   }
 
   function loadState() {
@@ -125,10 +126,6 @@
     const tags = (card.dataset.tags || '').toLowerCase();
     const catOk = activeCat === 'all' || cat === activeCat;
     const devOk = activeDev === 'all' || dev === activeDev;
-    const vibeOk =
-      activeVibe === 'all' ||
-      vibes.split(',').some((v) => v.trim() === activeVibe) ||
-      tags.includes(activeVibe);
     const q = searchQuery.toLowerCase();
     const searchOk =
       !q ||
@@ -137,7 +134,7 @@
       vibes.includes(q) ||
       tags.includes(q) ||
       (card.dataset.res || '').toLowerCase().includes(q);
-    return catOk && devOk && vibeOk && searchOk;
+    return catOk && devOk && searchOk;
   }
 
   function sortCards() {
@@ -147,9 +144,10 @@
 
     const list = cards().slice();
     list.sort((a, b) => {
-      const da = state.downloads[cardIndex(a)] || 0;
-      const db = state.downloads[cardIndex(b)] || 0;
-      return db - da;
+      const da = downloadCountForCard(a);
+      const db = downloadCountForCard(b);
+      if (db !== da) return db - da;
+      return (+a.dataset.index || 0) - (+b.dataset.index || 0);
     });
     list.forEach((card) => gallery.insertBefore(card, emptyEl));
   }
@@ -189,7 +187,7 @@
     emptyEl.classList.toggle('visible', visible === 0);
     if (visible === 0) {
       emptyEl.querySelector('.empty-title').textContent = 'No wallpapers found';
-      emptyEl.querySelector('p').textContent = 'Try a different search, color vibe, or filter.';
+      emptyEl.querySelector('p').textContent = 'Try a different search or filter.';
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.style.display = 'none';
     }
@@ -215,8 +213,8 @@
     updateFilterBar();
 
     document.querySelectorAll('[data-dlkey]').forEach((el) => {
-      const i = +el.dataset.dlkey;
-      const n = state.downloads[i] || 0;
+      const card = el.closest('.wall-card');
+      const n = card ? downloadCountForCard(card) : state.downloads[+el.dataset.dlkey] || 0;
       el.textContent = n === 0 ? '0 dls' : fmtNum(n) + ' dls';
     });
 
@@ -489,7 +487,7 @@
   }
 
   function bootWallDrop(ev) {
-    ensureBaseline();
+    resetDownloadStorageOnce();
     galleryCount = (ev && ev.detail && ev.detail.count) || cards().length;
     state = loadState();
     bindCardInteractions();
@@ -514,23 +512,11 @@
   if (filtersEl) {
     filtersEl.addEventListener('click', (e) => {
       const btn = e.target.closest('.pill');
-      if (!btn || btn.classList.contains('vibe-swatch')) return;
-      document.querySelectorAll('#filters .pill:not(.vibe-swatch)').forEach((b) => b.classList.remove('active'));
+      if (!btn) return;
+      document.querySelectorAll('#filters .pill').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       activeCat = btn.dataset.cat;
       sortMode = 'default';
-      applyFilters(false);
-    });
-  }
-
-  const vibeRow = document.getElementById('vibeFilters');
-  if (vibeRow) {
-    vibeRow.addEventListener('click', (e) => {
-      const sw = e.target.closest('.vibe-swatch');
-      if (!sw) return;
-      vibeRow.querySelectorAll('.vibe-swatch').forEach((b) => b.classList.remove('active'));
-      sw.classList.add('active');
-      activeVibe = sw.dataset.vibe || 'all';
       applyFilters(false);
     });
   }
@@ -566,13 +552,13 @@
       if (nav === 'collections') {
         sortMode = 'default';
         activeCat = 'all';
-        activeVibe = 'all';
-        document.querySelectorAll('#filters .pill:not(.vibe-swatch)').forEach((b) => {
+        activeDev = 'all';
+        document.querySelectorAll('#filters .pill').forEach((b) => {
           b.classList.toggle('active', b.dataset.cat === 'all');
         });
-        if (vibeRow) {
-          vibeRow.querySelectorAll('.vibe-swatch').forEach((b) => {
-            b.classList.toggle('active', b.dataset.vibe === 'all');
+        if (deviceGroup) {
+          deviceGroup.querySelectorAll('.device-pill').forEach((b) => {
+            b.classList.toggle('active', b.dataset.dev === 'all');
           });
         }
         scrollToGallery();
@@ -580,9 +566,20 @@
         showToast('All collections');
       } else if (nav === 'popular') {
         sortMode = 'popular';
+        activeCat = 'all';
+        activeDev = 'all';
+        document.querySelectorAll('#filters .pill').forEach((b) => {
+          b.classList.toggle('active', b.dataset.cat === 'all');
+        });
+        if (deviceGroup) {
+          deviceGroup.querySelectorAll('.device-pill').forEach((b) => {
+            b.classList.toggle('active', b.dataset.dev === 'all');
+          });
+        }
         scrollToGallery();
+        sortCards();
         applyFilters(false);
-        showToast('Sorted by downloads');
+        showToast('Most downloaded first');
       }
     });
   });

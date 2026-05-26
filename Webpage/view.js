@@ -1,7 +1,6 @@
 (function () {
-  const STORAGE_KEY = 'walldrop_v3';
-  const BASELINE_KEY = 'walldrop_dl_baseline_v1';
-  const DOWNLOAD_BASELINE = 1240;
+  const STORAGE_KEY = 'walldrop_v4';
+  const MIGRATION_KEY = 'walldrop_v4_migrated';
 
   const params = new URLSearchParams(location.search);
   const src = params.get('src');
@@ -91,7 +90,17 @@
   imgEl.addEventListener('load', showNaturalSize);
   if (imgEl.complete && imgEl.naturalWidth) showNaturalSize();
 
+  function resetDownloadStorageOnce() {
+    try {
+      if (localStorage.getItem(MIGRATION_KEY)) return;
+      ['walldrop_v3', 'walldrop_v2', 'walldrop_dl_baseline_v1'].forEach((k) => localStorage.removeItem(k));
+      localStorage.removeItem(STORAGE_KEY);
+      localStorage.setItem(MIGRATION_KEY, '1');
+    } catch (e) {}
+  }
+
   function loadState() {
+    resetDownloadStorageOnce();
     const byImage = {};
     let totalDownloads = 0;
     try {
@@ -114,9 +123,6 @@
           totalDownloads
         })
       );
-      if (!localStorage.getItem(BASELINE_KEY)) {
-        localStorage.setItem(BASELINE_KEY, String(DOWNLOAD_BASELINE));
-      }
     } catch (e) {}
   }
 
