@@ -5,7 +5,21 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>WallDrop — Clean & Minimal Wallpapers</title>
 <meta name="description" content="WallDrop — free dark and minimal wallpapers for desktop and mobile. Download calm, high-contrast backgrounds.">
+<meta name="theme-color" content="#080808">
+<link rel="canonical" href="https://wall-drops.netlify.app/">
+<link rel="manifest" href="manifest.json">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://wall-drops.netlify.app/">
+<meta property="og:title" content="WallDrop — Clean & Minimal Wallpapers">
+<meta property="og:description" content="Designed for stillness. Free dark & minimal wallpapers for desktop and mobile.">
+<meta property="og:image" content="https://wall-drops.netlify.app/images/wallpapers/desktop/sagittarius-black.jpg">
+<meta property="og:site_name" content="WallDrop">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WallDrop — Clean & Minimal Wallpapers">
+<meta name="twitter:description" content="Designed for stillness. Free dark & minimal wallpapers.">
+<meta name="twitter:image" content="https://wall-drops.netlify.app/images/wallpapers/desktop/sagittarius-black.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect fill='%23080808' width='32' height='32' rx='6'/%3E%3Ccircle cx='10' cy='16' r='3' fill='%23f5f5f5'/%3E%3C/svg%3E">
+<link rel="apple-touch-icon" href="icons/icon.svg">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="loader.css">
 <link rel="stylesheet" href="cursor.css">
@@ -313,6 +327,61 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 .device-pill:hover{border-color:var(--silver);color:var(--silver)}
 .device-pill.active{background:rgba(255,255,255,0.08);border-color:var(--border-light);color:var(--white)}
 .filter-section.is-disabled{opacity:0.4;pointer-events:none;user-select:none}
+.filter-vibes{
+  display:flex;align-items:center;gap:0.45rem;flex-wrap:wrap;
+  margin-top:0.85rem;padding-top:0.85rem;border-top:1px solid var(--border);
+  width:100%;
+}
+.filter-vibes-label{
+  font-size:0.62rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.12em;margin-right:0.25rem;
+}
+.vibe-swatch{
+  width:22px;height:22px;border-radius:50%;padding:0;cursor:pointer;
+  border:2px solid transparent;transition:transform 0.15s,border-color 0.15s,box-shadow 0.15s;
+  flex-shrink:0;
+}
+.vibe-swatch[data-vibe="all"]{
+  background:conic-gradient(#f5f5f5,#888,#222,#f5f5f5);
+}
+.vibe-swatch[data-vibe="black"]{background:#0a0a0a}
+.vibe-swatch[data-vibe="white"]{background:#e8e8e8}
+.vibe-swatch[data-vibe="gray"]{background:#6b6b6b}
+.vibe-swatch[data-vibe="red"]{background:#9b1c1c}
+.vibe-swatch[data-vibe="orange"]{background:#c45c1a}
+.vibe-swatch[data-vibe="yellow"]{background:#b89a2a}
+.vibe-swatch[data-vibe="green"]{background:#2d6b4a}
+.vibe-swatch[data-vibe="blue"]{background:#2a4a7a}
+.vibe-swatch[data-vibe="purple"]{background:#5a3d8a}
+.vibe-swatch[data-vibe="pink"]{background:#8a4a6a}
+.vibe-swatch[data-vibe="pastel"]{background:linear-gradient(135deg,#c8b8e8,#f0d8c8)}
+.vibe-swatch:hover{transform:scale(1.08)}
+.vibe-swatch.active{border-color:var(--white);box-shadow:0 0 0 2px rgba(255,255,255,0.15)}
+.thumb-skeleton{
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,#0e0e0e 8%,#161616 18%,#0e0e0e 33%);
+  background-size:200% 100%;
+  animation:shimmer 1.2s ease-in-out infinite;
+}
+.wall-thumb-inner.is-loading img{opacity:0}
+.wall-thumb-inner:not(.is-loading) .thumb-skeleton{display:none}
+@keyframes shimmer{
+  0%{background-position:200% 0}
+  100%{background-position:-200% 0}
+}
+.wall-thumb-inner{position:relative}
+.lb-quality-row{
+  display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:0.5rem;
+}
+.lb-quality-row label{font-size:0.62rem;color:var(--dim);letter-spacing:0.1em;text-transform:uppercase}
+.lb-quality{
+  background:var(--surface);border:1px solid var(--border-light);color:var(--silver);
+  font-family:'Inter',sans-serif;font-size:0.72rem;padding:0.45rem 0.75rem;border-radius:8px;
+  cursor:pointer;
+}
+.lb-wall-hint{
+  font-size:0.68rem;color:var(--dim);max-width:28rem;text-align:center;line-height:1.5;
+  margin-top:-0.35rem;
+}
 
 /* ── GALLERY ── */
 .gallery-wrap{padding:1.5rem 3rem 4rem}
@@ -653,8 +722,8 @@ footer{
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Browse</a></li>
-    <li><a href="#" data-soon="Collections">Collections</a></li>
-    <li><a href="#" data-soon="Popular">Popular</a></li>
+    <li><a href="#gallery" data-nav="collections">Collections</a></li>
+    <li><a href="#gallery" data-nav="popular">Popular</a></li>
     <li><a href="about.html">About</a></li>
   </ul>
   <div class="nav-right">
@@ -726,13 +795,25 @@ footer{
 
 <!-- FILTER BAR -->
 <div class="filter-section" id="filterSection" aria-label="Filter wallpapers">
-  <div class="filters" id="filters">
-    <button class="pill active" data-cat="all">All</button>
-    <button class="pill" data-cat="dark">Dark</button>
-    <button class="pill" data-cat="minimal">Minimal</button>
-    <button class="pill" data-cat="abstract">Abstract</button>
-    <button class="pill" data-cat="monochrome">Monochrome</button>
-    <button class="pill" data-cat="gradient">Gradient</button>
+  <div style="width:100%">
+    <div class="filters" id="filters">
+      <button class="pill active" data-cat="all">All</button>
+      <button class="pill" data-cat="dark">Dark</button>
+      <button class="pill" data-cat="minimal">Minimal</button>
+      <button class="pill" data-cat="abstract">Abstract</button>
+      <button class="pill" data-cat="monochrome">Monochrome</button>
+      <button class="pill" data-cat="gradient">Gradient</button>
+    </div>
+    <div class="filter-vibes" id="vibeFilters" aria-label="Filter by color vibe">
+      <span class="filter-vibes-label">Vibe</span>
+      <button type="button" class="vibe-swatch pill active" data-vibe="all" title="All colors" aria-label="All colors"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="black" title="Dark / black" aria-label="Black"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="purple" title="Purple" aria-label="Purple"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="blue" title="Blue" aria-label="Blue"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="orange" title="Orange" aria-label="Orange"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="red" title="Red" aria-label="Red"></button>
+      <button type="button" class="vibe-swatch pill" data-vibe="pastel" title="Pastel" aria-label="Pastel"></button>
+    </div>
   </div>
   <div class="device-group" id="deviceGroup">
     <button class="device-pill active" data-dev="all">All</button>
@@ -746,7 +827,8 @@ footer{
   <div class="gallery" id="gallery">
     <div class="empty-state visible" id="emptyState">
       <div class="empty-title">No wallpapers yet</div>
-      <p>Copy images into <strong>images/wallpapers/desktop</strong> or <strong>mobile</strong>, then run <strong>update-gallery.bat</strong>.</p>
+      <p>Add wallpapers to <strong>images/wallpapers/desktop</strong> or <strong>mobile</strong>, then deploy. Netlify rebuilds the gallery automatically.</p>
+      <span class="empty-hint">Tip: convert large PNGs to WebP for faster loads — see PERFORMANCE.md</span>
     </div>
 
   </div>
@@ -777,371 +859,28 @@ footer{
       <div class="wall-lightbox__sub" id="lbSub">—</div>
     </div>
     <div class="wall-lightbox__actions">
+      <div class="lb-quality-row">
+        <label for="lbQuality">Quality</label>
+        <select class="lb-quality" id="lbQuality" aria-label="Download quality">
+          <option value="original">Original (full resolution)</option>
+          <option value="1080p">1080p optimized</option>
+          <option value="mobile">Mobile aspect</option>
+        </select>
+      </div>
       <button type="button" class="dl-btn" id="lbDownload">↓ Download</button>
       <a class="pre-btn" id="lbFullPage" href="#">Full page</a>
     </div>
+    <p class="lb-wall-hint" id="lbWallHint"></p>
   </div>
 </div>
 
 <script src="gallery.js"></script>
+<script src="walldrop-app.js"></script>
 <script>
-/* ── STATE (downloads keyed by image — survives new uploads) ── */
-const STORAGE_KEY='walldrop_v3';
-const cards=()=>[...document.querySelectorAll('.wall-card')];
-
-function loadState(){
-  const total=cards().length;
-  const byImage={};
-  let totalDownloads=0;
-  try{
-    let s=JSON.parse(localStorage.getItem(STORAGE_KEY));
-    if(!s){
-      const old=JSON.parse(localStorage.getItem('walldrop_v2'));
-      if(old) s=old;
-    }
-    s=s||{};
-    if(s.downloadsByImage&&typeof s.downloadsByImage==='object'){
-      Object.assign(byImage,s.downloadsByImage);
-    }
-    if(Array.isArray(s.downloadKeys)&&Array.isArray(s.downloads)){
-      s.downloadKeys.forEach((key,i)=>{
-        if(key) byImage[key]=(byImage[key]||0)+(s.downloads[i]||0);
-      });
-    }
-    if(typeof s.totalDownloads==='number') totalDownloads=s.totalDownloads;
-  }catch{}
-  const downloads=cards().map(c=>byImage[c.dataset.image]||0);
-  const sum=downloads.reduce((a,b)=>a+b,0);
-  if(!totalDownloads) totalDownloads=sum;
-  return{downloads,downloadsByImage:byImage,wallCount:total,totalDownloads};
-}
-
-function saveState(s){
-  const downloadsByImage={};
-  const downloadKeys=[];
-  cards().forEach((card,i)=>{
-    const key=card.dataset.image;
-    downloadKeys.push(key);
-    downloadsByImage[key]=s.downloads[i]||0;
+if('serviceWorker' in navigator){
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').catch(function(){});
   });
-  try{
-    localStorage.setItem(STORAGE_KEY,JSON.stringify({
-      downloads:s.downloads,
-      downloadsByImage,
-      downloadKeys,
-      totalDownloads:s.totalDownloads||0
-    }));
-  }catch{}
-}
-
-let state={downloads:[],wallCount:0,totalDownloads:0};
-let activeCat='all',activeDev='all',searchQuery='';
-/* ── HELPERS ── */
-function fmtNum(n){
-  if(n>=1000000) return (n/1000000).toFixed(1).replace(/\.0$/,'')+'M';
-  if(n>=1000) return (n/1000).toFixed(1).replace(/\.0$/,'')+'K';
-  return String(n);
-}
-function easeOut(t){return 1-Math.pow(1-t,3)}
-function cardIndex(card){return cards().indexOf(card)}
-function showToast(msg){
-  const t=document.getElementById('toast');
-  t.textContent=msg;t.classList.add('show');
-  clearTimeout(showToast._t);
-  showToast._t=setTimeout(()=>t.classList.remove('show'),2400);
-}
-
-function cardMatches(card){
-  const cat=card.dataset.cat;
-  const dev=card.dataset.dev;
-  const title=card.querySelector('.card-title').textContent.toLowerCase();
-  const catOk=activeCat==='all'||cat===activeCat;
-  const devOk=activeDev==='all'||dev===activeDev;
-  const q=searchQuery.toLowerCase();
-  const searchOk=!q||title.includes(q)||cat.includes(q);
-  return catOk&&devOk&&searchOk;
-}
-
-function applyFilters(animateSearch){
-  const gallery=document.getElementById('gallery');
-  const q=searchQuery.trim().toLowerCase();
-  let visible=0;
-
-  cards().forEach(card=>{
-    const show=cardMatches(card);
-    card.classList.toggle('hidden',!show);
-    card.classList.remove('is-search-hit');
-    if(show) visible++;
-  });
-
-  if(gallery) gallery.classList.toggle('is-searching',!!q);
-
-  if(animateSearch&&q){
-    requestAnimationFrame(()=>{
-      let hitIndex=0;
-      cards().forEach(card=>{
-        if(card.classList.contains('hidden')) return;
-        card.classList.add('is-search-hit');
-        card.style.setProperty('--pop-delay',Math.min(hitIndex*0.06,0.36)+'s');
-        hitIndex++;
-      });
-    });
-  }
-
-  const emptyEl=document.getElementById('emptyState');
-  const total=cards().length;
-  if(total===0){
-    emptyEl.classList.add('visible');
-    emptyEl.querySelector('.empty-title').textContent='No wallpapers yet';
-    emptyEl.querySelector('p').textContent='Copy images into images/wallpapers/desktop or mobile, then run update-gallery.bat.';
-    emptyEl.querySelector('.empty-hint').style.display='inline-block';
-  }else{
-    emptyEl.classList.toggle('visible',visible===0);
-    if(visible===0){
-      emptyEl.querySelector('.empty-title').textContent='No wallpapers found';
-      emptyEl.querySelector('p').textContent='Try a different search or filter.';
-      emptyEl.querySelector('.empty-hint').style.display='none';
-    }
-  }
-  updateUploadedCount();
-}
-
-function updateUploadedCount(){
-  const el=document.getElementById('wall-count');
-  if(el) el.textContent=fmtNum(cards().length);
-}
-
-/* ── RENDER STATS ── */
-function updateFilterBar(){
-  const fs=document.getElementById('filterSection');
-  if(fs) fs.classList.toggle('is-disabled',cards().length===0);
-}
-
-function renderStats(animate=true){
-  const total=cards().length;
-  const totalDl=state.totalDownloads||state.downloads.reduce((a,b)=>a+b,0);
-  state.wallCount=total;
-  updateFilterBar();
-  document.querySelectorAll('[data-dlkey]').forEach(el=>{
-    const i=+el.dataset.dlkey;
-    const n=state.downloads[i]||0;
-    el.textContent=n===0?'0 dls':fmtNum(n)+' dls';
-  });
-  const wallEl=document.getElementById('wall-count');
-  const dlEl=document.getElementById('dl-count');
-  if(animate&&totalDl>0){
-    animateNum(dlEl,totalDl,'fmtNum');
-  }else{
-    dlEl.textContent=fmtNum(totalDl);
-  }
-  updateUploadedCount();
-  applyFilters(false);
-}
-
-function animateNum(el,target,fmt){
-  const dur=800;const t0=performance.now();
-  function step(now){
-    const p=Math.min((now-t0)/dur,1);
-    const val=Math.round(target*easeOut(p));
-    el.textContent=fmt==='fmtNum'?fmtNum(val):val;
-    if(p<1)requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-function slugFilename(title,ext){
-  return title.replace(/\s+/g,'-').toLowerCase()+'-walldrop'+ext;
-}
-
-function recordDownload(index,title){
-  const card=cards()[index];
-  const key=card&&card.dataset.image;
-  state.downloads[index]=(state.downloads[index]||0)+1;
-  if(key){
-    state.downloadsByImage=state.downloadsByImage||{};
-    state.downloadsByImage[key]=state.downloads[index];
-  }
-  state.totalDownloads=(state.totalDownloads||0)+1;
-  saveState(state);
-  renderStats(false);
-  showToast('Downloaded · '+title);
-}
-
-function downloadImageFile(src,title,index){
-  fetch(src).then(r=>{
-    if(!r.ok) throw new Error('fetch');
-    return r.blob();
-  }).then(blob=>{
-    const ext=(src.match(/\.\w+$/)||['.jpg'])[0];
-    const url=URL.createObjectURL(blob);
-    const a=document.createElement('a');
-    a.href=url;
-    a.download=slugFilename(title,ext);
-    a.click();
-    URL.revokeObjectURL(url);
-    recordDownload(index,title);
-  }).catch(()=>showToast('Download failed — check image path'));
-}
-
-function downloadWallpaper(index){
-  const card=cards()[index];
-  if(!card) return;
-  const title=card.querySelector('.card-title').textContent.trim();
-  const imageSrc=card.dataset.image;
-  if(!imageSrc){showToast('No image file for this wallpaper');return;}
-  downloadImageFile(imageSrc,title,index);
-}
-
-function markDownloadBtn(btn){
-  btn.textContent='✓ Saved';
-  btn.classList.add('done');
-  setTimeout(()=>{btn.textContent='↓ Download';btn.classList.remove('done')},1800);
-}
-
-function triggerDownload(index,btn){
-  downloadWallpaper(index);
-  if(btn) markDownloadBtn(btn);
-}
-
-/* ── LIGHTBOX VIEW ── */
-const lightbox=document.getElementById('wallLightbox');
-const lbImg=document.getElementById('lbImg');
-const lbTitle=document.getElementById('lbTitle');
-const lbSub=document.getElementById('lbSub');
-const lbDownload=document.getElementById('lbDownload');
-const lbFullPage=document.getElementById('lbFullPage');
-const lbClose=document.getElementById('lbClose');
-const lbBackdrop=document.getElementById('lbBackdrop');
-let lightboxIndex=null;
-let lightboxClosing=false;
-
-const reducedMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-function openLightbox(index){
-  const card=cards()[index];
-  if(!card||card.classList.contains('hidden')||lightboxClosing) return;
-  const img=card.querySelector('.wall-thumb-inner img');
-  const src=card.dataset.image;
-  if(!src||!img) return;
-
-  lightboxIndex=index;
-  lbImg.classList.remove('is-ready');
-  lbImg.onload=function(){lbImg.classList.add('is-ready')};
-  if(lbImg.src!==src) lbImg.src=src;
-  else if(lbImg.complete) lbImg.classList.add('is-ready');
-  lbImg.alt=card.querySelector('.card-title').textContent;
-  lbTitle.textContent=card.querySelector('.card-title').textContent;
-  lbSub.textContent=(card.dataset.res||'')+' · '+(card.dataset.cat||'')+' · '+(card.dataset.dev==='mobile'?'Mobile':'Desktop');
-  if(card.dataset.viewUrl) lbFullPage.href=card.dataset.viewUrl;
-
-  card.classList.add('is-launching');
-  setTimeout(()=>card.classList.remove('is-launching'),reducedMotion?0:380);
-
-  lightbox.setAttribute('aria-hidden','false');
-  document.body.style.overflow='hidden';
-  if(reducedMotion){
-    lightbox.classList.add('is-open');
-    return;
-  }
-  lightbox.classList.remove('is-open');
-  void lightbox.offsetWidth;
-  requestAnimationFrame(()=>lightbox.classList.add('is-open'));
-}
-
-function closeLightbox(){
-  if(!lightbox.classList.contains('is-open')||lightboxClosing) return;
-  lightboxClosing=true;
-  lightbox.classList.remove('is-open');
-  const wait=reducedMotion?0:420;
-  setTimeout(()=>{
-    lightbox.setAttribute('aria-hidden','true');
-    document.body.style.overflow='';
-    lbImg.removeAttribute('src');
-    lbImg.classList.remove('is-ready');
-    lightboxIndex=null;
-    lightboxClosing=false;
-  },wait);
-}
-
-lbClose.addEventListener('click',closeLightbox);
-lbBackdrop.addEventListener('click',closeLightbox);
-lbDownload.addEventListener('click',()=>{
-  if(lightboxIndex!==null) triggerDownload(lightboxIndex,lbDownload);
-});
-document.addEventListener('keydown',e=>{
-  if(e.key==='Escape'&&lightbox.classList.contains('is-open')) closeLightbox();
-});
-
-/* ── CARD INTERACTIONS ── */
-function bindCardInteractions(){
-  cards().forEach((card,i)=>{
-    const thumb=card.querySelector('.wall-thumb');
-    if(thumb){
-      thumb.addEventListener('click',e=>{
-        e.preventDefault();
-        openLightbox(i);
-      });
-    }
-  });
-}
-
-/* ── FILTERS & SEARCH ── */
-document.getElementById('filters').addEventListener('click',e=>{
-  const btn=e.target.closest('.pill');if(!btn) return;
-  document.querySelectorAll('.pill').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  activeCat=btn.dataset.cat;
-  applyFilters(false);
-});
-
-document.getElementById('deviceGroup').addEventListener('click',e=>{
-  const btn=e.target.closest('.device-pill');if(!btn) return;
-  document.querySelectorAll('.device-pill').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-  activeDev=btn.dataset.dev;
-  applyFilters(false);
-});
-
-let searchInputTimer;
-
-function runSearch(animate){
-  searchQuery=document.querySelector('.search-wrap input').value.trim();
-  if(cards().length===0){
-    if(searchQuery) showToast('No wallpapers uploaded yet');
-    return;
-  }
-  applyFilters(animate!==false);
-}
-
-function onSearchInput(){
-  clearTimeout(searchInputTimer);
-  searchInputTimer=setTimeout(()=>runSearch(true),70);
-}
-
-document.querySelector('.search-btn').addEventListener('click',()=>runSearch(true));
-document.querySelector('.search-wrap input').addEventListener('keydown',e=>{
-  if(e.key==='Enter') runSearch(true);
-});
-document.querySelector('.search-wrap input').addEventListener('input',onSearchInput);
-
-/* ── NAV SCROLL ── */
-document.querySelectorAll('.nav-links a[href="#"]').forEach(a=>{
-  a.addEventListener('click',e=>{
-    e.preventDefault();
-    showToast('Coming soon — '+(a.dataset.soon||a.textContent.trim()));
-  });
-});
-/* ── INIT ── */
-function bootWallDrop(){
-  state=loadState();
-  bindCardInteractions();
-  renderStats();
-}
-window.addEventListener('walldrop:gallery-ready',bootWallDrop);
-if(typeof initWallDropGallery==='function'){
-  initWallDropGallery();
-}else{
-  bootWallDrop();
 }
 </script>
 <script src="hero-anim.js"></script>

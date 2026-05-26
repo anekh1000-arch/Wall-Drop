@@ -40,8 +40,6 @@
       card.dataset.image
     );
     card.dataset.viewUrl = viewUrl;
-    var viewLink = card.querySelector('.pre-btn');
-    if (viewLink) viewLink.href = viewUrl;
   }
 
   function deviceTags(dev) {
@@ -106,6 +104,8 @@
       index,
       imagePath
     );
+    const vibes = Array.isArray(item.vibes) ? item.vibes.join(',') : '';
+    const tags = Array.isArray(item.tags) ? item.tags.join(',') : '';
 
     const card = document.createElement('div');
     card.className = 'wall-card';
@@ -115,6 +115,8 @@
     card.dataset.image = imagePath;
     card.dataset.viewUrl = viewUrl;
     card.dataset.index = String(index);
+    if (vibes) card.dataset.vibes = vibes;
+    if (tags) card.dataset.tags = tags;
     if (item.width) card.dataset.width = String(item.width);
     if (item.height) card.dataset.height = String(item.height);
     if (item.width && item.height) {
@@ -122,18 +124,29 @@
     }
 
     const thumbInner = document.createElement('div');
-    thumbInner.className = 'wall-thumb-inner has-image';
+    thumbInner.className = 'wall-thumb-inner has-image is-loading';
+    const skeleton = document.createElement('div');
+    skeleton.className = 'thumb-skeleton';
+    skeleton.setAttribute('aria-hidden', 'true');
+
     const img = document.createElement('img');
     img.src = imagePath;
     img.alt = item.title;
     img.loading = 'lazy';
     img.decoding = 'async';
     img.addEventListener('load', function () {
+      thumbInner.classList.remove('is-loading');
       applyNaturalSize(card, img, item);
     });
+    img.addEventListener('error', function () {
+      thumbInner.classList.remove('is-loading');
+      thumbInner.classList.add('is-error');
+    });
     if (img.complete && img.naturalWidth) {
+      thumbInner.classList.remove('is-loading');
       applyNaturalSize(card, img, item);
     }
+    thumbInner.appendChild(skeleton);
     thumbInner.appendChild(img);
 
     const tagsHtml = deviceTags(item.device)
@@ -184,7 +197,13 @@
       items = Array.isArray(data.wallpapers) ? data.wallpapers : [];
     } catch (err) {
       console.warn('WallDrop: could not load wallpapers.json', err);
-      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { error: err } }));
+      emptyEl.classList.add('visible');
+      emptyEl.querySelector('.empty-title').textContent = 'Gallery unavailable';
+      emptyEl.querySelector('p').textContent =
+        'Could not load wallpapers.json. On Netlify, ensure the build step runs (npm run build).';
+      const hint = emptyEl.querySelector('.empty-hint');
+      if (hint) hint.style.display = 'none';
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { error: err, count: 0 } }));
       return;
     }
 
@@ -199,10 +218,17 @@
       index++;
     });
 
-    gallery.querySelectorAll('.wall-thumb-inner,.wall-card').forEach(function (el) {
-      el.style.willChange = 'transform';
-      el.style.transform = 'translateZ(0)';
-    });
+    if (index === 0) {
+      emptyEl.classList.add('visible');
+      emptyEl.querySelector('.empty-title').textContent = 'No wallpapers yet';
+      emptyEl.querySelector('p').textContent =
+        'Add images to images/wallpapers/desktop or mobile, then deploy (Netlify runs npm run build automatically).';
+      const hint = emptyEl.querySelector('.empty-hint');
+      if (hint) hint.textContent = 'Tip: use WebP/AVIF for faster loads — see PERFORMANCE.md';
+      if (hint) hint.style.display = 'inline-block';
+    } else {
+      emptyEl.classList.remove('visible');
+    }
 
     window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: index } }));
   };

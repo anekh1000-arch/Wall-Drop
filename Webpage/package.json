@@ -1,0 +1,14 @@
+{
+  "name": "walldrop",
+  "version": "1.0.0",
+  "private": true,
+  "description": "WallDrop — minimal dark wallpaper gallery",
+  "scripts": {
+    "build": "node generate-gallery.js",
+    "prebuild": "node generate-gallery.js",
+    "gallery": "node generate-gallery.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

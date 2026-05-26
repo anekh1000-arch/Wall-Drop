@@ -6,6 +6,13 @@
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "Car.png",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
       "width": 3840,
       "height": 2160
     },
@@ -13,10 +20,16 @@
       "title": "Fox",
       "category": "dark",
       "device": "desktop",
-      "resolution": "5120×2880",
+      "resolution": "3840×2160",
       "image": "Fox.jpg",
-      "width": 5120,
-      "height": 2880
+      "vibes": [
+        "orange",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ]
     },
     {
       "title": "Macos Monterey Stock Black",
@@ -24,8 +37,15 @@
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "Macos-Monterey-Stock-Black.jpg",
-      "width": 3840,
-      "height": 2160
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop",
+        "stock",
+        "os"
+      ]
     },
     {
       "title": "Sagittarius Black",
@@ -33,8 +53,13 @@
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "sagittarius-black.jpg",
-      "width": 3840,
-      "height": 2160
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ]
     },
     {
       "title": "Spider Man",
@@ -42,17 +67,30 @@
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "spider-man.jpg",
-      "width": 3840,
-      "height": 2160
+      "vibes": [
+        "red",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ]
     },
     {
       "title": "Violet Patterns",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×4000",
+      "resolution": "3840×2160",
       "image": "Violet Patterns.jpg",
-      "width": 6000,
-      "height": 4000
+      "vibes": [
+        "purple",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop",
+        "patterns"
+      ]
     },
     {
       "title": "Windows 11 Dark Mode",
@@ -60,8 +98,17 @@
       "device": "desktop",
       "resolution": "7680×4320",
       "image": "Windows-11-Dark-Mode.png",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop",
+        "os"
+      ],
       "width": 7680,
       "height": 4320
     }
-  ]
+  ],
+  "generatedAt": "2026-05-26T06:46:07.347Z"
 }
