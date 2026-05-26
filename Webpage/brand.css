@@ -1,4 +1,4 @@
-/* WallDrop logo — icons/logo.png (black bg matches site) */
+/* WallDrop logo — icons/logo.svg (transparent, scales cleanly) */
 .site-logo{
   width:42px;height:42px;
   display:block;flex-shrink:0;
