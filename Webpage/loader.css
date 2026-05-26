@@ -36,9 +36,7 @@ html.is-loading{overflow:hidden}
   color:#f5f5f5;
   display:flex;align-items:center;gap:8px;
 }
-.page-loader__dot{
-  width:6px;height:6px;border-radius:50%;
-  background:#f5f5f5;
+.page-loader__brand .site-logo{
   animation:loaderPulse 1.4s ease-in-out infinite;
 }
 

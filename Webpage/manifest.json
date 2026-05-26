@@ -16,10 +16,10 @@
       "purpose": "any"
     },
     {
-      "src": "icons/icon.svg",
+      "src": "icons/logo.png",
       "sizes": "512x512",
-      "type": "image/svg+xml",
-      "purpose": "maskable"
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ]
 }

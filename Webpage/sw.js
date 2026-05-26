@@ -1,5 +1,5 @@
 const CACHE = 'walldrop-v4';
-const PRECACHE = ['/', '/index.html', '/manifest.json'];
+const PRECACHE = ['/', '/index.html', '/manifest.json', '/brand.css', '/icons/logo.svg', '/icons/favicon.svg'];
 
 /** Always fetch fresh — gallery data and scripts change on every upload */
 const NETWORK_FIRST = ['/wallpapers.json', '/gallery.js', '/walldrop-app.js', '/index.html'];

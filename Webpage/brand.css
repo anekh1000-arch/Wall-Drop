@@ -1,0 +1,35 @@
+/* WallDrop logo mark — use with icons/logo.svg */
+.site-logo{
+  width:28px;height:28px;
+  display:block;flex-shrink:0;
+  object-fit:contain;
+}
+.site-logo--sm{width:22px;height:22px}
+.site-logo--lg{width:40px;height:40px}
+.logo,
+.footer-brand,
+.page-loader__brand{
+  display:flex;align-items:center;gap:10px;
+}
+.logo-text,
+.footer-brand__text{
+  font-family:'Outfit',sans-serif;
+  font-size:1.05rem;font-weight:600;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--white,#f5f5f5);
+}
+.footer-brand{
+  text-decoration:none;
+  color:inherit;
+  transition:color 0.15s;
+}
+.footer-brand .footer-brand__text{
+  font-size:0.85rem;
+  font-weight:600;
+  letter-spacing:0.2em;
+  color:var(--dim,#555);
+  transition:color 0.15s;
+}
+.footer-brand:hover .footer-brand__text{color:var(--silver,#a0a0a0)}
+.footer-brand .site-logo--sm{opacity:0.85}
