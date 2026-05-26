@@ -1,8 +1,13 @@
 @echo off
 cd /d "%~dp0"
 echo === WallDrop: sync gallery ===
-python sync.py 2>nul
-if errorlevel 1 py sync.py
+if exist "Webpage\sync.py" (
+  python Webpage\sync.py 2>nul
+  if errorlevel 1 py Webpage\sync.py
+) else (
+  python sync.py 2>nul
+  if errorlevel 1 py sync.py
+)
 if errorlevel 1 (
   echo sync failed - fix Python first
   pause
