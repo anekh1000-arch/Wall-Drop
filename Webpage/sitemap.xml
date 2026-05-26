@@ -2,12 +2,25 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://wall-drops.netlify.app/</loc>
-    <lastmod>2026-05-26T07:47:49.628Z</lastmod>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/about</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/license.html</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FCar.png&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=0&amp;w=3840&amp;h=2160</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -18,7 +31,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FFox.jpg&amp;title=Amber+Wake&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=1</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -29,7 +43,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FMacos-Monterey-Stock-Black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=2</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -40,7 +55,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fsagittarius-black.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=3</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -51,7 +67,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fspider-man.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=4</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -62,7 +79,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FViolet+Patterns.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=5</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -73,7 +91,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2Fwallpapersden.com_ship-monochrome_2560x1617.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=desktop&amp;res=3840%C3%972160&amp;i=6</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -84,7 +103,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fdesktop%2FWindows-11-Dark-Mode.png&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=desktop&amp;res=7680%C3%974320&amp;i=7&amp;w=7680&amp;h=4320</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -95,7 +115,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F421c9091-38ba-4775-9de9-20c8a173d503%281%29.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=8</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -106,7 +127,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2F5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg&amp;title=Noir+Silence&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=9</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -117,7 +139,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fa68e939b-5014-446f-937c-3d46d5aa20a5.jpg&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=10</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -128,7 +151,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fe6e4138b-9932-403f-95f1-b3627ec89e49.jpg&amp;title=Eternal+Void&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=11</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -139,7 +163,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Ff3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=12</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -150,7 +175,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0009.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=13</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -161,7 +187,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_0010.JPG&amp;title=Obsidian+Drift&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=14</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -172,7 +199,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1345.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=15</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -183,7 +211,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2FIMG_1558.JPG&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=16</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
@@ -194,7 +223,8 @@
     </image:image>
   </url>
   <url>
-    <loc>https://wall-drops.netlify.app/</loc>
+    <loc>https://wall-drops.netlify.app/view.html?src=images%2Fwallpapers%2Fmobile%2Fjon-tyson-eYVEsLmljlA-unsplash.jpg&amp;title=Midnight+Eclipse&amp;cat=dark&amp;dev=mobile&amp;res=1284%C3%972778&amp;i=17</loc>
+    <lastmod>2026-05-26T08:10:09.678Z</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
