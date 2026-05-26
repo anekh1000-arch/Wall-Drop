@@ -1,15 +1,19 @@
 /* WallDrop logo — icons/logo.png (black bg matches site) */
 .site-logo{
-  width:32px;height:32px;
+  width:42px;height:42px;
   display:block;flex-shrink:0;
   object-fit:contain;
 }
-.site-logo--sm{width:26px;height:26px}
-.site-logo--lg{width:44px;height:44px}
+.site-logo--sm{width:34px;height:34px}
+.site-logo--lg{width:52px;height:52px}
 .logo,
 .footer-brand,
 .page-loader__brand{
-  display:flex;align-items:center;gap:10px;
+  display:flex;align-items:center;gap:12px;
+}
+.logo .site-logo,
+.page-loader__brand .site-logo{
+  width:2.35rem;height:2.35rem;
 }
 .logo-text,
 .footer-brand__text{

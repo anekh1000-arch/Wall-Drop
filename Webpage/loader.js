@@ -10,7 +10,7 @@
     '<div class="page-loader__grid"></div>' +
     '<div class="page-loader__inner">' +
     '<div class="page-loader__brand">' +
-    '<img src="icons/logo.png?v=3" alt="" class="site-logo site-logo--sm" width="26" height="26">' +
+    '<img src="icons/logo.png?v=4" alt="" class="site-logo site-logo--sm" width="34" height="34">' +
     '<span class="logo-text">WallDrop</span></div>' +
     '<svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">' +
     '<circle cx="22" cy="22" r="18"></circle>' +
