@@ -1,6 +1,8 @@
 (function () {
+  const FROM_NAV_KEY = 'walldrop-from-nav';
   const MIN_SHOW_MS = 600;
-  const NAV_DELAY_MS = 480;
+  const NAV_DELAY_MS = 380;
+  const VIEW_NAV_DELAY_MS = 200;
   const start = performance.now();
 
   const LOADER_HTML =
@@ -16,6 +18,10 @@
     '</svg>' +
     '<div class="page-loader__bar"><div class="page-loader__bar-fill"></div></div>' +
     '<span class="page-loader__label">Loading</span></div></div>';
+
+  function isViewPage() {
+    return /view\.html/i.test(location.pathname);
+  }
 
   function isPageLink(anchor) {
     const href = anchor.getAttribute('href');
@@ -36,6 +42,28 @@
     }
   }
 
+  function isViewLink(url) {
+    try {
+      return /view\.html/i.test(new URL(url, location.href).pathname);
+    } catch {
+      return false;
+    }
+  }
+
+  function comingFromNav() {
+    try {
+      return sessionStorage.getItem(FROM_NAV_KEY) === '1';
+    } catch {
+      return false;
+    }
+  }
+
+  function clearNavFlag() {
+    try {
+      sessionStorage.removeItem(FROM_NAV_KEY);
+    } catch (e) {}
+  }
+
   function ensureLoader() {
     var loader = document.getElementById('page-loader');
     if (!loader) {
@@ -53,6 +81,15 @@
     document.documentElement.classList.add('is-loading');
   }
 
+  function hideLoaderImmediate() {
+    var loader = document.getElementById('page-loader');
+    document.documentElement.classList.remove('is-loading');
+    if (!loader) return;
+    loader.classList.add('is-exit');
+    loader.setAttribute('aria-hidden', 'true');
+    loader.setAttribute('aria-busy', 'false');
+  }
+
   function hideLoader() {
     var loader = document.getElementById('page-loader');
     if (!loader) {
@@ -62,10 +99,7 @@
     var elapsed = performance.now() - start;
     var wait = Math.max(0, MIN_SHOW_MS - elapsed);
     setTimeout(function () {
-      loader.classList.add('is-exit');
-      loader.setAttribute('aria-hidden', 'true');
-      loader.setAttribute('aria-busy', 'false');
-      document.documentElement.classList.remove('is-loading');
+      hideLoaderImmediate();
     }, wait);
   }
 
@@ -77,10 +111,20 @@
     } catch (e) {
       return;
     }
+
+    if (isViewLink(url)) {
+      try {
+        sessionStorage.setItem(FROM_NAV_KEY, '1');
+      } catch (e) {}
+    }
+
     showLoader();
-    setTimeout(function () {
-      location.href = url;
-    }, NAV_DELAY_MS);
+    setTimeout(
+      function () {
+        location.href = url;
+      },
+      isViewLink(url) ? VIEW_NAV_DELAY_MS : NAV_DELAY_MS
+    );
   }
 
   document.addEventListener('click', function (e) {
@@ -96,19 +140,29 @@
     navigateWithLoader(a.href);
   });
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', hideLoader);
-  } else {
+  function initOnLoad() {
+    if (isViewPage() && comingFromNav()) {
+      clearNavFlag();
+      hideLoaderImmediate();
+      return;
+    }
     hideLoader();
   }
 
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOnLoad);
+  } else {
+    initOnLoad();
+  }
+
   window.addEventListener('pageshow', function (e) {
-    if (e.persisted) hideLoader();
+    if (e.persisted) hideLoaderImmediate();
   });
 
   window.WallDropLoader = {
     show: showLoader,
     hide: hideLoader,
+    hideImmediate: hideLoaderImmediate,
     navigate: navigateWithLoader
   };
 })();
