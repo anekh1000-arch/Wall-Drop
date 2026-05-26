@@ -1,4 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-label="WallDrop">
-  <path fill="none" stroke="#f0f0f0" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" d="M22 54V34a28 28 0 0 1 56 0v20"/>
-  <path fill="#f0f0f0" d="M50 58c5.5 0 9 8.5 9 14.5S55.5 86 50 86s-9-5.5-9-13.5S44.5 58 50 58z"/>
+  <!-- Monogram W + drop (clean, premium, scalable) -->
+  <path fill="none" stroke="#f0f0f0" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"
+        d="M16 26 30 66 50 34 70 66 84 26"/>
+  <path fill="#f0f0f0" d="M50 70c6.5 0 11 8.8 11 15.6S56.2 96 50 96 39 92.3 39 85.6 43.5 70 50 70z"/>
 </svg>

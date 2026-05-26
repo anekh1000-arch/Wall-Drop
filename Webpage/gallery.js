@@ -122,6 +122,11 @@
       return 'images/wallpapers/' + dev + '/' + raw;
     }
 
+    // Support subfolders like "dark/foo.jpg" (desktop/mobile categorization)
+    if (!raw.startsWith('images/')) {
+      raw = 'images/wallpapers/' + dev + '/' + raw.replace(/^\/+/, '');
+    }
+
     if (raw.indexOf('/wallpapers/' + dev + '/') === -1) {
       console.warn(
         'WallDrop: "' + item.title + '" should use images/wallpapers/' + dev + '/ — check image path'

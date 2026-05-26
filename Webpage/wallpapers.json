@@ -1,616 +1,1135 @@
 {
   "wallpapers": [
     {
-      "title": "20928412 2107.W026.N002.637B.P1.637",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×3000",
+      "resolution": "3840×2160",
       "image": "20928412_2107.w026.n002.637B.p1.637.jpg",
-      "width": 6000,
-      "height": 3000
+      "alt": "Midnight Eclipse — 2107.w026.n002.637b.p1.637 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Beautiful Autumnal Landscape",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "4864×3328",
+      "resolution": "3840×2160",
       "image": "beautiful-autumnal-landscape.jpg",
-      "width": 4864,
-      "height": 3328
+      "alt": "Obsidian Drift — beautiful autumnal landscape dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Blue Aesthetic 3840X2160 17495",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "blue-aesthetic-3840x2160-17495.png",
+      "alt": "Midnight Eclipse — blue aesthetic 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "blue",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Capture 1774525079378",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "2560×1440",
       "image": "capture_1774525079378.png",
+      "alt": "Noir Silence — capture 1774525079378 dark minimalist desktop wallpaper, 2560×1440 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Minimalist Selection",
       "width": 2560,
       "height": 1440
     },
     {
-      "title": "Capture 1775669463248",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "capture_1775669463248.png",
+      "alt": "Midnight Eclipse — capture 1775669463248 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Car",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "Car.png",
+      "alt": "Eternal Void — car dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Elliott Engelmann Djlkxyfjltc Unsplash",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
-      "resolution": "4000×2660",
+      "resolution": "3840×2160",
       "image": "elliott-engelmann-DjlKxYFJlTc-unsplash.jpg",
-      "width": 4000,
-      "height": 2660
+      "alt": "Eternal Void — elliott engelmann djlkxyfjltc dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Floral Purple 3840X2160 21500",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "floral-purple-3840x2160-21500.png",
+      "alt": "Midnight Eclipse — floral purple 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "purple",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Fox",
+      "title": "Amber Wake",
       "category": "dark",
       "device": "desktop",
-      "resolution": "5120×2880",
+      "resolution": "3840×2160",
       "image": "Fox.jpg",
-      "width": 5120,
-      "height": 2880
+      "alt": "Amber Wake — fox dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "orange",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Ian Dooley Dubna1Qmppa Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×4000",
+      "resolution": "3840×2160",
       "image": "ian-dooley-DuBNA1QMpPA-unsplash.jpg",
-      "width": 6000,
-      "height": 4000
+      "alt": "Obsidian Drift — ian dooley dubna1qmppa dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Icy Mountains Wallpaper",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "1920×1080",
       "image": "Icy Mountains Wallpaper.png",
+      "alt": "Midnight Eclipse — icy mountains wallpaper dark minimalist desktop wallpaper, 1920×1080 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 1920,
       "height": 1080
     },
     {
-      "title": "Johannes Plenio Hvrpomumrai Unsplash",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×4000",
+      "resolution": "3840×2160",
       "image": "johannes-plenio-hvrpOmuMrAI-unsplash.jpg",
-      "width": 6000,
-      "height": 4000
+      "alt": "Noir Silence — johannes plenio hvrpomumrai dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Jonatan Pie H8Nxgssjqxs Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "7042×4699",
+      "resolution": "3840×2160",
       "image": "jonatan-pie-h8nxGssjQXs-unsplash.jpg",
-      "width": 7042,
-      "height": 4699
+      "alt": "Obsidian Drift — jonatan pie h8nxgssjqxs dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Macos Monterey Stock Black",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "Macos-Monterey-Stock-Black.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Noir Silence — macos monterey stock dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Milad Fakurian 8Cozowgk9Qo Unsplash",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6016×3384",
+      "resolution": "3840×2160",
       "image": "milad-fakurian-8cOzOWgk9Qo-unsplash.jpg",
-      "width": 6016,
-      "height": 3384
+      "alt": "Eternal Void — milad fakurian 8cozowgk9qo dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Milad Fakurian Djjazybyx4I Unsplash",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
-      "resolution": "3000×2000",
+      "resolution": "3840×2160",
       "image": "milad-fakurian-DjjaZybYx4I-unsplash.jpg",
-      "width": 3000,
-      "height": 2000
+      "alt": "Midnight Eclipse — milad fakurian djjazybyx4i dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Minato Namikaze 5120X2880 24353",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "5120×2880",
       "image": "minato-namikaze-5120x2880-24353.png",
+      "alt": "Eternal Void — minato namikaze 5120x2880 dark minimalist desktop wallpaper, 5120×2880 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 5120,
       "height": 2880
     },
     {
-      "title": "Miyamoto Musashi 3840X2160 15204",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "miyamoto-musashi-3840x2160-15204.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Noir Silence — miyamoto musashi 3840x2160 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Mountain 1",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
-      "resolution": "5504×3072",
+      "resolution": "3840×2160",
       "image": "Mountain 1.jpg",
-      "width": 5504,
-      "height": 3072
+      "alt": "Eternal Void — mountain 1 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Norbert Kowalczyk Jrkkj9Njmxm Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×4500",
+      "resolution": "3840×2160",
       "image": "norbert-kowalczyk-jrKKj9nJMxM-unsplash.jpg",
-      "width": 6000,
-      "height": 4500
+      "alt": "Obsidian Drift — norbert kowalczyk jrkkj9njmxm dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Os X Snow Leopard 5120X3200 24051",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
-      "resolution": "5120×3200",
+      "resolution": "3840×2160",
       "image": "os-x-snow-leopard-5120x3200-24051.jpg",
-      "width": 5120,
-      "height": 3200
+      "alt": "Noir Silence — os x snow dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black",
+        "white"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Parrish Freeman 29W9Rscuumw Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "5219×3479",
+      "resolution": "3840×2160",
       "image": "parrish-freeman-29W9RscuUMw-unsplash.jpg",
-      "width": 5219,
-      "height": 3479
+      "alt": "Obsidian Drift — parrish freeman 29w9rscuumw dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Philipp Pilz Aohbmkqlzgm Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6240×4160",
+      "resolution": "3840×2160",
       "image": "philipp-pilz-AOhBMkQlzgM-unsplash.jpg",
-      "width": 6240,
-      "height": 4160
+      "alt": "Obsidian Drift — philipp pilz aohbmkqlzgm dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Pier Sea Surrounded By Hills Cloudy Sky Evening Portugal",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
-      "resolution": "7360×4912",
+      "resolution": "3840×2160",
       "image": "pier-sea-surrounded-by-hills-cloudy-sky-evening-portugal.jpg",
-      "width": 7360,
-      "height": 4912
+      "alt": "Noir Silence — pier sea surrounded dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Sagittarius Black",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "sagittarius-black.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Noir Silence — sagittarius black dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Spider Man",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "spider-man.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Eternal Void — spider man dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "red",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Tanjiro Kamado Red 5120X2880 22577",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "desktop",
       "resolution": "5120×2880",
       "image": "tanjiro-kamado-red-5120x2880-22577.png",
+      "alt": "Noir Silence — tanjiro kamado red dark minimalist desktop wallpaper, 5120×2880 quality",
+      "vibes": [
+        "black",
+        "red"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 5120,
       "height": 2880
     },
     {
-      "title": "Violet Patterns",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
-      "resolution": "6000×4000",
+      "resolution": "3840×2160",
       "image": "Violet Patterns.jpg",
-      "width": 6000,
-      "height": 4000
+      "alt": "Eternal Void — violet patterns dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "purple",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Wallpaper",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "wallpaper.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Eternal Void — wallpaper dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Wallpapersden.Com Ship Monochrome 2560X1617",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
-      "resolution": "2560×1617",
+      "resolution": "3840×2160",
       "image": "wallpapersden.com_ship-monochrome_2560x1617.jpg",
-      "width": 2560,
-      "height": 1617
+      "alt": "Obsidian Drift — wallpapersden.com ship monochrome dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "gray",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "Weightlifter 3840X2160 24340",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "weightlifter-3840x2160-24340.png",
+      "alt": "Midnight Eclipse — weightlifter 3840x2160 24340 dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 3840,
       "height": 2160
     },
     {
-      "title": "Windows 11 Dark Mode",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "7680×4320",
       "image": "Windows-11-Dark-Mode.png",
+      "alt": "Midnight Eclipse — windows 11 dark dark minimalist desktop wallpaper, 7680×4320 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 7680,
       "height": 4320
     },
     {
-      "title": "Windows 11 Purple Abstract Dark Background Dark Purple Dark 3840X2400 8995",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2400",
       "image": "windows-11-purple-abstract-dark-background-dark-purple-dark-3840x2400-8995.png",
+      "alt": "Midnight Eclipse — windows 11 purple dark minimalist desktop wallpaper, 3840×2400 quality",
+      "vibes": [
+        "purple",
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 3840,
       "height": 2400
     },
     {
-      "title": "Yuvraj Singh Parmar Dbc2 Aa E3E Unsplash",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "desktop",
       "resolution": "3840×2160",
       "image": "yuvraj-singh-parmar-Dbc2-AA-e3E-unsplash.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Obsidian Drift — yuvraj singh parmar dark minimalist desktop wallpaper, 3840×2160 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "desktop"
+      ],
+      "curatedTag": "Premium AMOLED Edition"
     },
     {
-      "title": "421C9091 38Ba 4775 9De9 20C8A173D503(1)",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
-      "resolution": "591×1280",
+      "resolution": "1284×2778",
       "image": "421c9091-38ba-4775-9de9-20c8a173d503(1).jpg",
-      "width": 591,
-      "height": 1280
+      "alt": "Eternal Void — c9091 38ba 4775 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "5974C0C2 5E53 4Cce B3D0 4994Cec7B64E",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
-      "resolution": "720×1280",
+      "resolution": "1284×2778",
       "image": "5974c0c2-5e53-4cce-b3d0-4994cec7b64e.jpg",
-      "width": 720,
-      "height": 1280
+      "alt": "Noir Silence — c0c2 5e53 4cce dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "A68E939B 5014 446F 937C 3D46D5Aa20A5",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "mobile",
-      "resolution": "640×1280",
+      "resolution": "1284×2778",
       "image": "a68e939b-5014-446f-937c-3d46d5aa20a5.jpg",
-      "width": 640,
-      "height": 1280
+      "alt": "Obsidian Drift — a68e939b 5014 446f dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Black Panther Wallpapers Free By Zedge™",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
-      "resolution": "444×794",
+      "resolution": "1284×2778",
       "image": "Black Panther Wallpapers - Free By Zedge™.jpeg",
-      "width": 444,
-      "height": 794
+      "alt": "Noir Silence — black panther wallpapers dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Black And White 6480X7454 21293",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
-      "resolution": "6480×7454",
+      "resolution": "1284×2778",
       "image": "black-and-white-6480x7454-21293.jpg",
-      "width": 6480,
-      "height": 7454
+      "alt": "Eternal Void — black and white dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black",
+        "white"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Coloros 16 Stock 1440X3168 24290",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
-      "resolution": "1440×3168",
+      "resolution": "1284×2778",
       "image": "coloros-16-stock-1440x3168-24290.jpg",
-      "width": 1440,
-      "height": 3168
+      "alt": "Eternal Void — coloros 16 stock dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Coloros 16 Stock 1440X3168 24292",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
       "resolution": "1440×3168",
       "image": "coloros-16-stock-1440x3168-24292.png",
+      "alt": "Noir Silence — coloros 16 stock dark minimalist mobile wallpaper, 1440×3168 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Premium AMOLED Edition",
       "width": 1440,
       "height": 3168
     },
     {
-      "title": "Daniil Silantev Xqo0Mbtuihk Unsplash",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
-      "resolution": "4000×6000",
+      "resolution": "1284×2778",
       "image": "daniil-silantev-XQO0MBtUihk-unsplash.jpg",
-      "width": 4000,
-      "height": 6000
+      "alt": "Noir Silence — daniil silantev xqo0mbtuihk dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "E6E4138B 9932 403F 95F1 B3627Ec89E49",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
-      "resolution": "720×1280",
+      "resolution": "1284×2778",
       "image": "e6e4138b-9932-403f-95f1-b3627ec89e49.jpg",
-      "width": 720,
-      "height": 1280
+      "alt": "Eternal Void — e6e4138b 9932 403f dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Ekmed Ali Djlin5Msptw Unsplash",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
-      "resolution": "2242×2991",
+      "resolution": "1284×2778",
       "image": "ekmed-ali-DjLIn5mSptw-unsplash.jpg",
-      "width": 2242,
-      "height": 2991
+      "alt": "Noir Silence — ekmed ali djlin5msptw dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "F3Ba2De7 E64C 498B Bd37 8A5E77A2Fba7",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "720×1280",
+      "resolution": "1284×2778",
       "image": "f3ba2de7-e64c-498b-bd37-8a5e77a2fba7.jpg",
-      "width": 720,
-      "height": 1280
+      "alt": "Midnight Eclipse — f3ba2de7 e64c 498b dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Honor Magic V6 3200X3200 25983",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mobile",
-      "resolution": "3200×3200",
+      "resolution": "1284×2778",
       "image": "honor-magic-v6-3200x3200-25983.jpg",
-      "width": 3200,
-      "height": 3200
+      "alt": "Noir Silence — honor magic v6 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Honor Magic V6 3200X3200 25988",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "3200×3200",
+      "resolution": "1284×2778",
       "image": "honor-magic-v6-3200x3200-25988.jpg",
-      "width": 3200,
-      "height": 3200
+      "alt": "Midnight Eclipse — honor magic v6 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Honor Magic V6 3200X3200 25993",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "3200×3200",
+      "resolution": "1284×2778",
       "image": "honor-magic-v6-3200x3200-25993.jpg",
-      "width": 3200,
-      "height": 3200
+      "alt": "Midnight Eclipse — honor magic v6 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Img 0009",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "1080×2160",
+      "resolution": "1284×2778",
       "image": "IMG_0009.JPG",
-      "width": 1080,
-      "height": 2160
+      "alt": "Midnight Eclipse — img 0009 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Img 0010",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "mobile",
-      "resolution": "1200×2140",
+      "resolution": "1284×2778",
       "image": "IMG_0010.JPG",
-      "width": 1200,
-      "height": 2140
+      "alt": "Obsidian Drift — img 0010 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Img 1345",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "736×1635",
+      "resolution": "1284×2778",
       "image": "IMG_1345.JPG",
-      "width": 736,
-      "height": 1635
+      "alt": "Midnight Eclipse — img 1345 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Img 1558",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "972×2160",
+      "resolution": "1284×2778",
       "image": "IMG_1558.JPG",
-      "width": 972,
-      "height": 2160
+      "alt": "Midnight Eclipse — img 1558 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Iphone 17 Pro Stock 1320X2868 23880",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
       "resolution": "1320×2868",
       "image": "iphone-17-pro-stock-1320x2868-23880.png",
+      "alt": "Eternal Void — iphone 17 pro dark minimalist mobile wallpaper, 1320×2868 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Minimalist Selection",
       "width": 1320,
       "height": 2868
     },
     {
-      "title": "Iphone 17 Stock 1206X2622 23879",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "1206×2622",
+      "resolution": "1284×2778",
       "image": "iphone-17-stock-1206x2622-23879.jpg",
-      "width": 1206,
-      "height": 2622
+      "alt": "Midnight Eclipse — iphone 17 stock dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Iphone 17 Stock 1206X2622 23882",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "mobile",
-      "resolution": "1206×2622",
+      "resolution": "1284×2778",
       "image": "iphone-17-stock-1206x2622-23882.jpg",
-      "width": 1206,
-      "height": 2622
+      "alt": "Obsidian Drift — iphone 17 stock dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Iphone Air 2025 Stock 1260X2736 23887",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
       "resolution": "1260×2736",
       "image": "iphone-air-2025-stock-1260x2736-23887.png",
+      "alt": "Eternal Void — iphone air 2025 dark minimalist mobile wallpaper, 1260×2736 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 1260,
       "height": 2736
     },
     {
-      "title": "Iphone Air 2025 Stock 1260X2736 23890",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
       "resolution": "1260×2736",
       "image": "iphone-air-2025-stock-1260x2736-23890.png",
+      "alt": "Eternal Void — iphone air 2025 dark minimalist mobile wallpaper, 1260×2736 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Stillness Collection",
       "width": 1260,
       "height": 2736
     },
     {
-      "title": "Iridescent Spheres 5120X5120 26346",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mobile",
-      "resolution": "5120×5120",
+      "resolution": "1284×2778",
       "image": "iridescent-spheres-5120x5120-26346.jpg",
-      "width": 5120,
-      "height": 5120
+      "alt": "Eternal Void — iridescent spheres 5120x5120 dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Iwin Yylcfhyrveg Unsplash",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "3375×6000",
+      "resolution": "1284×2778",
       "image": "iwin-YyLCFhYrVeg-unsplash.jpg",
-      "width": 3375,
-      "height": 6000
+      "alt": "Midnight Eclipse — iwin yylcfhyrveg unsplash dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Jon Tyson Eyveslmljla Unsplash",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mobile",
-      "resolution": "3024×4032",
+      "resolution": "1284×2778",
       "image": "jon-tyson-eYVEsLmljlA-unsplash.jpg",
-      "width": 3024,
-      "height": 4032
+      "alt": "Midnight Eclipse — jon tyson eyveslmljla dark minimalist mobile wallpaper, 1284×2778 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mobile"
+      ],
+      "curatedTag": "Studio Cut"
     },
     {
-      "title": "Macos Big Sur Apple Layers Fluidic Colorful Dark Wwdc 2020 6016X6016 1432",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "mac",
-      "resolution": "6016×6016",
+      "resolution": "3024×1964",
       "image": "macos-big-sur-apple-layers-fluidic-colorful-dark-wwdc-2020-6016x6016-1432.jpg",
-      "width": 6016,
-      "height": 6016
+      "alt": "Obsidian Drift — macos big sur dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Macos Big Sur Apple Layers Fluidic Colorful Wwdc Stock 4096X2304 1455",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mac",
-      "resolution": "4096×2304",
+      "resolution": "3024×1964",
       "image": "macos-big-sur-apple-layers-fluidic-colorful-wwdc-stock-4096x2304-1455.jpg",
-      "width": 4096,
-      "height": 2304
+      "alt": "Midnight Eclipse — macos big sur dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Macos Monterey Stock Blue Light Layers 5K 6016X6016 5898",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mac",
-      "resolution": "6016×6016",
+      "resolution": "3024×1964",
       "image": "macos-monterey-stock-blue-light-layers-5k-6016x6016-5898.jpg",
-      "width": 6016,
-      "height": 6016
+      "alt": "Eternal Void — macos monterey stock dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black",
+        "white",
+        "blue"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Macos Monterey Wwdc 21 Stock 5K 6016X6016 5584",
+      "title": "Midnight Eclipse",
       "category": "dark",
       "device": "mac",
-      "resolution": "6016×6016",
+      "resolution": "3024×1964",
       "image": "macos-monterey-wwdc-21-stock-5k-6016x6016-5584.jpg",
-      "width": 6016,
-      "height": 6016
+      "alt": "Midnight Eclipse — macos monterey wwdc dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Macos Monterey Wwdc 21 Stock Dark Mode 5K 6016X6016 5585",
+      "title": "Obsidian Drift",
       "category": "dark",
       "device": "mac",
-      "resolution": "6016×6016",
+      "resolution": "3024×1964",
       "image": "macos-monterey-wwdc-21-stock-dark-mode-5k-6016x6016-5585.jpg",
-      "width": 6016,
-      "height": 6016
+      "alt": "Obsidian Drift — macos monterey wwdc dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Macos Tahoe 26 5K 6016X6016 22672",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mac",
-      "resolution": "6016×6016",
+      "resolution": "3024×1964",
       "image": "macos-tahoe-26-5k-6016x6016-22672.jpg",
-      "width": 6016,
-      "height": 6016
+      "alt": "Eternal Void — macos tahoe 26 dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Os X Mavericks Tide 3840X2160 24077",
+      "title": "Noir Silence",
       "category": "dark",
       "device": "mac",
-      "resolution": "3840×2160",
+      "resolution": "3024×1964",
       "image": "os-x-mavericks-tide-3840x2160-24077.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Noir Silence — os x mavericks dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     },
     {
-      "title": "Os X Mountain Lion 3840X2160 24073",
+      "title": "Eternal Void",
       "category": "dark",
       "device": "mac",
-      "resolution": "3840×2160",
+      "resolution": "3024×1964",
       "image": "os-x-mountain-lion-3840x2160-24073.jpg",
-      "width": 3840,
-      "height": 2160
+      "alt": "Eternal Void — os x mountain dark minimalist Mac wallpaper, 3024×1964 quality",
+      "vibes": [
+        "black"
+      ],
+      "tags": [
+        "dark",
+        "mac"
+      ],
+      "curatedTag": "Minimalist Selection"
     }
-  ]
+  ],
+  "generatedAt": "2026-05-26T16:02:25.263Z"
 }

@@ -276,15 +276,14 @@ function formatRes(w, h) {
 function scanFolder(folder, device) {
   if (!fs.existsSync(folder)) return [];
   const items = [];
-  const names = fs.readdirSync(folder).filter((n) => IMAGE_EXT.has(path.extname(n).toLowerCase()));
-  names.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
-
   const overrides = loadTitleOverrides();
 
-  for (const filename of names) {
-    const parsed = parseFilename(filename);
-    const filePath = path.join(folder, filename);
-    const overrideTitle = overrides[filename] || overrides[`${device}/${filename}`];
+  function addEntry(filename, parsed, filePath, imageField) {
+    const overrideTitle =
+      overrides[filename] ||
+      overrides[imageField] ||
+      overrides[`${device}/${filename}`] ||
+      overrides[`${device}/${imageField}`];
     const aestheticTitle =
       typeof overrideTitle === 'string' && overrideTitle.trim()
         ? overrideTitle.trim()
@@ -298,7 +297,7 @@ function scanFolder(folder, device) {
       category: parsed.category,
       device,
       resolution: res,
-      image: filename,
+      image: imageField,
       alt: buildSeoAltText(filename, aestheticTitle, parsed.category, device, res),
       vibes,
       tags: inferTags(aestheticTitle, parsed.category, device),
@@ -309,6 +308,35 @@ function scanFolder(folder, device) {
       entry.height = size.h;
     }
     items.push(entry);
+  }
+
+  // Flat folder scan (backward compatible)
+  const names = fs
+    .readdirSync(folder)
+    .filter((n) => IMAGE_EXT.has(path.extname(n).toLowerCase()));
+  names.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+  for (const filename of names) {
+    const parsed = parseFilename(filename);
+    const filePath = path.join(folder, filename);
+    addEntry(filename, parsed, filePath, filename);
+  }
+
+  // Nested category scan (desktop/mobile)
+  if (device === 'desktop' || device === 'mobile') {
+    for (const cat of ['dark', 'minimal', 'abstract', 'monochrome']) {
+      const sub = path.join(folder, cat);
+      if (!fs.existsSync(sub)) continue;
+      const subNames = fs
+        .readdirSync(sub)
+        .filter((n) => IMAGE_EXT.has(path.extname(n).toLowerCase()));
+      subNames.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
+      for (const filename of subNames) {
+        // Folder decides category; filename can still contain “--” hints for vibes/titles.
+        const parsed = Object.assign(parseFilename(filename), { category: cat });
+        const filePath = path.join(sub, filename);
+        addEntry(filename, parsed, filePath, `${cat}/${filename}`);
+      }
+    }
   }
   return items;
 }

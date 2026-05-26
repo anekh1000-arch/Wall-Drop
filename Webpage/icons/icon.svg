@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="WallDrop">
   <rect width="512" height="512" rx="96" fill="#080808"/>
-  <path fill="none" stroke="#f0f0f0" stroke-width="18" stroke-linecap="round" stroke-linejoin="round" d="M112 276V174a144 144 0 0 1 288 0v102"/>
-  <path fill="#f0f0f0" d="M256 296c28 0 46 44 46 74s-18 66-46 66-46-30-46-66 18-74 46-74z"/>
+  <path fill="none" stroke="#f0f0f0" stroke-width="34" stroke-linecap="round" stroke-linejoin="round"
+        d="M86 132 152 336 256 190 360 336 426 132"/>
+  <path fill="#f0f0f0" d="M256 350c34 0 58 46 58 82s-24 76-58 76-58-40-58-76 24-82 58-82z"/>
 </svg>
