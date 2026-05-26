@@ -1,0 +1,5 @@
+{
+  "_comment": "Owner file: map image filename to custom UI title. Example: \"my-file.jpg\": \"Midnight Circuit\"",
+  "Car.png": "Eternal Void",
+  "Fox.jpg": "Amber Wake"
+}

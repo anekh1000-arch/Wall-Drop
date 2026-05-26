@@ -12,6 +12,7 @@ const ROOT = __dirname;
 const DESKTOP = path.join(ROOT, 'images', 'wallpapers', 'desktop');
 const MOBILE = path.join(ROOT, 'images', 'wallpapers', 'mobile');
 const OUT = path.join(ROOT, 'wallpapers.json');
+const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
 const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome', 'gradient']);
@@ -98,6 +99,32 @@ function getCuratedTag(category, device, resolution) {
   if (category === 'monochrome') tags.unshift('Monochrome Study');
   if (device === 'mobile') tags.unshift('Pocket Perfect');
   return pick(tags, key) || 'Curated';
+}
+
+function loadTitleOverrides() {
+  if (!fs.existsSync(OVERRIDES_FILE)) return {};
+  try {
+    const parsed = JSON.parse(fs.readFileSync(OVERRIDES_FILE, 'utf8'));
+    return parsed && typeof parsed === 'object' ? parsed : {};
+  } catch {
+    console.warn('WallDrop: title-overrides.json is invalid JSON, ignoring overrides.');
+    return {};
+  }
+}
+
+function buildSeoAltText(rawFilename, title, category, device, resolution) {
+  const stem = path.parse(rawFilename).name
+    .replace(/^\d+[-_ ]*/g, '')
+    .replace(/[-_]+/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+    .toLowerCase();
+  const words = stem.split(' ').filter(Boolean);
+  const lead = words.slice(0, 3).join(' ') || title.toLowerCase();
+  const devLabel = device === 'mobile' ? 'mobile wallpaper' : 'desktop wallpaper';
+  const catLabel = category === 'dark' ? 'dark minimalist' : `${category} minimalist`;
+  const resLabel = resolution ? `${resolution} quality` : '4K quality';
+  return `${title} — ${lead} ${catLabel} ${devLabel}, ${resLabel}`.replace(/\s+/g, ' ').trim();
 }
 
 function parseFilename(name) {
@@ -241,10 +268,16 @@ function scanFolder(folder, device) {
   const names = fs.readdirSync(folder).filter((n) => IMAGE_EXT.has(path.extname(n).toLowerCase()));
   names.sort((a, b) => a.localeCompare(b, undefined, { sensitivity: 'base' }));
 
+  const overrides = loadTitleOverrides();
+
   for (const filename of names) {
     const parsed = parseFilename(filename);
     const filePath = path.join(folder, filename);
-    const aestheticTitle = getAestheticTitle(filename, parsed.category);
+    const overrideTitle = overrides[filename] || overrides[`${device}/${filename}`];
+    const aestheticTitle =
+      typeof overrideTitle === 'string' && overrideTitle.trim()
+        ? overrideTitle.trim()
+        : getAestheticTitle(filename, parsed.category);
     const size = readImageSize(filePath);
     const res = size ? formatRes(size.w, size.h) : FALLBACK_RES[device];
     const vibes = inferVibes(aestheticTitle, parsed.category, filename, parsed.extraVibes || []);
@@ -255,6 +288,7 @@ function scanFolder(folder, device) {
       device,
       resolution: res,
       image: filename,
+      alt: buildSeoAltText(filename, aestheticTitle, parsed.category, device, res),
       vibes,
       tags: inferTags(aestheticTitle, parsed.category, device),
       curatedTag: getCuratedTag(parsed.category, device, res)

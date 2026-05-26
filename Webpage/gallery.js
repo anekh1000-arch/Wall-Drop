@@ -131,7 +131,9 @@
 
     const img = document.createElement('img');
     img.src = imagePath;
-    img.alt = item.title;
+    img.alt =
+      item.alt ||
+      (item.title + ' ' + (item.device === 'mobile' ? 'mobile wallpaper' : 'desktop wallpaper') + ' 4K');
     img.loading = 'lazy';
     img.decoding = 'async';
     img.addEventListener('load', function () {

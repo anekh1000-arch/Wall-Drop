@@ -12,6 +12,23 @@
 
 That rebuilds **`wallpapers.json`** automatically. You do not edit JSON by hand unless you want to.
 
+## Change display names (owner option)
+
+If you want custom names for uploaded images, edit `title-overrides.json`.
+
+Example:
+
+```json
+{
+  "my-image.jpg": "Midnight Circuit",
+  "mobile/wallpaper-22.png": "Pocket Noir"
+}
+```
+
+- Left side = exact filename (or `mobile/filename` / `desktop/filename`)
+- Right side = name shown on website cards and preview
+- File paths for download stay unchanged
+
 ## Category from filename (optional)
 
 ```
