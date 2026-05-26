@@ -13,7 +13,7 @@ const ROOT = __dirname;
 const OUT_SITEMAP = path.join(ROOT, 'sitemap.xml');
 const OUT_ROBOTS = path.join(ROOT, 'robots.txt');
 const DATA = path.join(ROOT, 'wallpapers.json');
-const SITE_URL = (process.env.SITE_URL || 'https://wall-drops.netlify.app').replace(/\/+$/, '');
+const SITE_URL = (process.env.SITE_URL || 'https://wall-drops.vercel.app').replace(/\/+$/, '');
 const LICENSE_URL = `${SITE_URL}/license.html`;
 
 const FALLBACK_RES = { desktop: '3840×2160', mobile: '1284×2778', mac: '3024×1964' };

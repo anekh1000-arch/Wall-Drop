@@ -1,6 +1,6 @@
 # WallDrop — faster image loading
 
-Large PNG/JPEG wallpapers slow the gallery on mobile and Netlify bandwidth.
+Large PNG/JPEG wallpapers slow the gallery on mobile and hosting bandwidth.
 
 ## Recommended workflow
 
@@ -20,4 +20,4 @@ magick mogrify -format webp -quality 85 *.jpg
 
 ## Build
 
-Netlify runs `npm run build` → `generate-gallery.js` refreshes `wallpapers.json` from whatever files are in the wallpaper folders.
+Vercel runs `npm run build` → `generate-gallery.js` refreshes `wallpapers.json` from whatever files are in the wallpaper folders.

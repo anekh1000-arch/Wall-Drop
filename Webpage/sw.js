@@ -1,5 +1,12 @@
-const CACHE = 'walldrop-v1';
-const PRECACHE = ['/', '/index.html', '/gallery.js', '/walldrop-app.js', '/wallpapers.json', '/manifest.json'];
+const CACHE = 'walldrop-v3';
+const PRECACHE = ['/', '/index.html', '/manifest.json'];
+
+/** Always fetch fresh — gallery data and scripts change on every upload */
+const NETWORK_FIRST = ['/wallpapers.json', '/gallery.js', '/walldrop-app.js', '/index.html'];
+
+function isNetworkFirst(url) {
+  return NETWORK_FIRST.some((p) => url.pathname.endsWith(p) || url.pathname === p);
+}
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
@@ -9,9 +16,10 @@ self.addEventListener('install', (event) => {
 
 self.addEventListener('activate', (event) => {
   event.waitUntil(
-    caches.keys().then((keys) =>
-      Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k)))
-    ).then(() => self.clients.claim())
+    caches
+      .keys()
+      .then((keys) => Promise.all(keys.filter((k) => k !== CACHE).map((k) => caches.delete(k))))
+      .then(() => self.clients.claim())
   );
 });
 
@@ -20,13 +28,26 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(event.request.url);
   if (url.origin !== location.origin) return;
 
+  if (isNetworkFirst(url)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((res) => {
+          if (res.ok) {
+            caches.open(CACHE).then((c) => c.put(event.request, res.clone()));
+          }
+          return res;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const network = fetch(event.request)
         .then((res) => {
-          if (res.ok && (url.pathname.endsWith('.json') || url.pathname.includes('/images/'))) {
-            const copy = res.clone();
-            caches.open(CACHE).then((c) => c.put(event.request, copy));
+          if (res.ok && url.pathname.includes('/images/')) {
+            caches.open(CACHE).then((c) => c.put(event.request, res.clone()));
           }
           return res;
         })

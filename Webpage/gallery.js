@@ -220,7 +220,7 @@
       emptyEl.classList.add('visible');
       emptyEl.querySelector('.empty-title').textContent = 'Gallery unavailable';
       emptyEl.querySelector('p').textContent =
-        'Could not load wallpapers.json. On Netlify, ensure the build step runs (npm run build).';
+        'Could not load wallpapers.json. On Vercel, ensure the build step runs (npm run build).';
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.style.display = 'none';
       window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { error: err, count: 0 } }));
@@ -242,7 +242,7 @@
       emptyEl.classList.add('visible');
       emptyEl.querySelector('.empty-title').textContent = 'No wallpapers yet';
       emptyEl.querySelector('p').textContent =
-        'Add images to images/wallpapers/desktop, mobile, or mac, then deploy (Netlify runs npm run build automatically).';
+        'Add images to images/wallpapers/desktop, mobile, or mac, then deploy (Vercel runs npm run build automatically).';
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.textContent = 'Tip: use WebP/AVIF for faster loads — see PERFORMANCE.md';
       if (hint) hint.style.display = 'inline-block';

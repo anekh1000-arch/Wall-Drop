@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 /**
- * Scan images/wallpapers/{desktop,mobile,mac} and write wallpapers.json for Netlify/static hosting.
+ * Scan images/wallpapers/{desktop,mobile,mac} and write wallpapers.json for Vercel/static hosting.
  * Run: node generate-gallery.js  (also via npm run build)
  */
 'use strict';

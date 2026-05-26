@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://wall-drops.netlify.app/sitemap.xml
+Sitemap: https://wall-drops.vercel.app/sitemap.xml
