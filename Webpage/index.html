@@ -163,10 +163,10 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   margin-bottom:2rem;
 }
 .badge-dot{
-  width:5px;height:5px;border-radius:50%;flex-shrink:0;
-  background:#9b1c1c;
-  box-shadow:0 0 8px rgba(155,28,28,0.55);
-  animation:badgeGlow 2.5s ease-in-out infinite;
+  width:6px;height:6px;border-radius:50%;flex-shrink:0;
+  background:#5eead4;
+  box-shadow:0 0 10px rgba(94,234,212,0.9),0 0 22px rgba(45,212,191,0.45);
+  animation:badgePulse 2.2s ease-in-out infinite;
 }
 .badge-label{
   font-family:'Outfit',sans-serif;
@@ -184,9 +184,17 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   letter-spacing:0.14em;text-transform:uppercase;
   color:var(--dim);
 }
-@keyframes badgeGlow{
-  0%,100%{opacity:1;box-shadow:0 0 8px rgba(155,28,28,0.6)}
-  50%{opacity:0.6;box-shadow:0 0 4px rgba(155,28,28,0.22)}
+@keyframes badgePulse{
+  0%,100%{
+    opacity:1;
+    transform:scale(1);
+    box-shadow:0 0 10px rgba(94,234,212,0.95),0 0 22px rgba(45,212,191,0.5);
+  }
+  50%{
+    opacity:0.88;
+    transform:scale(1.2);
+    box-shadow:0 0 16px rgba(94,234,212,1),0 0 32px rgba(45,212,191,0.65);
+  }
 }
 
 .hero h1{
