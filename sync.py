@@ -32,7 +32,7 @@ MONOCHROME = ROOT / "images" / "wallpapers" / "monochrome"
 OUT = ROOT / "wallpapers.json"
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
-CATEGORIES = {"dark", "minimal", "abstract", "monochrome", "gradient"}
+CATEGORIES = {"dark", "others", "abstract", "monochrome", "gradient"}
 FALLBACK_RES = {"desktop": "3840×2160", "mobile": "1284×2778", "mac": "3024×1964", "monochrome": "3840×2160"}
 
 

@@ -17,7 +17,7 @@ const OUT = path.join(ROOT, 'wallpapers.json');
 const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
 const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
-const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome']);
+const CATEGORIES = new Set(['dark', 'others', 'abstract', 'monochrome']);
 const FALLBACK_RES = {
   desktop: '3840×2160',
   mobile: '1284×2778',
@@ -96,7 +96,7 @@ function getCuratedTag(category, device, resolution) {
   const key = `${category}|${device}|${resolution}`;
   const tags = [
     'Premium AMOLED Edition',
-    'Minimalist Selection',
+    'Others Selection',
     'Studio Cut',
     'Night Mode Curated',
     'Stillness Collection'
@@ -168,7 +168,7 @@ function inferVibes(title, category, filename, extraVibes = []) {
   }
 
   if (category === 'dark' || category === 'monochrome') vibes.add('black');
-  if (category === 'minimal') vibes.add('gray');
+  if (category === 'others') vibes.add('gray');
   // legacy gradient category removed from UI; keep existing wallpapers as dark/abstract/monochrome
 
   if (!vibes.size) vibes.add('black');
@@ -320,7 +320,7 @@ function scanFolder(folder, device) {
 
   // Nested category scan (desktop/mobile)
   if (device === 'desktop' || device === 'mobile') {
-    for (const cat of ['dark', 'minimal', 'abstract', 'monochrome']) {
+    for (const cat of ['dark', 'others', 'abstract', 'monochrome']) {
       const sub = path.join(folder, cat);
       if (!fs.existsSync(sub)) continue;
       const subNames = fs

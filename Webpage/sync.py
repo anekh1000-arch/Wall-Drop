@@ -9,7 +9,7 @@ Drop images into:
 
 Optional filename prefix for category:
   dark--my-wall.jpg   → category: dark, title: My Wall
-  minimal--slate.png  → category: minimal
+  others--slate.png  → category: others
 
 Without prefix → category defaults to "dark", title from filename.
 
