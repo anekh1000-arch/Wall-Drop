@@ -1,9 +1,10 @@
 """
-Rebuild wallpapers.json from images in desktop/ and mobile/ folders.
+Rebuild wallpapers.json from images in desktop/, mobile/, and monochrome/ folders.
 
 Drop images into:
   images/wallpapers/desktop/
   images/wallpapers/mobile/
+  images/wallpapers/monochrome/
 
 Optional filename prefix for category:
   dark--my-wall.jpg   → category: dark, title: My Wall
@@ -25,11 +26,12 @@ from image_size import format_resolution, read_image_size
 ROOT = Path(__file__).resolve().parent
 DESKTOP = ROOT / "images" / "wallpapers" / "desktop"
 MOBILE = ROOT / "images" / "wallpapers" / "mobile"
+MONOCHROME = ROOT / "images" / "wallpapers" / "monochrome"
 OUT = ROOT / "wallpapers.json"
 
 IMAGE_EXT = {".jpg", ".jpeg", ".png", ".webp", ".gif"}
 CATEGORIES = {"dark", "minimal", "abstract", "monochrome", "gradient"}
-FALLBACK_RES = {"desktop": "3840×2160", "mobile": "1284×2778"}
+FALLBACK_RES = {"desktop": "3840×2160", "mobile": "1284×2778", "monochrome": "3840×2160"}
 
 
 def title_from_stem(stem: str) -> str:
@@ -76,19 +78,25 @@ def scan_folder(folder: Path, device: str) -> list[dict]:
 def main() -> int:
     DESKTOP.mkdir(parents=True, exist_ok=True)
     MOBILE.mkdir(parents=True, exist_ok=True)
+    MONOCHROME.mkdir(parents=True, exist_ok=True)
 
-    wallpapers = scan_folder(DESKTOP, "desktop") + scan_folder(MOBILE, "mobile")
+    wallpapers = (
+        scan_folder(DESKTOP, "desktop")
+        + scan_folder(MOBILE, "mobile")
+        + scan_folder(MONOCHROME, "monochrome")
+    )
     data = {"wallpapers": wallpapers}
 
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(data, f, indent=2, ensure_ascii=False)
         f.write("\n")
 
-    print(f"WallDrop sync: {len(wallpapers)} wallpaper(s) → wallpapers.json")
+    print(f"WallDrop sync: {len(wallpapers)} wallpaper(s) -> wallpapers.json")
     print(f"  desktop: {len(scan_folder(DESKTOP, 'desktop'))}")
     print(f"  mobile:  {len(scan_folder(MOBILE, 'mobile'))}")
+    print(f"  monochrome: {len(scan_folder(MONOCHROME, 'monochrome'))}")
     if not wallpapers:
-        print("  (drop JPG/PNG/WebP into images/wallpapers/desktop or mobile)")
+        print("  (drop JPG/PNG/WebP into images/wallpapers/desktop, mobile, or monochrome)")
     return 0
 
 
