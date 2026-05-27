@@ -11,6 +11,10 @@ function sumStats(byImage) {
   return Object.values(byImage || {}).reduce((a, b) => a + (Number(b) || 0), 0);
 }
 
+function getGlobalTotal(stats) {
+  return stats.totalDownloads || 0;
+}
+
 function normalizeStats(raw) {
   const byImage =
     raw && raw.downloadsByImage && typeof raw.downloadsByImage === 'object' ? raw.downloadsByImage : {};
@@ -134,9 +138,9 @@ module.exports = async function handler(req, res) {
       merged.totalDownloads = sumStats(merged.downloadsByImage);
       const saved = await writeStats(merged);
       if (!saved) {
-        return res.status(503).json({ error: 'storage_unavailable', stats: merged });
+        return res.status(503).json({ error: 'storage_unavailable', stats: merged, globalTotal: getGlobalTotal(merged) });
       }
-      return res.status(200).json(merged);
+      return res.status(200).json({ ...merged, globalTotal: getGlobalTotal(merged) });
     }
 
     const image = body && body.image ? String(body.image).trim() : '';
@@ -151,10 +155,11 @@ module.exports = async function handler(req, res) {
       return res.status(503).json({
         error: 'storage_unavailable',
         message: 'Connect Upstash Redis or Vercel Blob for shared download counts.',
-        stats
+        stats,
+        globalTotal: getGlobalTotal(stats)
       });
     }
-    return res.status(200).json(stats);
+    return res.status(200).json({ ...stats, globalTotal: getGlobalTotal(stats) });
   }
 
   return res.status(405).json({ error: 'method not allowed' });

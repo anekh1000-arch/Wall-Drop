@@ -86,6 +86,11 @@
     return saveLocal(merged);
   }
 
+  async function getGlobalTotalFromServer() {
+    const stats = await fetchServer();
+    return stats ? getGlobalTotal(stats) : getGlobalTotal(loadLocal());
+  }
+
   async function recordDownload(imagePath) {
     const key = String(imagePath || '').trim();
     if (!key) return loadLocal();
@@ -125,6 +130,8 @@
     recordDownload,
     countForImage,
     sumByImage,
-    normalizeStats
+    normalizeStats,
+    getGlobalTotal,
+    getGlobalTotalFromServer
   };
 })(window);
