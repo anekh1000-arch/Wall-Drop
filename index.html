@@ -616,9 +616,45 @@ footer{
 .wall-card:nth-child(7){animation-delay:0.3s}
 .wall-card:nth-child(8){animation-delay:0.34s}
 
+/* ── ABOUT SECTION ── */
+.about-section{
+  padding:4rem 3rem;
+  background:var(--surface);
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+.about-content{
+  max-width:800px;
+  margin:0 auto;
+}
+.about-content h3{
+  font-family:'Outfit',sans-serif;
+  font-size:1.25rem;
+  font-weight:600;
+  color:var(--white);
+  margin:2rem 0 1rem;
+  letter-spacing:0.02em;
+}
+.about-content h3:first-child{
+  margin-top:0;
+}
+.about-content p{
+  color:var(--silver);
+  font-size:0.9rem;
+  line-height:1.8;
+  margin-bottom:1.5rem;
+}
+.about-content strong{
+  color:var(--white);
+  font-weight:500;
+}
+
 @media(max-width:640px){
-  nav,.hero,.gallery-wrap,.filter-section,footer{padding-left:1rem;padding-right:1rem}
+  nav,.hero,.gallery-wrap,.filter-section,footer,.about-section{padding-left:1rem;padding-right:1rem}
   nav{padding:0 1rem;position:relative;flex-wrap:wrap}
+  .about-section{padding:3rem 1rem}
+  .about-content h3{font-size:1.1rem;margin:1.5rem 0 0.75rem}
+  .about-content p{font-size:0.85rem}
   .nav-right{gap:0.5rem}
   .nav-toggle{display:flex;align-items:center;justify-content:center}
   .nav-links{
@@ -734,6 +770,24 @@ footer{
       <div class="stat-val">4K</div>
       <div class="stat-label">Resolution</div>
     </div>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+  <h2 class="visually-hidden">About WallDrop</h2>
+  <div class="about-content">
+    <h3>Why Choose WallDrop?</h3>
+    <p>WallDrop offers a curated collection of high-quality dark and minimal wallpapers designed to reduce eye strain and improve focus. Our wallpapers are perfect for developers, designers, and anyone who spends hours in front of screens. Each wallpaper is handpicked to ensure it meets our strict standards for visual quality, color harmony, and aesthetic appeal.</p>
+    
+    <h3>Dark Theme Benefits</h3>
+    <p>Dark wallpapers aren't just about aesthetics—they serve a practical purpose. Dark themes reduce blue light exposure, which can help improve sleep quality and reduce digital eye strain. Our AMOLED-friendly wallpapers are optimized for devices with OLED displays, helping to save battery life while providing stunning visual contrast.</p>
+    
+    <h3>Minimal Design Philosophy</h3>
+    <p>We believe in the power of simplicity. Our minimal wallpapers remove visual clutter, allowing you to focus on what matters most. Whether you're coding, writing, or just browsing, a clean desktop environment can help maintain mental clarity and productivity. Each wallpaper in our collection embodies the principles of minimalism: clean lines, balanced composition, and thoughtful use of negative space.</p>
+    
+    <h3>4K Resolution Quality</h3>
+    <p>All wallpapers in our collection are available in 4K resolution (3840×2160 for desktop, optimized for mobile). This ensures crisp, clear visuals on any display, from ultrawide monitors to high-DPI laptop screens. Our wallpapers are also optimized for various aspect ratios, ensuring they look great on any device.</p>
   </div>
 </section>
 
