@@ -53,14 +53,7 @@
     escapeHtml([initialRes, cat, devLabel].filter(Boolean).join(' \u00b7 ')) +
     '</p><p class="view-dl-stat" id="viewDlStat"></p></div>' +
     '<div class="view-actions">' +
-    '<label for="viewQuality" class="view-quality-label">Quality</label>' +
-    '<select id="viewQuality" class="view-quality">' +
-    '<option value="original">Original</option>' +
-    '<option value="1080p">1080p</option>' +
-    '<option value="mobile">Mobile</option>' +
-    '<option value="mac">MacBook</option>' +
-    '</select>' +
-    '<button type="button" class="dl-btn" id="viewDownload">↓ Download</button>' +
+    '<button type="button" class="dl-btn" id="viewDownload">↓ Download Original</button>' +
     '</div></div>';
 
   var imgEl = document.getElementById('viewImg');
@@ -92,112 +85,28 @@
   imgEl.addEventListener('load', showNaturalSize);
   if (imgEl.complete && imgEl.naturalWidth) showNaturalSize();
 
-  if (isMobile && dev === 'mobile') {
-    var q = document.getElementById('viewQuality');
-    if (q) q.value = 'mobile';
-  }
-
-  function getQualityTarget(quality, nw, nh) {
-    if (quality === '1080p') return { w: 1920, h: 1080 };
-    if (quality === 'mac') return { w: 3024, h: 1964 };
-    if (quality === 'mobile') {
-      return dev === 'mobile' ? { w: 1284, h: 2778 } : { w: 1170, h: 2532 };
-    }
-    return { w: nw, h: nh };
-  }
-
-  function resizeBlob(blob, targetW, targetH, nw, nh) {
-    return new Promise(function (resolve, reject) {
-      var url = URL.createObjectURL(blob);
-      var img = new Image();
-      img.onload = function () {
-        var canvas = document.createElement('canvas');
-        canvas.width = targetW;
-        canvas.height = targetH;
-        var ctx = canvas.getContext('2d');
-        ctx.fillStyle = '#080808';
-        ctx.fillRect(0, 0, targetW, targetH);
-        var scale = Math.min(targetW / nw, targetH / nh);
-        var dw = Math.round(nw * scale);
-        var dh = Math.round(nh * scale);
-        ctx.drawImage(img, Math.floor((targetW - dw) / 2), Math.floor((targetH - dh) / 2), dw, dh);
-        canvas.toBlob(
-          function (b) {
-            URL.revokeObjectURL(url);
-            if (b) resolve(b);
-            else reject(new Error('canvas'));
-          },
-          'image/jpeg',
-          0.92
-        );
-      };
-      img.onerror = function () {
-        URL.revokeObjectURL(url);
-        reject(new Error('img'));
-      };
-      img.src = url;
-    });
-  }
-
   function downloadWallpaper(btn) {
-    var quality = document.getElementById('viewQuality').value;
-    fetch(src)
-      .then(function (r) {
-        if (!r.ok) throw new Error('fetch');
-        return r.blob();
-      })
-      .then(function (blob) {
-        return new Promise(function (resolve, reject) {
-          var img = new Image();
-          var url = URL.createObjectURL(blob);
-          img.onload = function () {
-            URL.revokeObjectURL(url);
-            resolve({ blob: blob, w: img.naturalWidth, h: img.naturalHeight });
-          };
-          img.onerror = reject;
-          img.src = url;
-        });
-      })
-      .then(function (data) {
-        var out = data.blob;
-        if (quality !== 'original') {
-          var t = getQualityTarget(quality, data.w, data.h);
-          return resizeBlob(data.blob, t.w, t.h, data.w, data.h);
-        }
-        return out;
-      })
-      .then(async function (outBlob) {
-        var ext = quality === 'original' ? (src.match(/\.\w+$/) || ['.jpg'])[0] : '.jpg';
-        var suffix = quality === 'original' ? '' : '-' + quality;
-        var dlUrl = URL.createObjectURL(outBlob);
-        var a = document.createElement('a');
-        a.href = dlUrl;
-        a.download = title.replace(/\s+/g, '-').toLowerCase() + '-walldrop' + suffix + ext;
-        document.body.appendChild(a);
-        a.click();
-        a.remove();
-        URL.revokeObjectURL(dlUrl);
+    var ext = src.match(/\.\w+$/) || ['.jpg'];
+    var dlUrl = src;
+    var a = document.createElement('a');
+    a.href = dlUrl;
+    a.download = title.replace(/\s+/g, '-').toLowerCase() + '-walldrop' + ext[0];
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
 
-        if (window.WallDropDownloads) {
-          await window.WallDropDownloads.recordDownload(src);
-          updateDlStat();
-        }
+    if (window.WallDropDownloads) {
+      window.WallDropDownloads.recordDownload(src).then(updateDlStat);
+    }
 
-        if (btn) {
-          btn.textContent = '✓ Saved';
-          btn.classList.add('done');
-          setTimeout(function () {
-            btn.textContent = '↓ Download';
-            btn.classList.remove('done');
-          }, 1800);
-        }
-      })
-      .catch(function () {
-        var a = document.createElement('a');
-        a.href = src;
-        a.download = title.replace(/\s+/g, '-').toLowerCase() + '-walldrop' + (src.match(/\.\w+$/) || ['.jpg'])[0];
-        a.click();
-      });
+    if (btn) {
+      btn.textContent = '✓ Saved';
+      btn.classList.add('done');
+      setTimeout(function () {
+        btn.textContent = '↓ Download Original';
+        btn.classList.remove('done');
+      }, 1800);
+    }
   }
 
   document.getElementById('viewDownload').addEventListener('click', function () {
@@ -243,7 +152,7 @@
     if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
 
     var t = e.target;
-    if (t && t.closest && t.closest('nav,.view-meta,a,button,select,option,label,input,textarea')) return;
+    if (t && t.closest && t.closest('nav,.view-meta,a,button,label,input,textarea')) return;
     if (t && t.closest && t.closest('.view-img')) return;
 
     var x = typeof e.clientX === 'number' ? e.clientX : 0;
