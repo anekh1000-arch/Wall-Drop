@@ -1,0 +1,102 @@
+# WallDrop - Dark & Minimal Wallpaper Gallery
+
+## Purpose
+WallDrop is a curated, free wallpaper gallery focused on dark-themed and minimal aesthetics. The site provides calm, high-contrast backgrounds for desktop, Mac, and mobile devices without clutter or distractions.
+
+## Main Views
+
+### index.html (Home/Gallery)
+- **Hero Section**: Features animated SVG typography "Wallpapers" with search functionality
+- **Filter Bar**: Category filters (All, Dark, Minimal, Abstract, Monochrome, Gradient) and device filters (All, Desktop, Mac, Mobile)
+- **Gallery Grid**: Responsive grid displaying wallpaper cards with thumbnails, download counts, and category tags
+- **Lightbox**: Full-screen wallpaper preview with download options
+- **Stats Display**: Shows total uploaded wallpapers, download count, theme focus, and resolution info
+
+### about.html
+- **About Hero**: Brand messaging "Less noise. More focus."
+- **Story Section**: Explains WallDrop's philosophy of simplicity
+- **Goal Card**: Highlights the mission to create cleaner, calmer screens
+- **Pillars**: Three core principles - Minimal (by design), Free (to download), Everyday (made for use)
+- **CTA Section**: Links to browse wallpapers
+
+### admin.html (Owner Guide)
+- **Setup Instructions**: Step-by-step guide for adding wallpapers
+- **Folder Structure**: Desktop and mobile wallpaper directories
+- **Update Workflow**: Python script (sync.py) to regenerate gallery
+- **Category System**: Filename-based categorization (e.g., `dark--monterey-black.jpg`)
+- **Third-party Tools**: Optional integration suggestions (Decap CMS, Cloudinary)
+
+## Data Models
+
+### wallpapers.json
+```json
+{
+  "wallpapers": [
+    {
+      "id": "unique-id",
+      "title": "Wallpaper Name",
+      "category": "dark|minimal|abstract|monochrome|gradient",
+      "device": "desktop|mac|mobile",
+      "path": "images/wallpapers/desktop/filename.jpg",
+      "width": 3840,
+      "height": 2160,
+      "downloads": 0
+    }
+  ]
+}
+```
+
+### Folder Structure
+```
+images/wallpapers/
+├── desktop/    # Landscape wallpapers (PC/Mac)
+├── mac/        # Mac-specific wallpapers
+└── mobile/     # Portrait wallpapers (phones)
+```
+
+## Technical Stack
+
+### Frontend
+- **HTML5**: Semantic markup with proper heading hierarchy (H1-H6)
+- **CSS3**: Custom CSS with CSS variables for theming, no framework
+- **JavaScript (Vanilla)**: Gallery rendering, filtering, lightbox, download tracking
+- **Fonts**: Inter (body), Outfit (headings) via Google Fonts
+
+### Backend/Build
+- **Python (sync.py)**: Scans wallpaper folders, generates wallpapers.json with metadata
+- **Python (image_size.py)**: Extracts image dimensions for responsive display
+- **Static Hosting**: Designed for Vercel, GitHub Pages, or local HTTP server
+
+### Key Features
+- **Client-side Filtering**: JavaScript-based category and device filtering
+- **LocalStorage**: Persists download counts across sessions
+- **Responsive Design**: Mobile-first with breakpoint at 640px
+- **Accessibility**: Skip links, ARIA labels, keyboard navigation, focus states
+- **Performance**: Lazy loading, optimized images, minimal dependencies
+
+## Workflow
+
+### Adding Wallpapers
+1. Copy images to `images/wallpapers/desktop/` or `mobile/`
+2. (Optional) Prefix filename with category: `dark--filename.jpg`
+3. Run `python sync.py` or double-click `update-gallery.bat`
+4. Refresh site - gallery auto-updates
+
+### Deployment
+- **Local**: `python -m http.server 8080`
+- **Vercel**: Push to git, Vercel auto-deploys
+- **GitHub Pages**: Push to gh-pages branch
+
+## Design Philosophy
+- **Dark Theme Only**: All wallpapers are dark-themed for reduced eye strain
+- **Minimal Aesthetic**: Clean compositions, subtle gradients, high contrast
+- **No Sign-up Required**: Direct download without authentication
+- **Curated Quality**: Handpicked selection, not user-generated content
+- **Performance First**: Fast loading, minimal JavaScript, no external dependencies
+
+## SEO Implementation
+- Semantic HTML with proper heading hierarchy (H1 → H2 → H3)
+- Meta descriptions and titles on all pages
+- Structured data ready for schema markup
+- Accessible navigation and content structure
+- Fast page load times for search engine optimization

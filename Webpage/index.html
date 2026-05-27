@@ -111,6 +111,11 @@ nav{
 .nav-links a:hover,.nav-links a.active{color:var(--white)}
 .nav-links a.active{background:rgba(255,255,255,0.07)}
 .nav-links a:focus-visible,.nav-btn:focus-visible,.logo-link:focus-visible{outline:2px solid rgba(255,255,255,0.35);outline-offset:3px}
+.logo-link{text-decoration:none;color:inherit}
+.visually-hidden{
+  position:absolute;width:1px;height:1px;padding:0;margin:-1px;
+  overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;
+}
 .nav-toggle{
   display:none;background:transparent;border:1px solid var(--border-light);
   color:var(--silver);width:36px;height:36px;border-radius:6px;
@@ -356,6 +361,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 .device-pill:hover{border-color:var(--silver);color:var(--silver)}
 .device-pill.active{background:rgba(255,255,255,0.08);border-color:var(--border-light);color:var(--white)}
 .filter-section.is-disabled{opacity:0.4;pointer-events:none;user-select:none}
+.filter-wrapper{width:100%}
 .thumb-skeleton{
   position:absolute;inset:0;
   background:linear-gradient(110deg,#0e0e0e 8%,#161616 18%,#0e0e0e 33%);
@@ -731,7 +737,8 @@ footer{
 
 <!-- FILTER BAR -->
 <div class="filter-section reveal--soft" id="filterSection" data-reveal aria-label="Filter wallpapers">
-  <div style="width:100%">
+  <h2 class="visually-hidden">Filter by Category</h2>
+  <div class="filter-wrapper">
     <div class="filters" id="filters">
       <button class="pill active" data-cat="all">All</button>
       <button class="pill" data-cat="dark">Dark</button>
@@ -740,6 +747,7 @@ footer{
       <button class="pill" data-cat="monochrome">Monochrome</button>
     </div>
   </div>
+  <h2 class="visually-hidden">Filter by Device</h2>
   <div class="device-group" id="deviceGroup">
     <button class="device-pill active" data-dev="all">All</button>
     <button class="device-pill" data-dev="desktop">Desktop</button>
@@ -750,6 +758,7 @@ footer{
 
 <!-- GALLERY -->
 <div class="gallery-wrap" data-reveal>
+  <h2 class="visually-hidden">Wallpaper Gallery</h2>
   <div class="gallery" id="gallery">
     <div class="empty-state visible" id="emptyState">
       <div class="empty-title">No wallpapers yet</div>

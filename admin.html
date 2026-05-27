@@ -35,6 +35,12 @@ code,pre{font-family:ui-monospace,Consolas,monospace;font-size:0.82rem}
 code{background:#131313;border:1px solid #2a2a2a;padding:0.12rem 0.4rem;border-radius:4px;color:#d4d4d4}
 pre{background:#131313;border:1px solid #2a2a2a;padding:1rem;border-radius:8px;color:#c8c8c8;overflow-x:auto}
 .tip{border:1px solid #2a2a2a;background:#0e0e0e;border-radius:10px;padding:1rem;margin-top:1.5rem;font-size:0.88rem}
+.text-small{font-size:0.85rem}
+.text-muted{color:#888}
+.text-light{color:#f5f5f5}
+.text-dim{color:#666}
+.mt-sm{margin-top:0.75rem}
+.mt-md{margin-top:1.5rem}
 .tip h3{font-family:'Outfit',sans-serif;color:#f5f5f5;font-size:0.95rem;margin-bottom:0.5rem}
 ul{padding-left:1.2rem;margin:0.5rem 0}
 @media(max-width:520px){.folder{grid-template-columns:1fr}}
@@ -52,19 +58,19 @@ ul{padding-left:1.2rem;margin:0.5rem 0}
       <div class="folder-box">
         <strong>Desktop</strong><br>
         <code>images\wallpapers\desktop\</code><br>
-        <span style="font-size:0.85rem">Landscape · PC</span>
+        <span class="text-small">Landscape · PC</span>
       </div>
       <div class="folder-box">
         <strong>Mobile</strong><br>
         <code>images\wallpapers\mobile\</code><br>
-        <span style="font-size:0.85rem">Portrait · phones</span>
+        <span class="text-small">Portrait · phones</span>
       </div>
     </div>
   </li>
   <li>
     <strong>Update the gallery list</strong><br>
     Double-click <code>update-gallery.bat</code> in the Webpage folder<br>
-    <span style="color:#888">or in PowerShell:</span>
+    <span class="text-muted">or in PowerShell:</span>
     <pre>cd D:\Webpage
 python sync.py</pre>
     (use <code>py sync.py</code> if <code>python</code> does not work)
@@ -73,7 +79,7 @@ python sync.py</pre>
     <strong>View the site</strong><br>
     <pre>cd D:\Webpage
 python -m http.server 8080</pre>
-    Open <a href="http://localhost:8080" style="color:#f5f5f5">localhost:8080</a>
+    Open <a href="http://localhost:8080" class="text-light">localhost:8080</a>
   </li>
 </ol>
 
@@ -84,7 +90,7 @@ minimal--slate-lines.jpg
 abstract--void.jpg</pre>
 <p>Allowed prefixes: <code>dark</code> <code>minimal</code> <code>abstract</code> <code>monochrome</code> <code>gradient</code></p>
 <p>No prefix → treated as <strong>dark</strong>. Title is taken from the filename.</p>
-<p style="margin-top:0.75rem;color:#888">Any image size is OK — the site reads real width×height automatically (no need to resize to 4K).</p>
+<p class="mt-sm text-muted">Any image size is OK — the site reads real width×height automatically (no need to resize to 4K).</p>
 
 <div class="tip">
   <h3>Third-party tools (if you want easier management later)</h3>
@@ -93,9 +99,9 @@ abstract--void.jpg</pre>
     <li><strong>Cloudinary</strong> (free tier) — store images in the cloud; you paste URLs into JSON. Handy for many large files.</li>
     <li><strong>Google Drive / Dropbox</strong> — only for backup; the site still needs files in <code>desktop</code> / <code>mobile</code> or URLs in JSON.</li>
   </ul>
-  <p style="margin-top:0.75rem">For now, <strong>folder + update-gallery.bat</strong> is the simplest and works forever on your PC.</p>
+  <p class="mt-sm">For now, <strong>folder + update-gallery.bat</strong> is the simplest and works forever on your PC.</p>
 </div>
 
-<p style="margin-top:1.5rem;font-size:0.85rem;color:#666">Full notes: <code>OWNER.md</code> · <code>SETUP.md</code></p>
+<p class="mt-md text-small text-dim">Full notes: <code>OWNER.md</code> · <code>SETUP.md</code></p>
 </body>
 </html>
