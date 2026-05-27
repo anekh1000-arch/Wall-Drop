@@ -12,6 +12,7 @@ const ROOT = __dirname;
 const DESKTOP = path.join(ROOT, 'images', 'wallpapers', 'desktop');
 const MOBILE = path.join(ROOT, 'images', 'wallpapers', 'mobile');
 const MAC = path.join(ROOT, 'images', 'wallpapers', 'mac');
+const MONOCHROME = path.join(ROOT, 'images', 'wallpapers', 'monochrome');
 const OUT = path.join(ROOT, 'wallpapers.json');
 const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
@@ -20,7 +21,8 @@ const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome']);
 const FALLBACK_RES = {
   desktop: '3840×2160',
   mobile: '1284×2778',
-  mac: '3024×1964'
+  mac: '3024×1964',
+  monochrome: '3840×2160'
 };
 
 const VIBE_KEYWORDS = {
@@ -340,11 +342,13 @@ function main() {
   fs.mkdirSync(DESKTOP, { recursive: true });
   fs.mkdirSync(MOBILE, { recursive: true });
   fs.mkdirSync(MAC, { recursive: true });
+  fs.mkdirSync(MONOCHROME, { recursive: true });
 
   const wallpapers = [
     ...scanFolder(DESKTOP, 'desktop'),
     ...scanFolder(MOBILE, 'mobile'),
-    ...scanFolder(MAC, 'mac')
+    ...scanFolder(MAC, 'mac'),
+    ...scanFolder(MONOCHROME, 'monochrome')
   ];
   const data = { wallpapers, generatedAt: new Date().toISOString() };
 
@@ -353,12 +357,14 @@ function main() {
   const d = scanFolder(DESKTOP, 'desktop').length;
   const m = scanFolder(MOBILE, 'mobile').length;
   const mac = scanFolder(MAC, 'mac').length;
+  const mono = scanFolder(MONOCHROME, 'monochrome').length;
   console.log(`WallDrop: ${wallpapers.length} wallpaper(s) -> wallpapers.json`);
   console.log(`  desktop: ${d}`);
   console.log(`  mobile:  ${m}`);
   console.log(`  mac:     ${mac}`);
+  console.log(`  monochrome: ${mono}`);
   if (!wallpapers.length) {
-    console.log('  (add JPG/PNG/WebP to images/wallpapers/desktop, mobile, or mac)');
+    console.log('  (add JPG/PNG/WebP to images/wallpapers/desktop, mobile, mac, or monochrome)');
   }
 }
 
