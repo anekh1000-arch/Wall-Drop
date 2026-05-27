@@ -257,59 +257,6 @@ nav{
   margin:0;
 }
 
-.quote-section{
-  text-align:center;
-  padding:2.5rem 2rem;
-  background:linear-gradient(135deg,var(--surface) 0%,var(--card) 100%);
-  border:1px solid var(--border);
-  border-radius:14px;
-  margin-bottom:2.5rem;
-  position:relative;
-  overflow:hidden;
-}
-.quote-section::before{
-  content:'';
-  position:absolute;
-  top:-50%;
-  left:-50%;
-  width:200%;
-  height:200%;
-  background:radial-gradient(circle,rgba(255,255,255,0.03) 0%,transparent 70%);
-  animation:quoteGlow 8s ease-in-out infinite;
-}
-@keyframes quoteGlow{
-  0%,100%{transform:translate(0,0)}
-  50%{transform:translate(10%,10%)}
-}
-.quote-icon{
-  font-size:4rem;
-  color:var(--white);
-  opacity:0.15;
-  line-height:1;
-  margin-bottom:1rem;
-  position:relative;
-  z-index:1;
-}
-.quote-text{
-  font-family:'Outfit',sans-serif;
-  font-size:1.25rem;
-  font-weight:400;
-  line-height:1.6;
-  color:var(--white);
-  margin:0 0 1rem;
-  position:relative;
-  z-index:1;
-  letter-spacing:-0.02em;
-}
-.quote-author{
-  font-size:0.85rem;
-  color:var(--dim);
-  font-style:italic;
-  margin:0;
-  position:relative;
-  z-index:1;
-}
-
 footer{
   border-top:1px solid var(--border);
   padding:2.5rem 3rem 2rem;
@@ -451,12 +398,6 @@ footer{
     </div>
   </div>
 
-  <div class="quote-section reveal--soft" data-reveal>
-    <div class="quote-icon">"</div>
-    <p class="quote-text" id="quoteText"></p>
-    <p class="quote-author" id="quoteAuthor"></p>
-  </div>
-
   <p class="closing">No sign-up. No clutter. Just wallpapers that respect your attention.</p>
 
   <div class="about-cta">
@@ -481,35 +422,5 @@ footer{
 <script src="scroll-reveal.js"></script>
 <script src="site.js"></script>
 <script src="loader.js"></script>
-<script>
-(function(){
-  const quotes = [
-    { text: "Simplicity is the ultimate sophistication.", author: "Leonardo da Vinci" },
-    { text: "Less is more.", author: "Mies van der Rohe" },
-    { text: "The ability to simplify means to eliminate the unnecessary so that the necessary may speak.", author: "Hans Hofmann" },
-    { text: "Perfection is achieved not when there is nothing more to add, but when there is nothing left to take away.", author: "Antoine de Saint-Exupéry" },
-    { text: "Design is not just what it looks like and feels like. Design is how it works.", author: "Steve Jobs" },
-    { text: "Good design is as little design as possible.", author: "Dieter Rams" },
-    { text: "Make it simple, but significant.", author: "Don Draper" },
-    { text: "Simplicity is the keynote of all true elegance.", author: "Coco Chanel" },
-    { text: "The details are not the details. They make the design.", author: "Charles Eames" },
-    { text: "Creativity is intelligence having fun.", author: "Albert Einstein" }
-  ];
-  
-  function displayRandomQuote() {
-    const quote = quotes[Math.floor(Math.random() * quotes.length)];
-    const quoteText = document.getElementById('quoteText');
-    const quoteAuthor = document.getElementById('quoteAuthor');
-    if (quoteText) quoteText.textContent = quote.text;
-    if (quoteAuthor) quoteAuthor.textContent = '— ' + quote.author;
-  }
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', displayRandomQuote);
-  } else {
-    displayRandomQuote();
-  }
-})();
-</script>
 </body>
 </html>
