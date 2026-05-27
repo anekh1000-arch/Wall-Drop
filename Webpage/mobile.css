@@ -1,6 +1,7 @@
 /* Mobile layout and touch optimizations */
 html.is-mobile {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 @media (max-width: 768px) {
@@ -17,6 +18,28 @@ html.is-mobile {
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  html.is-mobile .nav-links.is-open {
+    display: flex;
+    position: absolute;
+    top: 56px;
+    left: 0;
+    right: 0;
+    background: var(--bg, #080808);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem;
+    z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  }
+
+  html.is-mobile .nav-links a {
+    padding: 0.85rem 1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
   }
 
   html.is-mobile .hero {
@@ -91,6 +114,7 @@ html.is-mobile {
   html.is-mobile .device-pill {
     min-height: 40px;
     flex-shrink: 0;
+    padding: 0.5rem 1rem;
   }
 
   html.is-mobile .device-group {
@@ -118,6 +142,10 @@ html.is-mobile {
     border-radius: 12px;
   }
 
+  html.is-mobile .wall-card {
+    min-height: 180px;
+  }
+
   html.is-mobile .wall-card .card-meta {
     padding: 0.55rem 0.65rem;
   }
@@ -130,13 +158,53 @@ html.is-mobile {
     font-size: 0.58rem;
   }
 
+  html.is-mobile .res-badge {
+    font-size: 0.52rem;
+    padding: 2px 5px;
+  }
+
+  html.is-mobile .dl-btn {
+    min-height: 36px;
+    padding: 0.5rem 1rem;
+  }
+
   html.is-mobile footer {
     padding: 2rem 1.25rem;
+  }
+
+  html.is-mobile .footer-nav {
+    gap: 1.5rem;
+    flex-wrap: wrap;
   }
 }
 
 @media (max-width: 420px) {
   html.is-mobile .gallery {
     grid-template-columns: 1fr;
+  }
+
+  html.is-mobile .wall-card {
+    min-height: 200px;
+  }
+}
+
+/* Touch-friendly button sizes */
+@media (max-width: 768px) {
+  html.is-mobile .btn-primary,
+  html.is-mobile .btn-ghost,
+  html.is-mobile .nav-btn,
+  html.is-mobile .pill,
+  html.is-mobile .device-pill {
+    min-height: 44px;
+    min-width: 44px;
+  }
+}
+
+/* Prevent zoom on input focus */
+@media (max-width: 768px) {
+  html.is-mobile input,
+  html.is-mobile select,
+  html.is-mobile textarea {
+    font-size: 16px;
   }
 }
