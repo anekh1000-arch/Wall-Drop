@@ -29,7 +29,7 @@
   filter:none;
 }
 .wall-card.reveal{
-  transform:translate3d(0,0,0);
+  transform:translate3d(0,18px,0);
   filter:none;
   transition:
     opacity 0.45s cubic-bezier(0.22,1,0.36,1),
