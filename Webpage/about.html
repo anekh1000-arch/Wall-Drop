@@ -219,6 +219,44 @@ nav{
 }
 .btn-ghost:hover{border-color:var(--silver);color:var(--silver)}
 
+.features-section{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1.5rem;
+  margin-bottom:2.5rem;
+}
+.feature-card{
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:14px;
+  padding:1.75rem 1.5rem;
+  transition:background 0.2s,border-color 0.2s;
+}
+.feature-card:hover{
+  background:var(--card);
+  border-color:var(--border-light);
+}
+.feature-icon{
+  font-size:1.5rem;
+  margin-bottom:1rem;
+}
+.feature-card h3{
+  font-family:'Outfit',sans-serif;
+  font-size:0.95rem;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:-0.02em;
+  margin-bottom:0.75rem;
+  line-height:1.4;
+}
+.feature-card p{
+  font-size:0.82rem;
+  font-weight:300;
+  line-height:1.7;
+  color:var(--silver);
+  margin:0;
+}
+
 footer{
   border-top:1px solid var(--border);
   padding:2.5rem 3rem 2rem;
@@ -256,6 +294,7 @@ footer{
   }
   .nav-links.is-open{display:flex}
   .pillars{grid-template-columns:1fr}
+  .features-section{grid-template-columns:1fr}
   .footer-nav{gap:1.5rem;flex-wrap:wrap}
 }
 </style>
@@ -328,6 +367,32 @@ footer{
     <div class="pillar">
       <h3>Everyday</h3>
       <p>Made for use</p>
+    </div>
+  </div>
+
+  <div class="features-section reveal--soft" data-reveal>
+    <div class="feature-card">
+      <div class="feature-icon">✨</div>
+      <h3>Why Choose WallDrop?</h3>
+      <p>WallDrop offers a curated collection of high-quality dark and minimal wallpapers designed to reduce eye strain and improve focus. Our wallpapers are perfect for developers, designers, and anyone who spends hours in front of screens. Each wallpaper is handpicked to ensure it meets our strict standards for visual quality, color harmony, and aesthetic appeal.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🌙</div>
+      <h3>Dark Theme Benefits</h3>
+      <p>Dark wallpapers aren't just about aesthetics—they serve a practical purpose. Dark themes reduce blue light exposure, which can help improve sleep quality and reduce digital eye strain. Our AMOLED-friendly wallpapers are optimized for devices with OLED displays, helping to save battery life while providing stunning visual contrast.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">🎯</div>
+      <h3>Minimal Design Philosophy</h3>
+      <p>We believe in the power of simplicity. Our minimal wallpapers remove visual clutter, allowing you to focus on what matters most. Whether you're coding, writing, or just browsing, a clean desktop environment can help maintain mental clarity and productivity. Each wallpaper in our collection embodies the principles of minimalism: clean lines, balanced composition, and thoughtful use of negative space.</p>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">📺</div>
+      <h3>4K Resolution Quality</h3>
+      <p>All wallpapers in our collection are available in 4K resolution (3840×2160 for desktop, optimized for mobile). This ensures crisp, clear visuals on any display, from ultrawide monitors to high-DPI laptop screens. Our wallpapers are also optimized for various aspect ratios, ensuring they look great on any device.</p>
     </div>
   </div>
 
