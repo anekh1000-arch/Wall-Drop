@@ -210,6 +210,30 @@
             : 'desktop wallpaper') +
         ' 4K');
     img.decoding = 'async';
+    
+    // Add explicit width/height to prevent CLS
+    if (item.width && item.height) {
+      img.width = item.width;
+      img.height = item.height;
+    }
+    
+    // Generate srcset for responsive images
+    if (item.width && item.height) {
+      const sizes = [
+        { width: 640, height: Math.round(640 * (item.height / item.width)) },
+        { width: 1280, height: Math.round(1280 * (item.height / item.width)) },
+        { width: 1920, height: Math.round(1920 * (item.height / item.width)) }
+      ];
+      const srcset = sizes
+        .filter(s => s.width <= item.width)
+        .map(s => `${imagePath} ${s.width}w`)
+        .join(', ');
+      if (srcset) {
+        img.srcset = srcset;
+        img.sizes = '(max-width: 640px) 100vw, (max-width: 1280px) 50vw, 33vw';
+      }
+    }
+    
     if (eager) {
       img.src = imagePath;
       img.loading = 'eager';

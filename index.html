@@ -345,6 +345,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   width:100%;position:relative;overflow:hidden;
   display:flex;align-items:center;justify-content:center;
   background:#0a0a0a;
+  aspect-ratio:var(--wall-ar, 16/9);
 }
 .wall-thumb-inner{
   width:100%;line-height:0;overflow:hidden;
@@ -359,6 +360,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   transform-origin:center center;
   transition:transform 0.55s cubic-bezier(0.25,0.46,0.45,0.94),filter 0.4s ease;
   will-change:transform;
+  aspect-ratio:var(--wall-ar, auto);
 }
 .wall-card:hover .wall-thumb-inner.has-image img{
   transform:scale(1.07);
