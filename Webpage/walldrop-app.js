@@ -308,7 +308,7 @@
             b.classList.toggle('active', b.dataset.dev === 'all');
           });
         }
-        scrollToGallery();
+        scrollToAboveCenter();
         applyFilters(false);
         showToast('Top 10 most downloaded');
       }
