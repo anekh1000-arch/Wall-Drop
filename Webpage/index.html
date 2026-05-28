@@ -100,7 +100,7 @@ nav{
   border-bottom:1px solid var(--border);
   will-change:transform;
 }
-.logo-link .logo-text{color:var(--white)}
+.logo-link .logo-text{color:var(--white);font-family:'Outfit',sans-serif;font-weight:600;font-size:1.1rem}
 .nav-links{display:flex;gap:0.2rem;list-style:none}
 .nav-links a{
   color:var(--dim);text-decoration:none;
@@ -317,7 +317,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   overflow:hidden;background:var(--surface);
   position:relative;z-index:1;width:fit-content;
 }
-.stat{padding:1.1rem 2rem;position:relative}
+.stat{padding:1.1rem 2rem;position:relative;display:flex;flex-direction:column;gap:3px}
 .stat+.stat::before{
   content:'';position:absolute;left:0;top:20%;height:60%;
   width:1px;background:var(--border);
@@ -328,7 +328,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   color:#d4d4d4;line-height:1;
   font-variant-numeric:tabular-nums;letter-spacing:-0.02em;
 }
-.stat-label{font-size:0.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.12em;margin-top:3px}
+.stat-label{font-size:0.65rem;color:var(--dim);text-transform:uppercase;letter-spacing:0.12em}
 
 /* ── FILTER BAR ── */
 .filter-section{
@@ -340,7 +340,7 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   -webkit-backdrop-filter:blur(20px);
   border-bottom:1px solid var(--border);
 }
-.filters{display:flex;gap:0.3rem;flex-wrap:wrap}
+.filters{display:flex;gap:0.3rem;flex-wrap:wrap;flex:1}
 .pill{
   background:transparent;border:1px solid var(--border);
   color:var(--dim);padding:0.35rem 0.9rem;
@@ -361,7 +361,6 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 .device-pill:hover{border-color:var(--silver);color:var(--silver)}
 .device-pill.active{background:rgba(255,255,255,0.08);border-color:var(--border-light);color:var(--white)}
 .filter-section.is-disabled{opacity:0.4;pointer-events:none;user-select:none}
-.filter-wrapper{width:100%}
 .thumb-skeleton{
   position:absolute;inset:0;
   background:linear-gradient(110deg,#0e0e0e 8%,#161616 18%,#0e0e0e 33%);
@@ -645,9 +644,7 @@ footer{
 <div id="page-loader" class="page-loader" aria-live="polite" aria-busy="true">
   <div class="page-loader__grid"></div>
   <div class="page-loader__inner">
-    <div class="page-loader__brand">
-      <span class="logo-text">WallDrop</span>
-    </div>
+    <span class="page-loader__brand logo-text">WallDrop</span>
     <svg class="page-loader__ring" viewBox="0 0 44 44" aria-hidden="true">
       <circle cx="22" cy="22" r="18"></circle>
       <circle class="ring-progress" cx="22" cy="22" r="18"></circle>
@@ -660,9 +657,7 @@ footer{
 <!-- NAV -->
 <nav>
   <a href="index.html" class="logo-link" style="text-decoration:none;color:inherit" aria-label="WallDrop home">
-    <div class="logo">
-      <span class="logo-text">WallDrop</span>
-    </div>
+    <span class="logo-text">WallDrop</span>
   </a>
   <ul class="nav-links">
     <li><a href="index.html" class="active">Browse</a></li>
@@ -720,12 +715,12 @@ footer{
 
   <div class="stats-row reveal--soft" data-reveal>
     <div class="stat">
-      <div class="stat-val" id="wall-count">0</div>
-      <div class="stat-label">Uploaded</div>
+      <span class="stat-val" id="wall-count">0</span>
+      <span class="stat-label">Uploaded</span>
     </div>
     <div class="stat">
-      <div class="stat-val">4K</div>
-      <div class="stat-label">Resolution</div>
+      <span class="stat-val">4K</span>
+      <span class="stat-label">Resolution</span>
     </div>
   </div>
 </section>
@@ -733,14 +728,12 @@ footer{
 <!-- FILTER BAR -->
 <div class="filter-section reveal--soft" id="filterSection" data-reveal aria-label="Filter wallpapers">
   <h2 class="visually-hidden">Filter by Category</h2>
-  <div class="filter-wrapper">
-    <div class="filters" id="filters">
-      <button class="pill active" data-cat="all">All</button>
-      <button class="pill" data-cat="dark">Dark</button>
-      <button class="pill" data-cat="minimal">Minimal</button>
-      <button class="pill" data-cat="abstract">Abstract</button>
-      <button class="pill" data-cat="monochrome">Monochrome</button>
-    </div>
+  <div class="filters" id="filters">
+    <button class="pill active" data-cat="all">All</button>
+    <button class="pill" data-cat="dark">Dark</button>
+    <button class="pill" data-cat="minimal">Minimal</button>
+    <button class="pill" data-cat="abstract">Abstract</button>
+    <button class="pill" data-cat="monochrome">Monochrome</button>
   </div>
   <h2 class="visually-hidden">Filter by Device</h2>
   <div class="device-group" id="deviceGroup">
@@ -760,16 +753,13 @@ footer{
       <p>Add wallpapers to <strong>images/wallpapers/desktop</strong>, <strong>mac</strong>, or <strong>mobile</strong>, then deploy. Vercel rebuilds the gallery automatically.</p>
       <span class="empty-hint">Tip: convert large PNGs to WebP for faster loads — see PERFORMANCE.md</span>
     </div>
-
   </div>
 </div>
 </main>
 
 <!-- FOOTER -->
 <footer class="reveal--soft" data-reveal>
-  <a href="index.html" class="footer-brand" aria-label="WallDrop home">
-    <span class="footer-brand__text">WallDrop</span>
-  </a>
+  <a href="index.html" class="footer-brand" aria-label="WallDrop home">WallDrop</a>
   <nav class="footer-nav" aria-label="Footer navigation">
     <a href="index.html">Browse</a>
     <a href="about.html">About</a>
