@@ -97,25 +97,36 @@
     const q = searchQuery.trim().toLowerCase();
     let visible = 0;
 
-    if (sortMode === 'popular') sortCardsPopular();
-
-    let popularShown = 0;
-    const popularLimit = sortMode === 'popular' ? POPULAR_LIMIT : Infinity;
-
-    cards().forEach((card) => {
-      let show = cardMatches(card);
-      if (show && sortMode === 'popular') {
-        if (popularShown >= popularLimit) show = false;
-        else popularShown++;
+    if (sortMode === 'popular') {
+      sortCardsPopular();
+      // In popular mode, don't use pagination - show all popular wallpapers
+      let popularShown = 0;
+      cards().forEach((card) => {
+        let show = cardMatches(card);
+        if (show && sortMode === 'popular') {
+          if (popularShown >= POPULAR_LIMIT) show = false;
+          else popularShown++;
+        }
+        card.classList.toggle('hidden', !show);
+        card.classList.remove('is-search-hit');
+        if (show) visible++;
+      });
+    } else {
+      // Normal mode with pagination
+      if (typeof window.applyGalleryFilters === 'function') {
+        window.applyGalleryFilters();
       }
-      card.classList.toggle('hidden', !show);
-      card.classList.remove('is-search-hit');
-      if (show) visible++;
-    });
+      cards().forEach((card) => {
+        let show = cardMatches(card);
+        card.classList.toggle('hidden', !show);
+        card.classList.remove('is-search-hit');
+        if (show) visible++;
+      });
+    }
 
     if (gallery) gallery.classList.toggle('is-searching', !!q);
 
-    if (animateSearch && q) {
+    if (animateSearch && q && sortMode !== 'popular') {
       requestAnimationFrame(() => {
         let hitIndex = 0;
         cards().forEach((card) => {
