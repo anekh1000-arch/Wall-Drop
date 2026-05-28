@@ -542,10 +542,12 @@
       const gallery = document.getElementById('gallery');
       const emptyEl = document.getElementById('emptyState');
       renderPage(currentPage, filteredItems, gallery, emptyEl);
-      // Scroll to filter section (higher up than gallery)
-      const filterSection = document.getElementById('filterSection');
-      if (filterSection) {
-        filterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      // Scroll to center of page
+      const gallerySection = document.querySelector('.gallery-wrap');
+      if (gallerySection) {
+        const rect = gallerySection.getBoundingClientRect();
+        const scrollTop = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       }
     }
   };
