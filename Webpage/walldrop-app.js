@@ -243,6 +243,7 @@
       btn.classList.add('active');
       activeCat = btn.dataset.cat;
       sortMode = 'default';
+      // Only use pagination in default mode, not popular mode
       if (typeof window.applyGalleryFilters === 'function') {
         window.applyGalleryFilters();
       }
@@ -258,7 +259,8 @@
       deviceGroup.querySelectorAll('.device-pill').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       activeDev = btn.dataset.dev;
-      if (typeof window.applyGalleryFilters === 'function') {
+      // Only use pagination in default mode, not popular mode
+      if (typeof window.applyGalleryFilters === 'function' && sortMode !== 'popular') {
         window.applyGalleryFilters();
       }
       applyFilters(false);
