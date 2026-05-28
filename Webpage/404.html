@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found — WallDrop</title>
+  <meta name="description" content="The page you're looking for doesn't exist. Return to WallDrop to browse our collection of dark, minimalist wallpapers.">
+  <link rel="icon" href="icons/favicon.svg?v=5" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="icons/icon.svg?v=5">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+
+    :root{
+      --bg:#080808;
+      --surface:#0e0e0e;
+      --card:#131313;
+      --border:#1f1f1f;
+      --border-light:#2a2a2a;
+      --white:#f5f5f5;
+      --silver:#a0a0a0;
+      --dim:#555;
+      --grid-line:rgba(255,255,255,0.03);
+      --grid-size:60px;
+    }
+
+    body{
+      background-color:var(--bg);
+      background-image:
+        linear-gradient(var(--grid-line) 1px,transparent 1px),
+        linear-gradient(90deg,var(--grid-line) 1px,transparent 1px);
+      background-size:var(--grid-size) var(--grid-size);
+      color:var(--silver);
+      font-family:'Inter',sans-serif;
+      font-size:14px;
+      line-height:1.6;
+      min-height:100vh;
+      display:flex;
+      flex-direction:column;
+      align-items:center;
+      justify-content:center;
+      padding:2rem;
+      -webkit-font-smoothing:antialiased;
+    }
+
+    .container{
+      text-align:center;
+      max-width:500px;
+    }
+
+    .error-code{
+      font-family:'Outfit',sans-serif;
+      font-size:clamp(6rem,20vw,12rem);
+      font-weight:700;
+      color:var(--white);
+      line-height:1;
+      margin-bottom:1rem;
+      letter-spacing:-0.05em;
+    }
+
+    .error-title{
+      font-family:'Outfit',sans-serif;
+      font-size:clamp(1.5rem,4vw,2rem);
+      font-weight:600;
+      color:var(--white);
+      margin-bottom:1rem;
+      letter-spacing:-0.02em;
+    }
+
+    .error-message{
+      color:var(--silver);
+      font-size:1rem;
+      font-weight:300;
+      margin-bottom:2.5rem;
+      line-height:1.7;
+    }
+
+    .home-btn{
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      padding:0.85rem 2rem;
+      background:var(--surface);
+      border:1px solid var(--border-light);
+      border-radius:10px;
+      color:var(--white);
+      text-decoration:none;
+      font-family:'Inter',sans-serif;
+      font-size:0.85rem;
+      font-weight:400;
+      letter-spacing:0.02em;
+      transition:all 0.2s ease;
+    }
+
+    .home-btn:hover{
+      background:var(--card);
+      border-color:var(--white);
+      transform:translateY(-2px);
+    }
+
+    .home-btn:active{
+      transform:translateY(0);
+    }
+
+    .home-btn svg{
+      width:16px;
+      height:16px;
+      margin-right:0.5rem;
+      stroke:currentColor;
+    }
+
+    @media(max-width:640px){
+      body{
+        padding:1.5rem;
+      }
+      .container{
+        max-width:100%;
+      }
+      .home-btn{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="error-code">404</div>
+    <h1 class="error-title">Page Not Found</h1>
+    <p class="error-message">The wallpaper you're looking for doesn't exist or has been moved. Let's get you back to browsing our collection.</p>
+    <a href="index.html" class="home-btn">
+      <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      Back to Home
+    </a>
+  </div>
+</body>
+</html>
