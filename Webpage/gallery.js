@@ -448,7 +448,7 @@
 
     appendCardsInChunks(pageItems, gallery, emptyEl, function (count) {
       updatePaginationControls();
-      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: filteredItems.length } }));
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: count } }));
     });
   }
 
@@ -487,10 +487,7 @@
     if (page < 1 || page > totalPages) return;
     currentPage = page;
     renderPage(currentPage);
-    const gallery = document.getElementById('gallery');
-    if (gallery) {
-      gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
   window.initWallDropGallery = async function () {
