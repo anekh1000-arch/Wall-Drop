@@ -314,6 +314,61 @@ nav{
   margin:0;
 }
 
+/* Contact Section */
+.contact-section{
+  margin-bottom:2.5rem;
+  animation:fadeUp 0.5s 0.38s ease both;
+}
+.contact-title{
+  font-family:'Outfit',sans-serif;
+  font-size:1.4rem;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:-0.03em;
+  margin-bottom:1.5rem;
+  line-height:1.3;
+}
+.contact-links{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:1rem;
+}
+.contact-link{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--surface);
+  border:1px solid var(--border);
+  border-radius:12px;
+  padding:1.25rem 1.5rem;
+  text-decoration:none;
+  transition:all 0.2s;
+}
+.contact-link:hover{
+  background:var(--card);
+  border-color:var(--border-light);
+  transform:translateY(-2px);
+}
+.contact-icon{
+  font-size:1.5rem;
+  color:var(--silver);
+  width:40px;height:40px;
+  display:flex;align-items:center;justify-content:center;
+  background:rgba(255,255,255,0.03);
+  border-radius:8px;
+}
+.contact-label{
+  font-size:0.62rem;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color:var(--dim);
+  margin-bottom:0.25rem;
+}
+.contact-value{
+  font-size:0.85rem;
+  font-weight:500;
+  color:var(--white);
+  letter-spacing:-0.01em;
+}
+
 footer{
   border-top:1px solid var(--border);
   padding:2.5rem 3rem 2rem;
@@ -331,6 +386,15 @@ footer{
   transition:color 0.15s;
 }
 .footer-nav a:hover{color:var(--silver)}
+.footer-contact{
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;margin-top:0.5rem;
+}
+.footer-contact a{
+  font-size:0.68rem;color:var(--dim);text-decoration:none;
+  letter-spacing:0.08em;transition:color 0.15s;
+}
+.footer-contact a:hover{color:var(--silver)}
 .footer-copy{
   font-size:0.65rem;color:var(--border-light);
   letter-spacing:0.04em;margin:0;
@@ -360,7 +424,9 @@ footer{
   .pillars{grid-template-columns:1fr}
   .features-section{grid-template-columns:1fr}
   .feature-card{padding:1.5rem 1.25rem}
+  .contact-links{grid-template-columns:1fr}
   .footer-nav{gap:1.5rem;flex-wrap:wrap}
+  .footer-contact{flex-direction:column;gap:0.75rem}
 }
 </style>
 </head>
@@ -479,6 +545,26 @@ footer{
     </div>
   </div>
 
+  <div class="contact-section reveal--soft" data-reveal>
+    <h2 class="contact-title">Get in Touch</h2>
+    <div class="contact-links">
+      <a href="https://x.com/walldropsite" target="_blank" rel="noopener" class="contact-link">
+        <div class="contact-icon">𝕏</div>
+        <div class="contact-info">
+          <div class="contact-label">X (Twitter)</div>
+          <div class="contact-value">@walldropsite</div>
+        </div>
+      </a>
+      <a href="mailto:walldropsite@gmail.com" class="contact-link">
+        <div class="contact-icon">✉</div>
+        <div class="contact-info">
+          <div class="contact-label">Email</div>
+          <div class="contact-value">walldropsite@gmail.com</div>
+        </div>
+      </a>
+    </div>
+  </div>
+
   <p class="closing">No sign-up. No clutter. Just wallpapers that respect your attention.</p>
 
   <div class="about-cta">
@@ -497,6 +583,10 @@ footer{
     <a href="index.html">Browse</a>
     <a href="about.html">About</a>
   </nav>
+  <div class="footer-contact">
+    <a href="https://x.com/walldropsite" target="_blank" rel="noopener">@walldropsite</a>
+    <a href="mailto:walldropsite@gmail.com">walldropsite@gmail.com</a>
+  </div>
   <p class="footer-copy">© 2026 WallDrop · Dark &amp; minimal wallpapers</p>
 </footer>
 
