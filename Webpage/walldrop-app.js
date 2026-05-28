@@ -173,12 +173,6 @@
     state.wallCount = galleryCount;
     updateFilterBar();
 
-    document.querySelectorAll('[data-dlkey]').forEach((el) => {
-      const card = el.closest('.wall-card');
-      const n = card ? downloadCountForCard(card) : 0;
-      el.textContent = n === 0 ? '0 dls' : fmtNum(n) + ' dls';
-    });
-
     const totalDl = state.totalDownloads || 0;
     const dlEl = document.getElementById('dl-count');
     if (animate && totalDl > 0) {

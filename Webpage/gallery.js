@@ -327,9 +327,6 @@
       '<div class="card-right">' +
       tagsHtml +
       shareButton +
-      '<span class="dl-count" data-dlkey="' +
-      index +
-      '">0 dls</span>' +
       '</div></div>';
 
     card.querySelector('.wall-thumb').appendChild(thumbInner);
