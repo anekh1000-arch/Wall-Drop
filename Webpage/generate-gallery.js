@@ -281,23 +281,26 @@ function scanFolder(folder, device) {
       overrides[imageField] ||
       overrides[`${device}/${filename}`] ||
       overrides[`${device}/${imageField}`];
-    const aestheticTitle =
+    // Use original filename as title, with basic cleanup
+    const stem = path.parse(filename).name;
+    const originalTitle = stem.replace(/[-_]/g, ' ').replace(/\s+/g, ' ').trim();
+    const title =
       typeof overrideTitle === 'string' && overrideTitle.trim()
         ? overrideTitle.trim()
-        : getAestheticTitle(filename, parsed.category);
+        : originalTitle || stem;
     const size = readImageSize(filePath);
     const res = size ? formatRes(size.w, size.h) : FALLBACK_RES[device];
-    const vibes = inferVibes(aestheticTitle, parsed.category, filename, parsed.extraVibes || []);
+    const vibes = inferVibes(title, parsed.category, filename, parsed.extraVibes || []);
 
     const entry = {
-      title: aestheticTitle,
+      title: title,
       category: parsed.category,
       device,
       resolution: res,
       image: imageField,
-      alt: buildSeoAltText(filename, aestheticTitle, parsed.category, device, res),
+      alt: buildSeoAltText(filename, title, parsed.category, device, res),
       vibes,
-      tags: inferTags(aestheticTitle, parsed.category, device),
+      tags: inferTags(title, parsed.category, device),
       curatedTag: getCuratedTag(parsed.category, device, res),
       addedAt: new Date().toISOString()
     };
