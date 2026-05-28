@@ -266,6 +266,54 @@ nav{
   margin:0;
 }
 
+/* FAQ Section */
+.faq-section{
+  margin-bottom:2.5rem;
+  animation:fadeUp 0.5s 0.32s ease both;
+}
+.faq-title{
+  font-family:'Outfit',sans-serif;
+  font-size:1.4rem;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:-0.03em;
+  margin-bottom:1.5rem;
+  line-height:1.3;
+}
+.faq-list{
+  display:flex;
+  flex-direction:column;
+  gap:1px;
+  background:var(--border);
+  border:1px solid var(--border);
+  border-radius:14px;
+  overflow:hidden;
+}
+.faq-item{
+  background:var(--surface);
+  padding:1.25rem 1.5rem;
+  transition:background 0.2s;
+}
+.faq-item:hover{
+  background:var(--card);
+}
+.faq-question{
+  font-family:'Outfit',sans-serif;
+  font-size:0.85rem;
+  font-weight:600;
+  color:var(--white);
+  letter-spacing:-0.01em;
+  margin-bottom:0.5rem;
+  line-height:1.4;
+}
+.faq-answer{
+  font-size:0.8rem;
+  font-weight:300;
+  line-height:1.6;
+  color:var(--silver);
+  margin:0;
+}
+
 footer{
   border-top:1px solid var(--border);
   padding:2.5rem 3rem 2rem;
@@ -404,6 +452,36 @@ footer{
       <div class="feature-icon">📺</div>
       <h3>4K Resolution Quality</h3>
       <p>All wallpapers in our collection are available in 4K resolution (3840×2160 for desktop, optimized for mobile). This ensures crisp, clear visuals on any display, from ultrawide monitors to high-DPI laptop screens. Our wallpapers are also optimized for various aspect ratios, ensuring they look great on any device.</p>
+    </div>
+  </div>
+
+  <div class="faq-section reveal--soft" data-reveal>
+    <h2 class="faq-title">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Are these wallpapers free?</div>
+        <div class="faq-answer">Yes, all wallpapers on WallDrop are completely free to download and use personally.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What resolution are the wallpapers?</div>
+        <div class="faq-answer">All wallpapers are available in 4K resolution, optimized for desktop, Mac, and mobile screens.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Can I use these wallpapers commercially?</div>
+        <div class="faq-answer">No, wallpapers on WallDrop are for personal use only.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How often are new wallpapers added?</div>
+        <div class="faq-answer">New wallpapers are added regularly. Check back often or look for the 'NEW' badge on fresh uploads.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">What image formats are available?</div>
+        <div class="faq-answer">Wallpapers are served in WebP format for fast loading, with JPEG fallback for older browsers.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">How do I download a wallpaper?</div>
+        <div class="faq-answer">Simply click on any wallpaper and hit the download button.</div>
+      </div>
     </div>
   </div>
 
