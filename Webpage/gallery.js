@@ -15,7 +15,7 @@
   const CARD_CHUNK = 24;
   const EAGER_COUNT = 20;
   const LAZY_ROOT_MARGIN = '1400px 0px';
-  const ITEMS_PER_PAGE = 24;
+  const ITEMS_PER_PAGE = 18;
 
   let lazyObserver = null;
   let scrollPrimeBound = false;
