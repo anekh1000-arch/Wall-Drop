@@ -448,7 +448,7 @@
 
     appendCardsInChunks(pageItems, gallery, emptyEl, function (count) {
       updatePaginationControls();
-      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: count } }));
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: filteredItems.length } }));
     });
   }
 
