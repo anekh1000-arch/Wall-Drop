@@ -15,7 +15,7 @@
   const CARD_CHUNK = 24;
   const EAGER_COUNT = 20;
   const LAZY_ROOT_MARGIN = '1400px 0px';
-  const ITEMS_PER_PAGE = 18;
+  const ITEMS_PER_PAGE = 24;
 
   let lazyObserver = null;
   let scrollPrimeBound = false;
@@ -487,9 +487,9 @@
     if (page < 1 || page > totalPages) return;
     currentPage = page;
     renderPage(currentPage);
-    const filterSection = document.getElementById('filterSection');
-    if (filterSection) {
-      filterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const gallery = document.getElementById('gallery');
+    if (gallery) {
+      gallery.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 
