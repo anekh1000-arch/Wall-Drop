@@ -193,11 +193,7 @@
 
   function scrollToGallery() {
     const el = document.getElementById('gallery') || document.getElementById('filterSection');
-    if (el) {
-      const rect = el.getBoundingClientRect();
-      const scrollTop = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
-      window.scrollTo({ top: scrollTop, behavior: reducedMotion ? 'auto' : 'smooth' });
-    }
+    if (el) el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
   }
 
   function runSearch(animate) {
@@ -301,7 +297,7 @@
             b.classList.toggle('active', b.dataset.dev === 'all');
           });
         }
-        scrollToGallery();
+        scrollToAboveCenter();
         applyFilters(false);
         showToast('Top 10 most downloaded');
       }
