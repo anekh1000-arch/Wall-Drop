@@ -542,11 +542,11 @@
       const gallery = document.getElementById('gallery');
       const emptyEl = document.getElementById('emptyState');
       renderPage(currentPage, filteredItems, gallery, emptyEl);
-      // Scroll to center of page
+      // Scroll to a position that shows the top of the gallery
       const gallerySection = document.querySelector('.gallery-wrap');
       if (gallerySection) {
         const rect = gallerySection.getBoundingClientRect();
-        const scrollTop = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
+        const scrollTop = window.pageYOffset + rect.top - 100;
         window.scrollTo({ top: scrollTop, behavior: 'smooth' });
       }
     }
