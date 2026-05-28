@@ -611,6 +611,12 @@ footer{
 .footer-contact a{
   font-size:0.68rem;color:var(--dim);text-decoration:none;
   letter-spacing:0.08em;transition:color 0.15s;
+  display:flex;align-items:center;gap:0.4rem;
+}
+.footer-contact a svg{
+  width:16px;height:16px;
+  stroke:currentColor;stroke-width:2;
+  fill:none;
 }
 .footer-contact a:hover{color:var(--silver)}
 .footer-copy{
@@ -832,7 +838,12 @@ footer{
     <a href="about.html">About</a>
   </nav>
   <div class="footer-contact">
-    <a href="https://x.com/walldropsite" target="_blank" rel="noopener">@walldropsite</a>
+    <a href="https://x.com/walldropsite" target="_blank" rel="noopener" aria-label="Follow on X">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 4l11.733 16h4.267l-11.733 -16z" />
+        <path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772" />
+      </svg>
+    </a>
   </div>
   <p class="footer-copy">© 2026 WallDrop · Dark &amp; minimal wallpapers</p>
 </footer>
