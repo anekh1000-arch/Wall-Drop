@@ -487,7 +487,10 @@
     if (page < 1 || page > totalPages) return;
     currentPage = page;
     renderPage(currentPage);
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    const filterSection = document.getElementById('filterSection');
+    if (filterSection) {
+      filterSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
   }
 
   window.initWallDropGallery = async function () {
