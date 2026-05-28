@@ -15,9 +15,13 @@
   const CARD_CHUNK = 24;
   const EAGER_COUNT = 20;
   const LAZY_ROOT_MARGIN = '1400px 0px';
+  const ITEMS_PER_PAGE = 24;
 
   let lazyObserver = null;
   let scrollPrimeBound = false;
+  let currentPage = 1;
+  let filteredItems = [];
+  let totalPages = 1;
 
   function formatRes(w, h) {
     return w + '\u00d7' + h;
@@ -417,6 +421,75 @@
     chunk();
   }
 
+  function renderPage(page) {
+    const gallery = document.getElementById('gallery');
+    const emptyEl = document.getElementById('emptyState');
+    if (!gallery || !emptyEl) return;
+
+    gallery.querySelectorAll('.wall-card').forEach(function (el) {
+      el.remove();
+    });
+
+    const startIndex = (page - 1) * ITEMS_PER_PAGE;
+    const endIndex = Math.min(startIndex + ITEMS_PER_PAGE, filteredItems.length);
+    const pageItems = filteredItems.slice(startIndex, endIndex);
+
+    if (pageItems.length === 0) {
+      emptyEl.classList.add('visible');
+      emptyEl.querySelector('.empty-title').textContent = 'No wallpapers found';
+      emptyEl.querySelector('p').textContent = 'Try adjusting your filters.';
+      const hint = emptyEl.querySelector('.empty-hint');
+      if (hint) hint.style.display = 'none';
+      updatePaginationControls();
+      return;
+    }
+
+    emptyEl.classList.remove('visible');
+
+    appendCardsInChunks(pageItems, gallery, emptyEl, function (count) {
+      updatePaginationControls();
+      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: count } }));
+    });
+  }
+
+  function updatePaginationControls() {
+    const pagination = document.getElementById('pagination');
+    if (!pagination) return;
+
+    totalPages = Math.ceil(filteredItems.length / ITEMS_PER_PAGE);
+    currentPage = Math.min(currentPage, totalPages);
+    currentPage = Math.max(currentPage, 1);
+
+    const prevBtn = pagination.querySelector('.pagination-prev');
+    const nextBtn = pagination.querySelector('.pagination-next');
+    const pageInfo = pagination.querySelector('.pagination-info');
+
+    if (pageInfo) {
+      pageInfo.textContent = 'Page ' + currentPage + ' of ' + totalPages;
+    }
+
+    if (prevBtn) {
+      prevBtn.disabled = currentPage === 1;
+    }
+
+    if (nextBtn) {
+      nextBtn.disabled = currentPage === totalPages;
+    }
+
+    if (totalPages <= 1) {
+      pagination.style.display = 'none';
+    } else {
+      pagination.style.display = 'flex';
+    }
+  }
+
+  function goToPage(page) {
+    if (page < 1 || page > totalPages) return;
+    currentPage = page;
+    renderPage(currentPage);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
   window.initWallDropGallery = async function () {
     const gallery = document.getElementById('gallery');
     const emptyEl = document.getElementById('emptyState');
@@ -445,6 +518,8 @@
     });
 
     var validItems = items.filter(isValidItem);
+    filteredItems = validItems;
+    currentPage = 1;
 
     if (validItems.length === 0) {
       emptyEl.classList.add('visible');
@@ -454,14 +529,52 @@
       const hint = emptyEl.querySelector('.empty-hint');
       if (hint) hint.textContent = 'Tip: use WebP/AVIF for faster loads — see PERFORMANCE.md';
       if (hint) hint.style.display = 'inline-block';
+      updatePaginationControls();
       window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: 0 } }));
       return;
     }
 
     emptyEl.classList.remove('visible');
 
-    appendCardsInChunks(validItems, gallery, emptyEl, function (count) {
-      window.dispatchEvent(new CustomEvent('walldrop:gallery-ready', { detail: { count: count } }));
-    });
+    renderPage(currentPage);
+
+    // Store all items for filtering
+    window.wallDropAllItems = validItems;
+
+    // Setup pagination event listeners
+    const prevBtn = document.querySelector('.pagination-prev');
+    const nextBtn = document.querySelector('.pagination-next');
+    
+    if (prevBtn) {
+      prevBtn.addEventListener('click', function() {
+        goToPage(currentPage - 1);
+      });
+    }
+    
+    if (nextBtn) {
+      nextBtn.addEventListener('click', function() {
+        goToPage(currentPage + 1);
+      });
+    }
+  };
+
+  window.filterGallery = function(category, device) {
+    const gallery = document.getElementById('gallery');
+    if (!gallery) return;
+
+    const allCards = gallery.querySelectorAll('.wall-card');
+    
+    if (category === 'all' && device === 'all') {
+      filteredItems = window.wallDropAllItems || [];
+    } else {
+      filteredItems = (window.wallDropAllItems || []).filter(function(item) {
+        const catMatch = category === 'all' || item.category === category;
+        const devMatch = device === 'all' || item.device === device;
+        return catMatch && devMatch;
+      });
+    }
+    
+    currentPage = 1;
+    renderPage(currentPage);
   };
 })();

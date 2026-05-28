@@ -586,6 +586,44 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   opacity:1;transform:translateX(-50%) translateY(0);
 }
 
+/* Pagination */
+.pagination-wrap{
+  display:none;
+  align-items:center;
+  justify-content:center;
+  gap:1.5rem;
+  padding:2rem 3rem 3rem;
+}
+.pagination-btn{
+  background:var(--surface);
+  border:1px solid var(--border);
+  color:var(--silver);
+  padding:0.6rem 1.4rem;
+  border-radius:8px;
+  font-family:'Inter',sans-serif;
+  font-size:0.7rem;
+  font-weight:500;
+  letter-spacing:0.08em;
+  text-transform:uppercase;
+  cursor:pointer;
+  transition:all 0.15s;
+}
+.pagination-btn:hover:not(:disabled){
+  border-color:var(--border-light);
+  background:var(--card);
+  color:var(--white);
+}
+.pagination-btn:disabled{
+  opacity:0.3;
+  cursor:not-allowed;
+}
+.pagination-info{
+  font-size:0.72rem;
+  color:var(--dim);
+  letter-spacing:0.06em;
+  font-weight:500;
+}
+
 /* ── FOOTER ── */
 footer{
   border-top:1px solid var(--border);
@@ -828,6 +866,14 @@ footer{
     </div>
   </div>
 </div>
+
+<!-- PAGINATION -->
+<div class="pagination-wrap" id="pagination" data-reveal>
+  <button class="pagination-btn pagination-prev" disabled>Previous</button>
+  <span class="pagination-info">Page 1 of 1</span>
+  <button class="pagination-btn pagination-next" disabled>Next</button>
+</div>
+
 </main>
 
 <!-- FOOTER -->

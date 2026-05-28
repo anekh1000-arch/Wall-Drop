@@ -232,6 +232,9 @@
       btn.classList.add('active');
       activeCat = btn.dataset.cat;
       sortMode = 'default';
+      if (typeof window.filterGallery === 'function') {
+        window.filterGallery(activeCat, activeDev);
+      }
       applyFilters(false);
     });
   }
@@ -244,6 +247,9 @@
       deviceGroup.querySelectorAll('.device-pill').forEach((b) => b.classList.remove('active'));
       btn.classList.add('active');
       activeDev = btn.dataset.dev;
+      if (typeof window.filterGallery === 'function') {
+        window.filterGallery(activeCat, activeDev);
+      }
       applyFilters(false);
     });
   }
