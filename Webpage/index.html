@@ -506,6 +506,16 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 }
 .wall-card:hover .res-badge{opacity:0}
 
+/* NEW badge */
+.new-badge{
+  position:absolute;top:10px;left:10px;
+  background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);
+  color:#fff;font-size:0.52rem;font-weight:600;letter-spacing:0.12em;
+  padding:3px 8px;border-radius:4px;
+  backdrop-filter:blur(8px);
+  z-index:2;
+}
+
 /* CARD META */
 .card-meta{
   padding:0.75rem 1rem;
@@ -536,6 +546,45 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   text-transform:uppercase;letter-spacing:0.08em;border-radius:100px;
 }
 .dl-count{font-size:0.62rem;color:var(--dim);letter-spacing:0.04em}
+
+/* Share button */
+.share-btn{
+  background:transparent;border:none;
+  color:var(--dim);padding:4px;
+  cursor:pointer;border-radius:6px;
+  transition:all 0.15s;
+  display:flex;align-items:center;justify-content:center;
+}
+.share-btn svg{
+  width:16px;height:16px;
+  stroke-width:1.8;
+}
+.share-btn:hover{
+  color:var(--silver);
+  background:rgba(255,255,255,0.05);
+}
+.share-btn:focus-visible{
+  outline:2px solid rgba(255,255,255,0.35);
+  outline-offset:2px;
+}
+
+/* Toast notification */
+.toast{
+  position:fixed;bottom:2rem;left:50%;
+  transform:translateX(-50%) translateY(20px);
+  background:rgba(255,255,255,0.95);
+  color:#080808;
+  padding:0.6rem 1.2rem;
+  border-radius:8px;
+  font-size:0.72rem;font-weight:500;
+  opacity:0;pointer-events:none;
+  transition:all 0.25s cubic-bezier(0.25,0.46,0.45,0.94);
+  z-index:1000;
+  box-shadow:0 4px 20px rgba(0,0,0,0.3);
+}
+.toast.visible{
+  opacity:1;transform:translateX(-50%) translateY(0);
+}
 
 /* ── FOOTER ── */
 footer{

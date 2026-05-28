@@ -298,7 +298,8 @@ function scanFolder(folder, device) {
       alt: buildSeoAltText(filename, aestheticTitle, parsed.category, device, res),
       vibes,
       tags: inferTags(aestheticTitle, parsed.category, device),
-      curatedTag: getCuratedTag(parsed.category, device, res)
+      curatedTag: getCuratedTag(parsed.category, device, res),
+      addedAt: new Date().toISOString()
     };
     if (size) {
       entry.width = size.w;

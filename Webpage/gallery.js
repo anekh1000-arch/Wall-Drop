@@ -162,6 +162,14 @@
     return 'view.html?' + q.toString();
   }
 
+  function isNewWallpaper(item) {
+    if (!item.addedAt) return false;
+    const addedDate = new Date(item.addedAt);
+    const now = new Date();
+    const daysDiff = (now - addedDate) / (1000 * 60 * 60 * 24);
+    return daysDiff <= 7;
+  }
+
   function buildCard(item, index, eager) {
     const imagePath = resolveImagePath(item);
     const resolution =
@@ -175,6 +183,7 @@
     );
     const vibes = Array.isArray(item.vibes) ? item.vibes.join(',') : '';
     const tags = Array.isArray(item.tags) ? item.tags.join(',') : '';
+    const isNew = isNewWallpaper(item);
 
     const card = document.createElement('div');
     card.className = 'wall-card';
@@ -289,11 +298,14 @@
 
     const curated = item.curatedTag ? String(item.curatedTag) : '';
 
+    const newBadge = isNew ? '<div class="new-badge">NEW</div>' : '';
+    const shareButton = '<button class="share-btn" aria-label="Share wallpaper" data-share-url="' + escapeAttr(viewUrl) + '" data-share-title="' + escapeAttr(item.title) + '"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg></button>';
+
     card.innerHTML =
       '<a class="wall-card-link" href="' +
       escapeAttr(viewUrl) +
       '">' +
-      '<div class="wall-thumb"></div>' +
+      '<div class="wall-thumb">' + newBadge + '</div>' +
       '<div class="res-badge">' +
       escapeHtml(resolution) +
       '</div>' +
@@ -310,13 +322,57 @@
       '</div>' +
       '<div class="card-right">' +
       tagsHtml +
+      shareButton +
       '<span class="dl-count" data-dlkey="' +
       index +
       '">0 dls</span>' +
       '</div></div>';
 
     card.querySelector('.wall-thumb').appendChild(thumbInner);
+    
+    // Add share button functionality
+    const shareBtn = card.querySelector('.share-btn');
+    if (shareBtn) {
+      shareBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        const shareUrl = this.dataset.shareUrl;
+        const shareTitle = this.dataset.shareTitle;
+        
+        if (navigator.share) {
+          navigator.share({
+            title: shareTitle,
+            url: shareUrl
+          }).catch(function(err) {
+            console.log('Share failed:', err);
+          });
+        } else {
+          // Fallback: copy to clipboard
+          navigator.clipboard.writeText(shareUrl).then(function() {
+            showToast('Link copied!');
+          }).catch(function() {
+            showToast('Failed to copy link');
+          });
+        }
+      });
+    }
+    
     return card;
+  }
+
+  function showToast(message) {
+    let toast = document.getElementById('toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'toast';
+      toast.className = 'toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('visible');
+    setTimeout(function() {
+      toast.classList.remove('visible');
+    }, 2000);
   }
 
   function escapeHtml(s) {
