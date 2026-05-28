@@ -198,6 +198,30 @@
     skeleton.className = 'thumb-skeleton';
     skeleton.setAttribute('aria-hidden', 'true');
 
+    // Create picture element for WebP/JPEG fallback
+    const picture = document.createElement('picture');
+    
+    const webpPath = imagePath.replace(/\.(jpg|jpeg|JPG|JPEG)$/i, '.webp');
+    const source = document.createElement('source');
+    source.srcset = webpPath;
+    source.type = 'image/webp';
+    
+    // Generate srcset for responsive WebP images
+    if (item.width && item.height) {
+      const sizes = [
+        { width: 640, height: Math.round(640 * (item.height / item.width)) },
+        { width: 1280, height: Math.round(1280 * (item.height / item.width)) },
+        { width: 1920, height: Math.round(1920 * (item.height / item.width)) }
+      ];
+      const webpSrcset = sizes
+        .filter(s => s.width <= item.width)
+        .map(s => `${webpPath} ${s.width}w`)
+        .join(', ');
+      if (webpSrcset) {
+        source.srcset = webpSrcset;
+      }
+    }
+    
     const img = document.createElement('img');
     img.alt =
       item.alt ||
@@ -217,7 +241,7 @@
       img.height = item.height;
     }
     
-    // Generate srcset for responsive images
+    // Generate srcset for responsive JPEG images (fallback)
     if (item.width && item.height) {
       const sizes = [
         { width: 640, height: Math.round(640 * (item.height / item.width)) },
@@ -251,8 +275,11 @@
       thumbInner.classList.remove('is-loading');
       thumbInner.classList.add('is-error');
     });
+    
+    picture.appendChild(source);
+    picture.appendChild(img);
     thumbInner.appendChild(skeleton);
-    thumbInner.appendChild(img);
+    thumbInner.appendChild(picture);
 
     const tagsHtml = deviceTags(item.device)
       .map(function (t) {
