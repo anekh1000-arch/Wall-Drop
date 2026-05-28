@@ -16,7 +16,7 @@ const MONOCHROME = path.join(ROOT, 'images', 'wallpapers', 'monochrome');
 const OUT = path.join(ROOT, 'wallpapers.json');
 const OVERRIDES_FILE = path.join(ROOT, 'title-overrides.json');
 
-const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.webp', '.gif']);
+const IMAGE_EXT = new Set(['.jpg', '.jpeg', '.png', '.gif']);
 const CATEGORIES = new Set(['dark', 'minimal', 'abstract', 'monochrome']);
 const FALLBACK_RES = {
   desktop: '3840×2160',
