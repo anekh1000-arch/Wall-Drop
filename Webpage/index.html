@@ -588,25 +588,19 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
 
 /* Pagination */
 .pagination-wrap{
-  display:none;
-  align-items:center;
-  justify-content:center;
-  gap:1.5rem;
-  padding:2rem 3rem 3rem;
+  display:flex;align-items:center;justify-content:center;
+  gap:1.5rem;padding:2rem 3rem 3rem;
 }
 .pagination-btn{
-  background:var(--surface);
-  border:1px solid var(--border);
-  color:var(--silver);
-  padding:0.6rem 1.4rem;
-  border-radius:8px;
-  font-family:'Inter',sans-serif;
-  font-size:0.7rem;
-  font-weight:500;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-  cursor:pointer;
-  transition:all 0.15s;
+  display:flex;align-items:center;gap:0.5rem;
+  background:var(--surface);border:1px solid var(--border);
+  color:var(--silver);padding:0.6rem 1.2rem;border-radius:8px;
+  font-family:'Inter',sans-serif;font-size:0.72rem;font-weight:500;
+  letter-spacing:0.08em;text-transform:uppercase;
+  cursor:pointer;transition:all 0.15s;
+}
+.pagination-btn svg{
+  width:16px;height:16px;
 }
 .pagination-btn:hover:not(:disabled){
   border-color:var(--border-light);
@@ -614,14 +608,12 @@ a.nav-btn{text-decoration:none;display:inline-flex;align-items:center}
   color:var(--white);
 }
 .pagination-btn:disabled{
-  opacity:0.3;
-  cursor:not-allowed;
+  opacity:0.3;cursor:not-allowed;
 }
 .pagination-info{
-  font-size:0.72rem;
-  color:var(--dim);
-  letter-spacing:0.06em;
-  font-weight:500;
+  font-size:0.72rem;color:var(--dim);
+  letter-spacing:0.08em;font-weight:500;
+  min-width:120px;text-align:center;
 }
 
 /* ── FOOTER ── */
@@ -868,21 +860,28 @@ footer{
 </div>
 
 <!-- PAGINATION -->
-<div class="pagination-wrap" id="pagination" data-reveal>
-  <button class="pagination-btn pagination-prev" disabled>Previous</button>
-  <span class="pagination-info">Page 1 of 1</span>
-  <button class="pagination-btn pagination-next" disabled>Next</button>
+<div class="pagination-wrap reveal--soft" data-reveal id="paginationSection">
+  <button class="pagination-btn" id="prevPage" onclick="changePage(-1)" aria-label="Previous page">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M15 18l-6-6 6-6"/>
+    </svg>
+    Previous
+  </button>
+  <span class="pagination-info" id="pageInfo">Page 1 of 1</span>
+  <button class="pagination-btn" id="nextPage" onclick="changePage(1)" aria-label="Next page">
+    Next
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M9 18l6-6-6-6"/>
+    </svg>
+  </button>
 </div>
-
 </main>
 
 <!-- FOOTER -->
 <footer class="reveal--soft" data-reveal>
-  <a href="index.html" class="footer-brand" aria-label="WallDrop home">
-    <span class="footer-brand__text">WallDrop</span>
-  </a>
+  <a href="index.html" class="footer-brand" aria-label="WallDrop home">WallDrop</a>
   <nav class="footer-nav" aria-label="Footer navigation">
-    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;">Browse</a>
+    <a href="index.html">Browse</a>
     <a href="about.html">About</a>
   </nav>
   <div class="footer-contact">
