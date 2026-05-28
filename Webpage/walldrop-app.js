@@ -192,14 +192,11 @@
   }
 
   function scrollToGallery() {
-    const gallerySection = document.querySelector('.gallery-wrap');
-    if (gallerySection) {
-      const rect = gallerySection.getBoundingClientRect();
+    const el = document.getElementById('gallery') || document.getElementById('filterSection');
+    if (el) {
+      const rect = el.getBoundingClientRect();
       const scrollTop = window.pageYOffset + rect.top - (window.innerHeight / 2) + (rect.height / 2);
       window.scrollTo({ top: scrollTop, behavior: reducedMotion ? 'auto' : 'smooth' });
-    } else {
-      const el = document.getElementById('gallery') || document.getElementById('filterSection');
-      if (el) el.scrollIntoView({ behavior: reducedMotion ? 'auto' : 'smooth', block: 'start' });
     }
   }
 
