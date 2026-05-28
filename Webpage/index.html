@@ -42,12 +42,12 @@
 <meta name="twitter:image" content="https://wall-drops.vercel.app/images/wallpapers/desktop/sagittarius-black.jpg">
 <link rel="icon" href="icons/favicon.svg?v=5" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/icon.svg?v=5">
-<link rel="stylesheet" href="scroll-reveal.css">
+<link rel="stylesheet" href="scroll-reveal.css" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="brand.css">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="loader.css">
-<link rel="stylesheet" href="mobile.css">
-<link rel="stylesheet" href="cursor.css">
+<link rel="stylesheet" href="mobile.css" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="cursor.css" media="print" onload="this.media='all'">
 <script>document.documentElement.classList.add('is-loading');</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -779,11 +779,11 @@ footer{
 
 <div class="toast" id="toast"></div>
 
-<script src="loader.js"></script>
-<script src="scroll-reveal.js"></script>
-<script src="gallery.js"></script>
-<script src="walldrop-app.js"></script>
-<script>
+<script src="loader.js" defer></script>
+<script src="scroll-reveal.js" defer></script>
+<script src="gallery.js" defer></script>
+<script src="walldrop-app.js" defer></script>
+<script defer>
 if('serviceWorker' in navigator){
   window.addEventListener('load',function(){
     navigator.serviceWorker.register('sw.js').then(function(reg){
@@ -795,7 +795,7 @@ if('serviceWorker' in navigator){
   });
 }
 </script>
-<script src="hero-anim.js"></script>
-<script src="site.js"></script>
+<script src="hero-anim.js" defer></script>
+<script src="site.js" defer></script>
 </body>
 </html>
